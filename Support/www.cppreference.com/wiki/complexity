@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>complexity</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-03-31T05:56:29-0700" />
+<meta name="keywords" content="complexity" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/complexity?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/complexity" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/complexity" />
+<link rel="stylesheet" media="all" type="text/css" href="lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="time_complexity" id="time_complexity">Time Complexity</a></h2>
+<div class="level2">
+
+<p>
+
+There are different measurements of the speed of any given algorithm. Given an
+input size of N, they can be described as follows:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Name</th><th class="col1">Speed</th><th class="col2">Description</th><th class="col3">Formula</th><th class="col4">Example</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">factorial time</td><td class="col1">slower</td><td class="col2">takes an amount of time proportional to N raised to the Nth power</td><td class="col3 centeralign">  N!  </td><td class="col4">Brute force solution to Traveling Salesman Problem</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">exponential time</td><td class="col1">slow</td><td class="col2">takes an amount of time proportional to a constant raised to the Nth power</td><td class="col3 centeralign">  K<sup>N</sup>  </td><td class="col4">Brute force solution to Rubik&#039;s Cube</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">polynomial time</td><td class="col1">fast</td><td class="col2">takes an amount of time proportional to N raised to some constant power</td><td class="col3 centeralign">  N<sup>K</sup>  </td><td class="col4">Comparison sorts (bubble, insertion, selection sort)</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">linearithmic time</td><td class="col1">faster</td><td class="col2">takes an amount of time between linear and polynomial</td><td class="col3 centeralign">  N * log(N)  </td><td class="col4">The Linear logarithmic sorts (quicksort, heapsort, mergesort)</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">linear time</td><td class="col1">even faster</td><td class="col2">takes an amount of time directly proportional to N</td><td class="col3 centeralign">  K * N  </td><td class="col4">Iterating through an array</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">logarithmic time</td><td class="col1">much faster</td><td class="col2">takes an amount of time proportional to the logarithm of N</td><td class="col3 centeralign">  K * log(N)  </td><td class="col4">Binary Search</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">constant time</td><td class="col1">fastest</td><td class="col2">takes a fixed amount of time, no matter how large the input is</td><td class="col3 centeralign">  K  </td><td class="col4">Array index lookup</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "Time Complexity" [1-1172] -->
+<h3><a name="complexity_analysis" id="complexity_analysis">Complexity Analysis</a></h3>
+<div class="level3">
+
+<p>
+
+A given operation can have different time complexities with different orders/sets of input.  The different methods of time complexity analysis are as follows:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Name</th><th class="col1">Description</th><th class="col2">Example</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">best-case</td><td class="col1">A case where the operation executes as fast as it possibly can</td><td class="col2"> Bubblesort has a best-case time complexity of N</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">average-case</td><td class="col1">A case where the operation executes in a time comparable to the majority of possible cases</td><td class="col2"> Quicksort has an average-case time complexity of N * log(N)</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">worst-case</td><td class="col1">A case where the operation executes as slowly as it possibly can</td><td class="col2"> Quicksort has a worst-case time complexity of N<sup>2</sup></td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">amortized worst-case</td><td class="col1">The average worst-case taken over an infinite number of inputs</td><td class="col2"> vector::push_back() has an amortized worst-case time complexity of K (constant time)</td>
+	</tr>
+</table>
+
+<p>
+
+Choosing the right algorithm depends upon which cases you expect your application to encounter.  For example, an application that must protect itself from malicious input will avoid naive implementations of quicksort, which has a worst-case time complexity of N<sup>2</sup> despite having one of the fastest average-case time complexities compared to all other sorts.
+
+</p>
+
+</div>
+<!-- SECTION "Complexity Analysis" [1173-] --></div>
+</body>
+</html>

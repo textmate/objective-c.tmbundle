@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keywords:casting_comparison</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-25T10:15:55-0700" />
+<meta name="keywords" content="keywords,casting_comparison" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/keywords/casting_comparison?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/keywords/casting_comparison" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/keywords/casting_comparison" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="casting_comparison#a_comparison_of_the_c_casting_operators" class="toc">A comparison of the C++ casting operators</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="casting_comparison#deficiencies_of_the_old_c-style_cast" class="toc">Deficiencies of the old C-style cast</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="casting_comparison#different_operators_for_different_uses" class="toc">Different operators for different uses</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h2><a name="a_comparison_of_the_c_casting_operators" id="a_comparison_of_the_c_casting_operators">A comparison of the C++ casting operators</a></h2>
+<div class="level2">
+
+<p>
+
+In addition to the C-style casting operator (provided for backwards compatibility) the C++ standard defines four additional casting operators:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="static_cast" class="wikilink1" title="keywords:static_cast">static_cast</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="const_cast" class="wikilink1" title="keywords:const_cast">const_cast</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="dynamic_cast" class="wikilink1" title="keywords:dynamic_cast">dynamic_cast</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="reinterpret_cast" class="wikilink1" title="keywords:reinterpret_cast">reinterpret_cast</a></div>
+</li>
+</ul>
+
+<p>
+
+The purpose of these new casting operators is to provide better type checking.  Their use is encouraged over the old C-style casting operator.
+</p>
+
+</div>
+<!-- SECTION "A comparison of the C++ casting operators" [1-428] -->
+<h3><a name="deficiencies_of_the_old_c-style_cast" id="deficiencies_of_the_old_c-style_cast">Deficiencies of the old C-style cast</a></h3>
+<div class="level3">
+
+<p>
+
+Two forms of the C-style cast are supported in C++:
+</p>
+<pre class="c code c++" style="font-family:monospace;">  <span class="kw4">int</span> age <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> sqrt<span class="br0">&#40;</span> foo <span class="sy0">/</span> <span class="nu16">3.25</span> <span class="br0">&#41;</span>;
+  <span class="kw4">int</span> age <span class="sy0">=</span> <span class="kw4">int</span><span class="br0">&#40;</span> sqrt<span class="br0">&#40;</span>foo<span class="sy0">/</span><span class="nu16">3.25</span> <span class="br0">&#41;</span> <span class="br0">&#41;</span>;</pre>
+<p>
+However, using the same syntax for a variety of different casting operations can make the intent of the programmer unclear.
+</p>
+
+<p>
+Furthermore, it can be difficult to find a specific type of cast in a large codebase.
+</p>
+
+<p>
+Finally, the generality of the C-style cast can be overkill for situations where all that is needed is a simple conversion.  The ability to select between several different casting operators of differing degrees of power can prevent programmers from inadvertently casting to an incorrect type. 
+</p>
+
+</div>
+<!-- SECTION "Deficiencies of the old C-style cast" [429-1125] -->
+<h3><a name="different_operators_for_different_uses" id="different_operators_for_different_uses">Different operators for different uses</a></h3>
+<div class="level3">
+
+<p>
+
+The four casting operators in C++ can be used in different cases, where each is most appropriate:
+</p>
+
+<p>
+<a href="static_cast" class="wikilink1" title="keywords:static_cast">static_cast</a> is the most useful cast. 
+It can be used to perform any implicit cast. When an implicit conversion loses some information, some compilers will produce warnings, and static_cast will eliminate these warnings. Making implicit conversion through static_cast is also useful to resolve ambiguity or to clarify the conversion presence.
+It also can be used to call an unary constructor, declared as <a href="explicit" class="wikilink1" title="keywords:explicit">explicit</a>.
+It also can be used to cast up and down a class hierarchy, like dynamic_cast, except that no runtime checking is performed.
+</p>
+
+<p>
+<a href="const_cast" class="wikilink1" title="keywords:const_cast">const_cast</a> is used to apply or remove <a href="const" class="wikilink1" title="keywords:const">const</a> or <a href="volatile" class="wikilink1" title="keywords:volatile">volatile</a> qualifier from a variable.
+</p>
+
+<p>
+<a href="dynamic_cast" class="wikilink1" title="keywords:dynamic_cast">dynamic_cast</a> is used on polymorphic pointers or references to move up or down a class hierarchy.  Note that dynamic_cast performs runtime-checks: if the object&#039;s type is not the one expected, it will return NULL during a pointer-cast and throw a std::bad_cast exception during a reference-cast.
+</p>
+
+<p>
+<a href="reinterpret_cast" class="wikilink1" title="keywords:reinterpret_cast">reinterpret_cast</a> is used to perform conversions between unrelated types, like conversion between unrelated pointers and references or conversion between an integer and a pointer.
+</p>
+
+<p>
+Old-style cast may correspond to static_cast, reinterpret_cast or const_cast, or even a combination of them. This means that none of these casting operators is as powerful as old-style cast.
+</p>
+
+<p>
+Related links:  <a href="http://www.acm.org/crossroads/xrds3-1/ovp3-1.html" class="urlextern" title="http://www.acm.org/crossroads/xrds3-1/ovp3-1.html"  rel="nofollow">http://www.acm.org/crossroads/xrds3-1/ovp3-1.html</a>
+
+</p>
+
+</div>
+<!-- SECTION "Different operators for different uses" [1126-] --></div>
+</body>
+</html>

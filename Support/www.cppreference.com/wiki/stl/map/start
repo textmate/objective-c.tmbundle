@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:map:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-25T11:37:41-0700" />
+<meta name="keywords" content="stl,map,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/map/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:map" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/map/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/map/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="c_maps" id="c_maps">C++ Maps</a></h1>
+<div class="level1">
+
+<p>
+
+C++ Maps are sorted associative containers that contain unique key/value pairs.
+For example, you could create a map that associates a string with an integer,
+and then use that map to associate the number of days in each month with the
+name of each month.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="map_constructors" class="wikilink1" title="stl:map:map_constructors">Map Constructors &amp; Destructors</a></td><td class="col1">default methods to allocate, copy, and deallocate maps</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="map_operators" class="wikilink1" title="stl:map:map_operators">Map operators</a></td><td class="col1">assign, compare, and access elements of a map</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="map_typedefs" class="wikilink1" title="stl:map:map_typedefs">Map typedefs</a></td><td class="col1">typedefs of a map</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="begin" class="wikilink1" title="stl:map:begin">begin</a></td><td class="col1">returns an iterator to the beginning of the map</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="clear" class="wikilink1" title="stl:map:clear">clear</a></td><td class="col1">removes all elements from the map</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="count" class="wikilink1" title="stl:map:count">count</a></td><td class="col1">returns the number of elements matching a certain key</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="empty" class="wikilink1" title="stl:map:empty">empty</a></td><td class="col1">true if the map has no elements</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="end" class="wikilink1" title="stl:map:end">end</a></td><td class="col1">returns an iterator just past the last element of a map</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="equal_range" class="wikilink1" title="stl:map:equal_range">equal_range</a></td><td class="col1">returns iterators to the first and just past the last elements matching a specific key</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="erase" class="wikilink1" title="stl:map:erase">erase</a></td><td class="col1">removes elements from a map</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="find" class="wikilink1" title="stl:map:find">find</a></td><td class="col1">returns an iterator to specific elements</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="insert" class="wikilink1" title="stl:map:insert">insert</a></td><td class="col1">insert items into a map</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="key_comp" class="wikilink1" title="stl:map:key_comp">key_comp</a></td><td class="col1">returns the function that compares keys</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="lower_bound" class="wikilink1" title="stl:map:lower_bound">lower_bound</a></td><td class="col1">returns an iterator to the first element greater than or equal to a certain value</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="max_size" class="wikilink1" title="stl:map:max_size">max_size</a></td><td class="col1">returns the maximum number of elements that the map can hold</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="rbegin" class="wikilink1" title="stl:map:rbegin">rbegin</a></td><td class="col1">returns a reverse_iterator to the end of the map</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="rend" class="wikilink1" title="stl:map:rend">rend</a></td><td class="col1">returns a reverse_iterator to the beginning of the map</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="size" class="wikilink1" title="stl:map:size">size</a></td><td class="col1">returns the number of items in the map</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="swap" class="wikilink1" title="stl:map:swap">swap</a></td><td class="col1">swap the contents of this map with another</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="upper_bound" class="wikilink1" title="stl:map:upper_bound">upper_bound</a></td><td class="col1">returns an iterator to the first element greater than a certain value</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="value_comp" class="wikilink1" title="stl:map:value_comp">value_comp</a></td><td class="col1">returns the function that compares values</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>examples_3</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-09T05:32:22-0700" />
+<meta name="keywords" content="examples_3" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/examples_3?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/examples_3" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/examples_3" />
+<link rel="stylesheet" media="all" type="text/css" href="lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+#include “animal.h”
+#include &lt;cstring&gt;
+</p>
+
+<p>
+Veterinario::Veterinario() {
+</p>
+<pre class="code">nome = especialidade = &quot;&quot;;</pre>
+
+<p>
+}
+Veterinario::Veterinario(string nom, string esp) {
+</p>
+<pre class="code">nome = nom;
+especialidade = esp;</pre>
+
+<p>
+}
+Veterinario::Veterinario(const Veterinario &amp; v) {
+</p>
+<pre class="code">nome = v.nome;
+especialidade = v.especialidade;</pre>
+
+<p>
+}
+string Veterinario::getNome() const {
+</p>
+<pre class="code">return nome;</pre>
+
+<p>
+}
+void Veterinario::setNome(string nom) {
+</p>
+<pre class="code">nome = nom;</pre>
+
+<p>
+}
+string Veterinario::getEspecialidade() const {
+</p>
+<pre class="code">return especialidade;</pre>
+
+<p>
+}
+void Veterinario::setEspecialidade(string esp) {
+</p>
+<pre class="code">especialidade = esp;</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+Animal::Animal(string esp, bool sex, char * nom, int ida)
+</p>
+<pre class="code">:  especie(esp), sexo(sex), nome(new char(strlen(nom)+1)), veterinario(&quot;&quot;,&quot;&quot;) {
+strcpy ((char*)nome, nom);
+idade = ida;
+numAnimais ++;</pre>
+
+<p>
+}
+Animal::Animal(string esp, bool sex, char * nom, int ida, Veterinario vet)
+</p>
+<pre class="code">:  especie(esp), sexo(sex), nome(new char(strlen(nom)+1)), veterinario(vet) {
+strcpy ((char*)nome, nom);
+idade = ida;
+numAnimais ++;</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+string Animal::getEspecie() const {
+</p>
+<pre class="code">return especie;</pre>
+
+<p>
+}
+bool Animal::getSexo() const {
+</p>
+<pre class="code">return sexo;</pre>
+
+<p>
+}
+char * Animal::getNome() const {
+</p>
+<pre class="code">return (char *)nome;</pre>
+
+<p>
+}
+int Animal::getIdade(void) const{
+</p>
+<pre class="code">return idade;</pre>
+
+<p>
+}
+void Animal::setIdade(int ida) {
+</p>
+<pre class="code">idade = ida;</pre>
+
+<p>
+}
+Veterinario Animal::getVeterinario() const {
+</p>
+<pre class="code">return veterinario;</pre>
+
+<p>
+}
+void Animal::setVeterinario(Veterinario vet) {
+</p>
+<pre class="code">veterinario = vet;</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+ostream &amp; operator«(ostream &amp; os, Animal &amp; a){
+</p>
+<pre class="code">os &lt;&lt; &quot;Animal: &quot; &lt;&lt; a.getEspecie() &lt;&lt; &quot;, &quot; &lt;&lt; a.getSexo() &lt;&lt; &quot;, &quot; &lt;&lt; a.getNome() 
+       &lt;&lt; &quot;, &quot; &lt;&lt; a.getIdade() &lt;&lt; &quot;; Responsavel: &quot; &lt;&lt; (a.getVeterinario()).getNome() &lt;&lt; endl;
+return os;</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+Animal::Animal(const Animal &amp; a)
+</p>
+<pre class="code">:  especie(a.especie), sexo(a.sexo), nome(new char(strlen(a.nome)+1)), veterinario(a.veterinario) {
+strcpy ((char*)nome, a.nome);
+idade = a.idade;</pre>
+
+<p>
+}
+Animal::~Animal() {
+</p>
+<pre class="code">delete [] nome;</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+bool Animal::operator&lt;(const Animal &amp; a) {
+</p>
+<pre class="code">if (idade &lt; a.getIdade())
+	return true;
+else
+	return (false);</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+int Animal::numAnimais = 0;
+</p>
+
+<p>
+int Animal::getNumAnimais() {
+</p>
+<pre class="code">return numAnimais;</pre>
+
+<p>
+}
+</p>
+</div>
+</body>
+</html>

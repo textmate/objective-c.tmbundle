@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru"
+ lang="ru" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ru:stl:vector:end</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-16T23:16:07-0700" />
+<meta name="keywords" content="ru,stl,vector,end" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/ru/stl/vector/end?do=index" title="Все страницы" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=ru:stl:vector" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/ru/stl/vector/end" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/ru/stl/vector/end" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="end" id="end">end</a></h2>
+<div class="level2">
+
+<p>
+Синтаксис:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;vector&gt;</span>
+    iterator end<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    const_iterator end<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>;</pre>
+<p>
+Функция end() возвращает итератор на место после последнего элемента вектора.
+Обратите внимание, что перед тем, как обратиться к последнему элементу через вызов 
+end(), нужно сначала декрементировать итератор.
+</p>
+
+<p>
+Например, в этом коде первый «cout» выведет мусор, тогда как второй
+действительно покажет последний элемент вектора:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    vector<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> v1;
+    v1.<span class="me1">push_back</span><span class="br0">&#40;</span> <span class="nu19">0</span> <span class="br0">&#41;</span>;
+    v1.<span class="me1">push_back</span><span class="br0">&#40;</span> <span class="nu0">1</span> <span class="br0">&#41;</span>;
+    v1.<span class="me1">push_back</span><span class="br0">&#40;</span> <span class="nu0">2</span> <span class="br0">&#41;</span>;
+    v1.<span class="me1">push_back</span><span class="br0">&#40;</span> <span class="nu0">3</span> <span class="br0">&#41;</span>;
+&nbsp;
+    <span class="kw4">int</span> bad_val <span class="sy0">=</span> <span class="sy0">*</span><span class="br0">&#40;</span>v1.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;bad_val is &quot;</span> <span class="sy0">&lt;&lt;</span> bad_val <span class="sy0">&lt;&lt;</span> endl;
+&nbsp;
+    <span class="kw4">int</span> good_val <span class="sy0">=</span> <span class="sy0">*</span><span class="br0">&#40;</span>v1.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#41;</span>;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;good_val is &quot;</span> <span class="sy0">&lt;&lt;</span> good_val <span class="sy0">&lt;&lt;</span> endl;</pre>
+<p>
+Следующий пример показывает, как begin() и end() используются для прохода по всем элементам вектора.
+</p>
+<pre class="c code c++" style="font-family:monospace;">    vector<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> v1<span class="br0">&#40;</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">5</span> <span class="br0">&#41;</span>;
+    vector<span class="sy0">&lt;</span>int<span class="sy0">&gt;::</span><span class="me2">iterator</span> it;
+    <span class="kw1">for</span><span class="br0">&#40;</span> it <span class="sy0">=</span> v1.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; it <span class="sy0">!=</span> v1.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; it<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="sy0">*</span>it <span class="sy0">&lt;&lt;</span> endl;
+    <span class="br0">&#125;</span></pre>
+<p>
+Итератор инициализируется с помощью вызова begin(). После выполнения тела цикла
+итератор инкрементируется и проверяется на неравенство результату вызова end().
+Так как end() возвращает итератор, указывающий на место после последнего элемента вектора,
+цикл остановится только после того, как будут пройдены все элементы вектора.
+</p>
+
+<p>
+end() выполнятеся за <a href="../../../complexity" class="wikilink1" title="complexity">константное время</a>.
+</p>
+
+<p>
+Смотри также: <a href="begin" class="wikilink1" title="ru:stl:vector:begin">begin</a>, <a href="rbegin" class="wikilink1" title="ru:stl:vector:rbegin">rbegin</a>, <a href="rend" class="wikilink1" title="ru:stl:vector:rend">rend</a>
+</p>
+
+</div>
+<!-- SECTION "end" [3-] --></div>
+</body>
+</html>

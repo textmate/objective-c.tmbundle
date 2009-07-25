@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:multimap:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-15T08:42:03-0700" />
+<meta name="keywords" content="stl,multimap,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/multimap/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:multimap" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/multimap/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/multimap/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="c_multimaps" id="c_multimaps">C++ Multimaps</a></h1>
+<div class="level1">
+
+<p>
+
+C++ Multimaps are like <a href="../map/start" class="wikilink1" title="stl:map:start">maps</a>, in that they are sorted
+associative containers, but differ from maps in that they allow
+duplicate keys.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="multimap_constructors" class="wikilink1" title="stl:multimap:multimap_constructors">Constructors</a></td><td class="col1">default methods to allocate, copy, and deallocate multimaps</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="multimap_operators" class="wikilink1" title="stl:multimap:multimap_operators">Operators</a></td><td class="col1">assign and compare multimaps</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="begin" class="wikilink1" title="stl:multimap:begin">begin</a></td><td class="col1">returns an iterator to the beginning of the multimap</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="clear" class="wikilink1" title="stl:multimap:clear">clear</a></td><td class="col1">removes all elements from the multimap</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="count" class="wikilink1" title="stl:multimap:count">count</a></td><td class="col1">returns the number of elements matching a certain key</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="empty" class="wikilink1" title="stl:multimap:empty">empty</a></td><td class="col1">true if the multimap has no elements</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="end" class="wikilink1" title="stl:multimap:end">end</a></td><td class="col1">returns an iterator just past the last element of a multimap</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="equal_range" class="wikilink1" title="stl:multimap:equal_range">equal_range</a></td><td class="col1">returns iterators to the first and just past the last elements matching a specific key</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="erase" class="wikilink1" title="stl:multimap:erase">erase</a></td><td class="col1">removes elements from a multimap</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="find" class="wikilink1" title="stl:multimap:find">find</a></td><td class="col1">returns an iterator to specific elements</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="insert" class="wikilink1" title="stl:multimap:insert">insert</a></td><td class="col1">inserts items into a multimap</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="key_comp" class="wikilink1" title="stl:multimap:key_comp">key_comp</a></td><td class="col1">returns the function that compares keys</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="lower_bound" class="wikilink1" title="stl:multimap:lower_bound">lower_bound</a></td><td class="col1">returns an iterator to the first element greater than or equal to a certain value</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="max_size" class="wikilink1" title="stl:multimap:max_size">max_size</a></td><td class="col1">returns the maximum number of elements that the multimap can hold</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="rbegin" class="wikilink1" title="stl:multimap:rbegin">rbegin</a></td><td class="col1">returns a reverse_iterator to the end of the multimap</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="rend" class="wikilink1" title="stl:multimap:rend">rend</a></td><td class="col1">returns a reverse_iterator to the beginning of the multimap</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="size" class="wikilink1" title="stl:multimap:size">size</a></td><td class="col1">returns the number of items in the multimap</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="swap" class="wikilink1" title="stl:multimap:swap">swap</a></td><td class="col1">swap the contents of this multimap with another</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="upper_bound" class="wikilink1" title="stl:multimap:upper_bound">upper_bound</a></td><td class="col1">returns an iterator to the first element greater than a certain value</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="value_comp" class="wikilink1" title="stl:multimap:value_comp">value_comp</a></td><td class="col1">returns the function that compares values</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

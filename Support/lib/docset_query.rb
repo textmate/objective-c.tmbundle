@@ -121,6 +121,14 @@ def man_page (query)
 	end
 end
 
+Cxx = Struct.new(:url, :language, :title, :klass)
+
+def cxx_lookup (query)
+  dir = ENV['TM_BUNDLE_SUPPORT'] + '/www.cppreference.com/wiki/stl'
+  files = `find #{e_sh dir} -type f \\( -name #{e_sh query} -or -path \\*/#{e_sh query}/start \\)`
+  files.to_a.map { |e| Cxx.new(e_url(e.chop), 'C++', e.gsub(/^#{Regexp.escape(dir)}\/(start)?|\n$/, ''), query) }
+end
+
 def get_user_selected_reference (class_names)
 	plist = {'menuItems' => class_names}.to_plist
 	res = OSX::PropertyList::load(%x{"$DIALOG" -up #{e_sh plist} })	
@@ -136,7 +144,9 @@ def search_docs_all(query)
   man = man_page(query)
   results << man if man
 
-  return results
+  results << cxx_lookup(query)
+
+  return results.flatten
 end
 
 def documentation_for_word

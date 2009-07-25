@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl"
+ lang="pl" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pl:c:mem:malloc</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-11T10:54:54-0700" />
+<meta name="keywords" content="pl,c,mem,malloc" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/pl/c/mem/malloc?do=index" title="Indeks" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=pl:c:mem" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/pl/c/mem/malloc" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/pl/c/mem/malloc" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="malloc" id="malloc">malloc</a></h2>
+<div class="level2">
+
+<p>
+Składnia:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstdlib&gt;</span>
+    <span class="kw4">void</span><span class="sy0">*</span> malloc<span class="br0">&#40;</span>size_t size<span class="br0">&#41;</span>;</pre>
+<p>
+Funkcja malloc() przydziela obszar pamięci o rozmiarze <em>size</em> i zwraca do niego wskaźnik. W przypadku wystąpienia błędu zwracaną wartością jest <em>NULL</em>. Przydzielony obszar pamięci znajduje się na stercie (heap) a nie stosie (stack), należy więc pamiętać o zwolnieniu przydzielonej pamięci za pomocą funkcji free(). Przykład:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw4">typedef</span> <span class="kw4">struct</span> typ_osoba
+    <span class="br0">&#123;</span>
+        <span class="kw4">int</span> wiek;
+        <span class="kw4">char</span> imie<span class="br0">&#91;</span><span class="nu0">20</span><span class="br0">&#93;</span>;
+    <span class="br0">&#125;</span> osoba;
+&nbsp;
+    osoba <span class="sy0">*</span>bob;
+    bob <span class="sy0">=</span> <span class="br0">&#40;</span>osoba<span class="sy0">*</span><span class="br0">&#41;</span>malloc<span class="br0">&#40;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>osoba<span class="br0">&#41;</span><span class="br0">&#41;</span>;
+&nbsp;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>bob <span class="sy0">!=</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        bob<span class="sy0">-&gt;</span>wiek <span class="sy0">=</span> <span class="nu0">22</span>;
+        strcpy<span class="br0">&#40;</span>bob<span class="sy0">-&gt;</span>imie<span class="sy0">,</span> <span class="st0">&quot;Robert&quot;</span><span class="br0">&#41;</span>;
+        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%s ma %d lat<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> bob<span class="sy0">-&gt;</span>imie<span class="sy0">,</span> bob<span class="sy0">-&gt;</span>wiek<span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span>
+&nbsp;
+    free<span class="br0">&#40;</span>bob<span class="br0">&#41;</span>;</pre>
+<p>
+W C++ należy korzystać z operatorów new i delete, zamiast funkcji malloc()/free().
+</p>
+<pre class="code"> 
+</pre>
+
+<p>
+
+Tematy pokrewne: <a href="http://www.cppreference.com/wiki/pl/c/mem/calloc" class="wikilink2" title="pl:c:mem:calloc" rel="nofollow">calloc</a>, <a href="http://www.cppreference.com/wiki/pl/keywords/delete" class="wikilink2" title="pl:keywords:delete" rel="nofollow">delete</a>, <a href="free" class="wikilink1" title="pl:c:mem:free">free</a>, <a href="http://www.cppreference.com/wiki/pl/keywords/new" class="wikilink2" title="pl:keywords:new" rel="nofollow">new</a>, <a href="http://www.cppreference.com/wiki/pl/c/mem/realloc" class="wikilink2" title="pl:c:mem:realloc" rel="nofollow">realloc</a>
+</p>
+
+</div>
+<!-- SECTION "malloc" [3-] --></div>
+</body>
+</html>

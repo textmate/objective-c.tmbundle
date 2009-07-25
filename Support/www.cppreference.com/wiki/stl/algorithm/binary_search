@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:algorithm:binary_search</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-03-31T13:54:52-0700" />
+<meta name="keywords" content="stl,algorithm,binary_search" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/algorithm/binary_search?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:algorithm" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/algorithm/binary_search" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/algorithm/binary_search" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="binary_search" id="binary_search">binary_search</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;algorithm&gt;</span>
+    bool binary_search<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> <span class="kw4">const</span> TYPE<span class="sy0">&amp;</span> val <span class="br0">&#41;</span>;
+    bool binary_search<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> <span class="kw4">const</span> TYPE<span class="sy0">&amp;</span> val<span class="sy0">,</span> Comp f <span class="br0">&#41;</span>;</pre>
+<p>
+The binary_search() function searches from <code>start</code> to <code>end</code> for <code>val</code>. The elements
+between <code>start</code> and <code>end</code> that are searched should be in ascending order as defined
+by the &lt; operator. Note that a binary search will not work unless the elements
+being searched are in order.
+</p>
+
+<p>
+If <code>val</code> is found, binary_search() returns true, otherwise false.
+If the function <code>f</code> is specified, then it is used to compare elements.
+</p>
+
+<p>
+binary_search() runs in <a href="../../complexity" class="wikilink1" title="complexity">logarithmic time</a>.
+</p>
+
+<p>
+For example, the following code uses binary_search() to determine if the
+integers 0-9 are in an array of integers:
+</p>
+<pre class="c code c++" style="font-family:monospace;">   <span class="kw4">int</span> nums<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="sy0">-</span><span class="nu0">242</span><span class="sy0">,</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu19">0</span><span class="sy0">,</span> <span class="nu0">5</span><span class="sy0">,</span> <span class="nu0">8</span><span class="sy0">,</span> <span class="nu0">9</span><span class="sy0">,</span> <span class="nu0">11</span> <span class="br0">&#125;</span>;
+   <span class="kw4">int</span> start <span class="sy0">=</span> <span class="nu19">0</span>;
+   <span class="kw4">int</span> end <span class="sy0">=</span> <span class="nu0">7</span>;
+&nbsp;
+   <span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu19">0</span>; i <span class="sy0">&lt;</span> <span class="nu0">10</span>; i<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span> binary_search<span class="br0">&#40;</span> nums<span class="sy0">+</span>start<span class="sy0">,</span> nums<span class="sy0">+</span>end<span class="sy0">,</span> i <span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;nums[] contains &quot;</span> <span class="sy0">&lt;&lt;</span> i <span class="sy0">&lt;&lt;</span> endl;
+     <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;nums[] DOES NOT contain &quot;</span> <span class="sy0">&lt;&lt;</span> i <span class="sy0">&lt;&lt;</span> endl;
+     <span class="br0">&#125;</span>
+   <span class="br0">&#125;</span></pre>
+<p>
+When run, this code displays the following output:
+</p>
+<pre class="code">
+   nums[] contains 0
+   nums[] DOES NOT contain 1
+   nums[] DOES NOT contain 2
+   nums[] DOES NOT contain 3
+   nums[] DOES NOT contain 4
+   nums[] contains 5
+   nums[] DOES NOT contain 6
+   nums[] DOES NOT contain 7
+   nums[] contains 8
+   nums[] contains 9</pre>
+<p>
+Related Topics: <a href="equal_range" class="wikilink1" title="stl:algorithm:equal_range">equal_range</a>, <a href="lower_bound" class="wikilink1" title="stl:algorithm:lower_bound">lower_bound</a>, <a href="partial_sort" class="wikilink1" title="stl:algorithm:partial_sort">partial_sort</a>, <a href="partial_sort_copy" class="wikilink1" title="stl:algorithm:partial_sort_copy">partial_sort_copy</a>, <a href="sort" class="wikilink1" title="stl:algorithm:sort">sort</a>, <a href="stable_sort" class="wikilink1" title="stl:algorithm:stable_sort">stable_sort</a>, <a href="upper_bound" class="wikilink1" title="stl:algorithm:upper_bound">upper_bound</a>
+</p>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl"
+ lang="pl" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pl:c:math:fmod</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-11T11:03:22-0700" />
+<meta name="keywords" content="pl,c,math,fmod" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/pl/c/math/fmod?do=index" title="Indeks" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=pl:c:math" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/pl/c/math/fmod" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/pl/c/math/fmod" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="fmod" id="fmod">fmod</a></h2>
+<div class="level2">
+
+<p>
+Składnia:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cmath&gt;</span>
+    <span class="kw4">double</span> fmod<span class="br0">&#40;</span><span class="kw4">double</span> x<span class="sy0">,</span> <span class="kw4">double</span> y<span class="br0">&#41;</span>;</pre>
+<p>
+
+Funkcja fmod() zwraca resztę z dzielenia <em>x</em> przez <em>y</em>. Na przykład:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">    x <span class="sy0">=</span> <span class="nu16">3.2</span>;
+    y <span class="sy0">=</span> <span class="nu16">1.5</span>;
+    z <span class="sy0">=</span> fmod<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span>;</pre>
+<p>
+
+spowoduje przypisanie <em>z</em> wartości <em>0.2</em>.
+</p>
+
+<p>
+C++ dostarcza przeciążone wersje funkcji:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cmath&gt;</span>
+    <span class="kw4">float</span> fmod<span class="br0">&#40;</span><span class="kw4">float</span> x<span class="sy0">,</span> <span class="kw4">float</span> y<span class="br0">&#41;</span>;  <span class="co1">//to samo co fmodf() w C99</span>
+    <span class="kw4">long</span> <span class="kw4">double</span> fmod<span class="br0">&#40;</span><span class="kw4">long</span> <span class="kw4">double</span> x<span class="sy0">,</span> <span class="kw4">long</span> <span class="kw4">double</span> y<span class="br0">&#41;</span>;  <span class="co1">//to samo co fmodl() w C99</span></pre>
+<p>
+Tematy pokrewne: <a href="ceil" class="wikilink1" title="pl:c:math:ceil">ceil</a>, <a href="fabs" class="wikilink1" title="pl:c:math:fabs">fabs</a>, <a href="floor" class="wikilink1" title="pl:c:math:floor">floor</a>
+</p>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru"
+ lang="ru" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ru:stl:list:list_operators</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-17T04:53:29-0700" />
+<meta name="keywords" content="ru,stl,list,list_operators" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/ru/stl/list/list_operators?do=index" title="Все страницы" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=ru:stl:list" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/ru/stl/list/list_operators" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/ru/stl/list/list_operators" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="операторы_списка" id="операторы_списка">Операторы списка</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;list&gt;</span>
+    list operator<span class="sy0">=</span><span class="br0">&#40;</span><span class="kw4">const</span> list<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">==</span><span class="br0">&#40;</span><span class="kw4">const</span> list<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> list<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">!=</span><span class="br0">&#40;</span><span class="kw4">const</span> list<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> list<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">&lt;</span><span class="br0">&#40;</span><span class="kw4">const</span> list<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> list<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="kw4">const</span> list<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> list<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">&lt;=</span><span class="br0">&#40;</span><span class="kw4">const</span> list<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> list<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">&gt;=</span><span class="br0">&#40;</span><span class="kw4">const</span> list<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> list<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;</pre>
+<p>
+Все контейнеры C++ могут быть сравнены и присвоены с помощью стандартных
+операторов: ==, !=, &lt;=, &gt;=, &lt;, &gt; и =.
+Сравнение двух списков или присваивание одного списка другому требует <a href="../../../complexity" class="wikilink1" title="complexity">линейное время</a>.
+</p>
+
+<p>
+Два списка равны, если:
+
+</p>
+<ol>
+<li class="level1"><div class="li"> их размер совпадает и</div>
+</li>
+<li class="level1"><div class="li"> каждый i-й элемент в одном списке равен i-му элементу в другом.</div>
+</li>
+</ol>
+
+<p>
+
+Сравнение списков происходит лексикографически.
+</p>
+
+<p>
+Смотри также: <a href="http://www.cppreference.com/wiki/ru/stl/list/merge" class="wikilink2" title="ru:stl:list:merge" rel="nofollow">merge</a>, <a href="http://www.cppreference.com/wiki/ru/stl/list/unique" class="wikilink2" title="ru:stl:list:unique" rel="nofollow">unique</a>
+</p>
+
+</div>
+<!-- SECTION "Операторы списка" [3-] --></div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru"
+ lang="ru" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ru:stl:vector:capacity</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-16T22:28:04-0700" />
+<meta name="keywords" content="ru,stl,vector,capacity" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/ru/stl/vector/capacity?do=index" title="Все страницы" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=ru:stl:vector" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/ru/stl/vector/capacity" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/ru/stl/vector/capacity" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="capacity" id="capacity">capacity</a></h2>
+<div class="level2">
+
+<p>
+Синтаксис:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;vector&gt;</span>
+    size_type capacity<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>;</pre>
+<p>
+Функция capacity() возвращает количество элементов, которое может содержать вектор до того, как ему потребуется выделить больше места.
+</p>
+
+<p>
+Код в примере использует разные способы установки вместимости двух векторов.
+Первый способ заключается в передаче аргумента конструктору, который инициализирует вектор 10-ю нулями, второй - в вызове функции <a href="reserve" class="wikilink1" title="ru:stl:vector:reserve">reserve</a>.
+Тем не менее, во втором случае действительный размер вектора остается равным нулю.
+</p>
+<pre class="c code c++" style="font-family:monospace;">   vector<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> v1<span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span>;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Вместимость v1 равна &quot;</span> <span class="sy0">&lt;&lt;</span> v1.<span class="me1">capacity</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Размер v1 равен &quot;</span> <span class="sy0">&lt;&lt;</span> v1.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl;
+   vector<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> v2;
+   v2.<span class="me1">reserve</span><span class="br0">&#40;</span><span class="nu0">20</span><span class="br0">&#41;</span>;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Вместимость v2 равна &quot;</span> <span class="sy0">&lt;&lt;</span> v2.<span class="me1">capacity</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Размер v2 равен &quot;</span> <span class="sy0">&lt;&lt;</span> v2.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl;</pre>
+<p>
+После запуска код выводит:
+</p>
+<pre class="code">
+   Вместимость v1 равна 10
+   Размер v1 равен 10
+   Вместимость v2 равна 20
+   Размер v2 равен 0</pre>
+<p>
+Контейнеры C++ были разработаны так, что их размер увеличивается динамически. Это освобождает программиста
+от забот о хранении произвольного числа элементов в контейнере. Тем не менее, иногда программист может улучшить
+производительность своей программы, дав подсказки компилятору о размере контейнеров, которые программа будет использовать.
+Эти подсказки, говорящие компилятору, какой ожидается размер контейнера, - вызов функции <a href="reserve" class="wikilink1" title="ru:stl:vector:reserve">reserve</a> и конструктора из примера.
+</p>
+
+<p>
+Функция capacity() выполняется за <a href="../../../complexity" class="wikilink1" title="complexity">константное время</a>.
+</p>
+
+<p>
+Смотри также: <a href="reserve" class="wikilink1" title="ru:stl:vector:reserve">reserve</a>, <a href="resize" class="wikilink1" title="ru:stl:vector:resize">resize</a>, <a href="size" class="wikilink1" title="ru:stl:vector:size">size</a>
+</p>
+
+</div>
+<!-- SECTION "capacity" [3-] --></div>
+</body>
+</html>

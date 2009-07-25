@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-01T08:02:29-0700" />
+<meta name="keywords" content="string,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/string/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/string/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/string/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="c_strings" id="c_strings">C++ Strings</a></h1>
+<div class="level1">
+
+<p>
+
+The string class provides a useful way to manipulate and store sequences of characters, and is defined in the <code>std</code> namespace in the <code>&lt;string&gt;</code> header file.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="string_constructors" class="wikilink1" title="string:string_constructors">Constructors</a></td><td class="col1">create strings from arrays of characters and other strings</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="string_operators" class="wikilink1" title="string:string_operators">Operators</a></td><td class="col1">concatenate strings, assign strings, use strings for I/O, compare strings</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="append" class="wikilink1" title="string:append">append</a></td><td class="col1">append characters and strings onto a string</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="assign" class="wikilink1" title="string:assign">assign</a></td><td class="col1">give a string values from strings of characters and other C++ strings</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="at" class="wikilink1" title="string:at">at</a></td><td class="col1">returns the character at a specific location</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="begin" class="wikilink1" title="string:begin">begin</a></td><td class="col1">returns an iterator to the beginning of the string</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="c_str" class="wikilink1" title="string:c_str">c_str</a></td><td class="col1">returns a non-modifiable standard C character array version of the string</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="capacity" class="wikilink1" title="string:capacity">capacity</a></td><td class="col1">returns the number of characters that the string can hold</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="clear" class="wikilink1" title="string:clear">clear</a></td><td class="col1">removes all characters from the string</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="compare" class="wikilink1" title="string:compare">compare</a></td><td class="col1">compares two strings</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="copy" class="wikilink1" title="string:copy">copy</a></td><td class="col1">copies characters from a string into an array</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="data" class="wikilink1" title="string:data">data</a></td><td class="col1">returns a pointer to the first character of a string</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="empty" class="wikilink1" title="string:empty">empty</a></td><td class="col1">true if the string has no characters</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="end" class="wikilink1" title="string:end">end</a></td><td class="col1">returns an iterator just past the last character of a string</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="erase" class="wikilink1" title="string:erase">erase</a></td><td class="col1">removes characters from a string</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="find" class="wikilink1" title="string:find">find</a></td><td class="col1">find characters in the string</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="find_first_not_of" class="wikilink1" title="string:find_first_not_of">find_first_not_of</a></td><td class="col1">find first absence of characters</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="find_first_of" class="wikilink1" title="string:find_first_of">find_first_of</a></td><td class="col1">find first occurrence of characters</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="find_last_not_of" class="wikilink1" title="string:find_last_not_of">find_last_not_of</a></td><td class="col1">find last absence of characters</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="find_last_of" class="wikilink1" title="string:find_last_of">find_last_of</a></td><td class="col1">find last occurrence of characters</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="getline" class="wikilink1" title="string:getline">getline</a></td><td class="col1">read data from an I/O stream into a string</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="insert" class="wikilink1" title="string:insert">insert</a></td><td class="col1">insert characters into a string</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><a href="length" class="wikilink1" title="string:length">length</a></td><td class="col1">returns the length of the string</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><a href="max_size" class="wikilink1" title="string:max_size">max_size</a></td><td class="col1">returns the maximum number of characters that the string can hold</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><a href="push_back" class="wikilink1" title="string:push_back">push_back</a></td><td class="col1">add a character to the end of the string</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><a href="rbegin" class="wikilink1" title="string:rbegin">rbegin</a></td><td class="col1">returns a reverse_iterator to the end of the string</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><a href="rend" class="wikilink1" title="string:rend">rend</a></td><td class="col1">returns a reverse_iterator to the beginning of the string</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><a href="replace" class="wikilink1" title="string:replace">replace</a></td><td class="col1">replace characters in the string</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"><a href="reserve" class="wikilink1" title="string:reserve">reserve</a></td><td class="col1">sets the minimum capacity of the string</td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"><a href="resize" class="wikilink1" title="string:resize">resize</a></td><td class="col1">change the size of the string</td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"><a href="rfind" class="wikilink1" title="string:rfind">rfind</a></td><td class="col1">find the last occurrence of a substring</td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"><a href="size" class="wikilink1" title="string:size">size</a></td><td class="col1">returns the number of items in the string</td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"><a href="substr" class="wikilink1" title="string:substr">substr</a></td><td class="col1">returns a certain substring</td>
+	</tr>
+	<tr class="row33">
+		<td class="col0"><a href="swap" class="wikilink1" title="string:swap">swap</a></td><td class="col1">swap the contents of this string with another</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

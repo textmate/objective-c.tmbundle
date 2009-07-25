@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:io:sprintf</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-23T10:29:55-0700" />
+<meta name="keywords" content="c,io,sprintf" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/io/sprintf?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:io" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/io/sprintf" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/io/sprintf" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="sprintf" id="sprintf">sprintf</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstdio&gt;</span>
+    <span class="kw4">int</span> sprintf<span class="br0">&#40;</span> <span class="kw4">char</span> <span class="sy0">*</span>buffer<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>format<span class="sy0">,</span> ... <span class="br0">&#41;</span>;</pre>
+<p>
+
+The sprintf() function is just like printf(), except that the output is sent to
+buffer. The return value is the number of characters written. For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">char</span> <span class="kw4">string</span><span class="br0">&#91;</span><span class="nu0">50</span><span class="br0">&#93;</span>;
+     <span class="kw4">int</span> file_number <span class="sy0">=</span> <span class="nu19">0</span>;
+&nbsp;
+     sprintf<span class="br0">&#40;</span> <span class="kw4">string</span><span class="sy0">,</span> <span class="st0">&quot;file.%d&quot;</span><span class="sy0">,</span> file_number <span class="br0">&#41;</span>;
+     file_number++;
+     output_file <span class="sy0">=</span> fopen<span class="br0">&#40;</span> <span class="kw4">string</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span> <span class="br0">&#41;</span>;</pre>
+<p>
+
+Note that sprintf() does the opposite of a function like atoi() – where atoi()
+converts a string into a number, sprintf() can be used to convert a number into
+a string.
+For example, the following code uses sprintf() to convert an integer into a
+string of characters:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">char</span> result<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span>;
+     <span class="kw4">int</span> num <span class="sy0">=</span> <span class="nu0">24</span>;
+     sprintf<span class="br0">&#40;</span> result<span class="sy0">,</span> <span class="st0">&quot;%d&quot;</span><span class="sy0">,</span> num <span class="br0">&#41;</span>;</pre>
+<p>
+
+This code is similar, except that it converts a floating-point number into an
+array of characters:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">char</span> result<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span>;
+     <span class="kw4">float</span> fnum <span class="sy0">=</span> <span class="nu16">3.14159</span>;
+     sprintf<span class="br0">&#40;</span> result<span class="sy0">,</span> <span class="st0">&quot;%f&quot;</span><span class="sy0">,</span> fnum <span class="br0">&#41;</span>;</pre>
+<p>
+Note that this function does not check the bounds of the buffer and therefore creates the risk of a buffer overflow.
+A secure alternative is <a href="snprintf" class="wikilink1" title="c:io:snprintf">snprintf</a>
+</p>
+
+<p>
+Related Topics: <a href="snprintf" class="wikilink1" title="c:io:snprintf">snprintf</a>, <a href="../string/atof" class="wikilink1" title="c:string:atof">atof</a>, <a href="../string/atoi" class="wikilink1" title="c:string:atoi">atoi</a>, <a href="../string/atol" class="wikilink1" title="c:string:atol">atol</a>, <a href="fprintf" class="wikilink1" title="c:io:fprintf">fprintf</a>, <a href="printf" class="wikilink1" title="c:io:printf">printf</a>
+</p>
+
+</div>
+<!-- SECTION "sprintf" [3-] --></div>
+</body>
+</html>

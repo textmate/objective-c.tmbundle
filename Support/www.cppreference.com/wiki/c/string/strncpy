@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:string:strncpy</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-06T20:31:40-0700" />
+<meta name="keywords" content="c,string,strncpy" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/string/strncpy?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/string/strncpy" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/string/strncpy" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="strncpy" id="strncpy">strncpy</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstring&gt;</span>
+    <span class="kw4">char</span> <span class="sy0">*</span>strncpy<span class="br0">&#40;</span> <span class="kw4">char</span> <span class="sy0">*</span>to<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>from<span class="sy0">,</span> size_t count <span class="br0">&#41;</span>;
+    namespace std <span class="br0">&#123;</span>
+      using <span class="sy0">::</span><span class="me2">strncpy</span>;
+   <span class="br0">&#125;</span></pre>
+<p>
+The strncpy function copies at most count characters of from to the string
+to. If from has less than count characters, the remainder is padded with &#039;\0&#039;
+characters. The return value is the resulting string.
+</p>
+
+<p>
+<strong>Warning:</strong> If you read the definition carefully, you will see that strncpy may not NULL terminate the resulting string!  This is a surprise to many people, but it has a very good reason, and leads us to the idiomatic use of strncpy:
+</p>
+<pre class="c code c++" style="font-family:monospace;">  <span class="co2">#include &lt;cstring&gt;</span>
+  <span class="co2">#include &lt;cstdlib&gt;</span>
+  <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> agrc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>argc<span class="sy0">!=</span><span class="nu0">2</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> EXIT_FAILURE; <span class="br0">&#125;</span>
+    <span class="kw4">char</span> buff<span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span>;
+    strncpy<span class="br0">&#40;</span>buff<span class="sy0">,</span> argv<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>buff<span class="br0">&#41;</span><span class="br0">&#41;</span>;
+    <span class="co1">// Here comes the idiomatic part, that</span>
+    <span class="co1">// must not be missing from code using strncpy:</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>buff<span class="br0">&#91;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>buff<span class="br0">&#41;</span><span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">!=</span> <span class="st0">'<span class="es0">\0</span>'</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="co1">// We have overflow.  You may decide to give an error:</span>
+      <span class="kw1">return</span> EXIT_FAILURE;
+      <span class="co1">// or to truncate your string:</span>
+      buff<span class="br0">&#91;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>buff<span class="br0">&#41;</span><span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">=</span><span class="st0">'<span class="es0">\0</span>'</span>;
+    <span class="br0">&#125;</span>
+    <span class="co1">// but in any case, make sure that at this line</span>
+    <span class="co1">// you string is NULL (zero) terminated!</span>
+  <span class="br0">&#125;</span></pre>
+<p>
+The use of strncpy in itself does not result in safer code.  It has to be used correctly (as above), otherwise a later code, which assumes that a buffer of 6 may contain maximum 5 characters, will fail, and may fail in a way that results in a security risk (crash or worse).
+</p>
+
+<p>
+An alternative way that always NULL-terminates the string is to use <a href="strncat" class="wikilink1" title="c:string:strncat">strncat</a>:
+</p>
+<pre class="c code c++" style="font-family:monospace;">  <span class="co2">#include &lt;cstring&gt;</span>
+  <span class="co2">#include &lt;cstdlib&gt;</span>
+  <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> agrc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>argc<span class="sy0">!=</span><span class="nu0">2</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> EXIT_FAILURE; <span class="br0">&#125;</span>
+    <span class="kw4">char</span> buff<span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="st0">&quot;&quot;</span>;
+    strncat<span class="br0">&#40;</span>buff<span class="sy0">,</span> argv<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>buff<span class="br0">&#41;</span><span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+  <span class="br0">&#125;</span></pre>
+<p>
+Related Topics: <a href="memcpy" class="wikilink1" title="c:string:memcpy">memcpy</a>, <a href="strchr" class="wikilink1" title="c:string:strchr">strchr</a>, <a href="strcpy" class="wikilink1" title="c:string:strcpy">strcpy</a>, <a href="strncat" class="wikilink1" title="c:string:strncat">strncat</a>, <a href="strncmp" class="wikilink1" title="c:string:strncmp">strncmp</a>
+</p>
+
+<p>
+Another set of related (but non-standard) functions are <a href="strlcpy" class="wikilink1" title="c:string:strlcpy">strlcpy</a> and <a href="strlcat" class="wikilink1" title="c:string:strlcat">strlcat</a>.
+</p>
+
+</div>
+<!-- SECTION "strncpy" [3-] --></div>
+</body>
+</html>

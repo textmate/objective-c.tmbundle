@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keywords:static</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:05-0700" />
+<meta name="keywords" content="keywords,static" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/keywords/static?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/keywords/static" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/keywords/static" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="static#static" class="toc">static</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="static#permanent_storage" class="toc">Permanent storage</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="static#single_copy_of_class_data" class="toc">Single copy of class data</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="static#class_functions_callable_without_an_object" class="toc">Class functions callable without an object</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="static#internal_linkage" class="toc">Internal linkage</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h2><a name="static" id="static">static</a></h2>
+<div class="level2">
+
+<p>
+
+The static keyword can be used in four different ways:
+</p>
+<ol>
+<li class="level1"><div class="li"> to create permanent storage for local variables in a function,</div>
+</li>
+<li class="level1"><div class="li"> to create a single copy of class data,</div>
+</li>
+<li class="level1"><div class="li"> to declare member functions that act like a non-member functions, and</div>
+</li>
+<li class="level1"><div class="li"> to specify internal linkage.</div>
+</li>
+</ol>
+
+</div>
+<!-- SECTION "static" [3-293] -->
+<h3><a name="permanent_storage" id="permanent_storage">Permanent storage</a></h3>
+<div class="level3">
+
+<p>
+
+Static local variables keep their value between function calls.  For example, in the following code, a static variable inside a function is used to keep track of how many times that function has been called:
+</p>
+<pre class="c code c++" style="font-family:monospace;"><span class="kw4">void</span> foo<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw4">static</span> <span class="kw4">int</span> counter <span class="sy0">=</span> <span class="nu19">0</span>;
+  <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;foo has been called &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="sy0">++</span>counter <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; times<span class="es0">\n</span>&quot;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu19">0</span>; i <span class="sy0">&lt;</span> <span class="nu0">10</span>; <span class="sy0">++</span>i <span class="br0">&#41;</span> foo<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre>
+</div>
+<!-- SECTION "Permanent storage" [294-703] -->
+<h3><a name="single_copy_of_class_data" id="single_copy_of_class_data">Single copy of class data</a></h3>
+<div class="level3">
+
+<p>
+
+When used in a class data member, all instantiations of that class share one copy of the variable.   
+</p>
+<pre class="c code c++" style="font-family:monospace;">class Foo <span class="br0">&#123;</span>
+public<span class="sy0">:</span>
+  Foo<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="sy0">++</span>numFoos;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;We have now created &quot;</span> <span class="sy0">&lt;&lt;</span> numFoos <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; instances of the Foo class<span class="es0">\n</span>&quot;</span>;
+  <span class="br0">&#125;</span>
+private<span class="sy0">:</span>
+  <span class="kw4">static</span> <span class="kw4">int</span> numFoos;
+<span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw4">int</span> Foo<span class="sy0">::</span><span class="me2">numFoos</span> <span class="sy0">=</span> <span class="nu19">0</span>;  <span class="co1">// allocate memory for numFoos, and initialize it</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  Foo f1;
+  Foo f2;
+  Foo f3;
+<span class="br0">&#125;</span></pre>
+<p>
+In the example above, the static class variable numFoos is shared between all three instances of the Foo class (f1, f2 and f3) and keeps a count of the number of times that the Foo class has been instantiated.
+</p>
+
+</div>
+<!-- SECTION "Single copy of class data" [704-1354] -->
+<h3><a name="class_functions_callable_without_an_object" id="class_functions_callable_without_an_object">Class functions callable without an object</a></h3>
+<div class="level3">
+
+<p>
+
+When used in a class function member, the function does not take an instantiation as an implicit <a href="this" class="wikilink1" title="keywords:this">this</a> parameter, instead behaving like a free function.  This means that static class functions can be called without creating instances of the class:
+</p>
+<pre class="c code c++" style="font-family:monospace;">class Foo <span class="br0">&#123;</span>
+public<span class="sy0">:</span>
+  Foo<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="sy0">++</span>numFoos;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;We have now created &quot;</span> <span class="sy0">&lt;&lt;</span> numFoos <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; instances of the Foo class<span class="es0">\n</span>&quot;</span>;
+  <span class="br0">&#125;</span>
+  <span class="kw4">static</span> <span class="kw4">int</span> getNumFoos<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">return</span> numFoos;
+  <span class="br0">&#125;</span>
+private<span class="sy0">:</span>
+  <span class="kw4">static</span> <span class="kw4">int</span> numFoos;
+<span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw4">int</span> Foo<span class="sy0">::</span><span class="me2">numFoos</span> <span class="sy0">=</span> <span class="nu19">0</span>;  <span class="co1">// allocate memory for numFoos, and initialize it</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  Foo f1;
+  Foo f2;
+  Foo f3;
+  <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;So far, we've made &quot;</span> <span class="sy0">&lt;&lt;</span> Foo<span class="sy0">::</span><span class="me2">getNumFoos</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; instances of the Foo class<span class="es0">\n</span>&quot;</span>;
+<span class="br0">&#125;</span></pre>
+</div>
+<!-- SECTION "Class functions callable without an object" [1355-2101] -->
+<h3><a name="internal_linkage" id="internal_linkage">Internal linkage</a></h3>
+<div class="level3">
+
+<p>
+
+When used on a free function, a global variable, or a global constant, it specifies internal linkage (as opposed to <a href="extern" class="wikilink1" title="keywords:extern">extern</a>, which specifies external linkage).  Internal linkage limits access to the data or function to the current file.
+</p>
+
+<p>
+Related: <a href="extern" class="wikilink1" title="keywords:extern">extern</a>
+</p>
+
+</div>
+<!-- SECTION "Internal linkage" [2102-] --></div>
+</body>
+</html>

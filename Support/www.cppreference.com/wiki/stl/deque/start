@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:deque:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-24T14:07:06-0800" />
+<meta name="keywords" content="stl,deque,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/deque/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:deque" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/deque/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/deque/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="c_double-ended_queues" id="c_double-ended_queues">C++ Double-ended Queues</a></h2>
+<div class="level2">
+
+<p>
+
+Double-ended queues (or deques) are similar to <a href="../vector/start" class="wikilink1" title="stl:vector:start">vectors</a>, except that they allow fast insertions and deletions at both the beginning and the end of the container.
+</p>
+
+<p>
+C++ deques are commonly implemented as dynamically allocated arrays that can grow at both ends.  This guarantees <a href="../../complexity" class="wikilink1" title="complexity">constant time</a> access, amortized constant time insertion and deletion at either end of the deque, and <a href="../../complexity" class="wikilink1" title="complexity">linear time</a> insertion and deletion from the middle of the deque.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="deque_constructors" class="wikilink1" title="stl:deque:deque_constructors">Constructors</a></td><td class="col1">create deques and initialize them with some data</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="deque_operators" class="wikilink1" title="stl:deque:deque_operators">Operators</a></td><td class="col1">compare, assign, and access elements of a deque</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="assign" class="wikilink1" title="stl:deque:assign">assign</a></td><td class="col1">assign elements to a deque</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="at" class="wikilink1" title="stl:deque:at">at</a></td><td class="col1">returns an element at a specific location</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="back" class="wikilink1" title="stl:deque:back">back</a></td><td class="col1">returns a reference to last element of a deque</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="begin" class="wikilink1" title="stl:deque:begin">begin</a></td><td class="col1">returns an iterator to the beginning of the deque</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="clear" class="wikilink1" title="stl:deque:clear">clear</a></td><td class="col1">removes all elements from the deque</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="empty" class="wikilink1" title="stl:deque:empty">empty</a></td><td class="col1">true if the deque has no elements</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="end" class="wikilink1" title="stl:deque:end">end</a></td><td class="col1">returns an iterator just past the last element of a deque</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="erase" class="wikilink1" title="stl:deque:erase">erase</a></td><td class="col1">removes elements from a deque</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="front" class="wikilink1" title="stl:deque:front">front</a></td><td class="col1">returns a reference to the first element of a deque</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="insert" class="wikilink1" title="stl:deque:insert">insert</a></td><td class="col1">inserts elements into the deque</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="max_size" class="wikilink1" title="stl:deque:max_size">max_size</a></td><td class="col1">returns the maximum number of elements that the deque can hold</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="pop_back" class="wikilink1" title="stl:deque:pop_back">pop_back</a></td><td class="col1">removes the last element of a deque</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="pop_front" class="wikilink1" title="stl:deque:pop_front">pop_front</a></td><td class="col1">removes the first element of the deque</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="push_back" class="wikilink1" title="stl:deque:push_back">push_back</a></td><td class="col1">add an element to the end of the deque</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="push_front" class="wikilink1" title="stl:deque:push_front">push_front</a></td><td class="col1">add an element to the front of the deque</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="rbegin" class="wikilink1" title="stl:deque:rbegin">rbegin</a></td><td class="col1">returns a reverse_iterator to the end of the deque</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="rend" class="wikilink1" title="stl:deque:rend">rend</a></td><td class="col1">returns a reverse_iterator to the beginning of the deque</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="resize" class="wikilink1" title="stl:deque:resize">resize</a></td><td class="col1">change the size of the deque</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="size" class="wikilink1" title="stl:deque:size">size</a></td><td class="col1">returns the number of items in the deque</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="swap" class="wikilink1" title="stl:deque:swap">swap</a></td><td class="col1">swap the contents of this deque with another</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "C++ Double-ended Queues" [1-1797] -->
+<h3><a name="notes" id="notes">Notes</a></h3>
+<div class="level3">
+
+<p>
+
+The name deque is pronounced “deck”, and stands for “double-ended queue.” Knuth reports that the name was coined by E. J. Schweppe. See section 2.2.1 of Knuth for more information about deques. <a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html" class="urlextern" title="http://www-cs-faculty.stanford.edu/~uno/taocp.html"  rel="nofollow">(D. E. Knuth, The Art of Computer Programming. Volume 1: Fundamental Algorithms, second edition. Addison-Wesley, 1973.)</a> 
+</p>
+
+</div>
+<!-- SECTION "Notes" [1798-] --></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl"
+ lang="pl" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pl:keywords:while</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-11T15:39:17-0700" />
+<meta name="keywords" content="pl,keywords,while" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/pl/keywords/while?do=index" title="Indeks" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=pl:keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/pl/keywords/while" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/pl/keywords/while" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="while" id="while">while</a></h2>
+<div class="level2">
+
+<p>
+Składnia:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw1">while</span> <span class="br0">&#40;</span>warunek<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="co1">//instrukcje</span>
+    <span class="br0">&#125;</span></pre>
+<p>
+Słowo kluczowe while jest wykorzystywane do tworzenia pętli. <em>instrukcje</em> są wykonywane dopóki <em>warunek</em> jest prawdziwy (zwraca wartość różną od zera). Jeżeli <em>warunek</em> jest fałszywy od początku, to <em>instrukcje</em> nie zostaną wykonane ani razu. Pętlę while wykorzystuje się najczęściej w przypadku, gdy nie wiadomo ile razy pętla zostanie wykonana.
+</p>
+
+<p>
+Przykładowo, poniższy kod spowoduje wypisanie na ekran liczb od 10 do 1:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">10</span>;
+&nbsp;
+    <span class="kw1">while</span> <span class="br0">&#40;</span>i<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> i <span class="sy0">&lt;&lt;</span> endl;
+        i--;
+    <span class="br0">&#125;</span></pre>
+<p>
+Tematy pokrewne: <a href="http://www.cppreference.com/wiki/pl/keywords/break" class="wikilink2" title="pl:keywords:break" rel="nofollow">break</a>, <a href="continue" class="wikilink1" title="pl:keywords:continue">continue</a>, <a href="http://www.cppreference.com/wiki/pl/keywords/do" class="wikilink2" title="pl:keywords:do" rel="nofollow">do</a>, <a href="http://www.cppreference.com/wiki/pl/keywords/for" class="wikilink2" title="pl:keywords:for" rel="nofollow">for</a>, <a href="http://www.cppreference.com/wiki/pl/keywords/if" class="wikilink2" title="pl:keywords:if" rel="nofollow">if</a>
+</p>
+
+</div>
+</div>
+</body>
+</html>

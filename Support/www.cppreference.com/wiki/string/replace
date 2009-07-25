@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string:replace</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-11-22T12:11:05-0800" />
+<meta name="keywords" content="string,replace" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/string/replace?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/string/replace" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/string/replace" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="replace" id="replace">replace</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;string&gt;</span>
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> size_type index<span class="sy0">,</span> size_type num<span class="sy0">,</span> <span class="kw4">const</span> string<span class="sy0">&amp;</span> str <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> size_type index1<span class="sy0">,</span> size_type num1<span class="sy0">,</span> <span class="kw4">const</span> string<span class="sy0">&amp;</span> str<span class="sy0">,</span> size_type index2<span class="sy0">,</span> size_type num2 <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> size_type index<span class="sy0">,</span> size_type num<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> size_type index<span class="sy0">,</span> size_type num1<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str<span class="sy0">,</span> size_type num2 <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> size_type index<span class="sy0">,</span> size_type num1<span class="sy0">,</span> size_type num2<span class="sy0">,</span> <span class="kw4">char</span> ch<span class="br0">&#41;</span>;
+&nbsp;
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> <span class="kw4">const</span> string<span class="sy0">&amp;</span> str <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str<span class="sy0">,</span> size_type num <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> replace<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> size_type num<span class="sy0">,</span> <span class="kw4">char</span> ch <span class="br0">&#41;</span>;</pre>
+<p>
+
+The function replace() either:
+</p>
+
+<p>
+* replaces characters of the current string with up to num characters from str,
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">  beginning at index<span class="sy0">,</span>
+&nbsp;
+  with up to num2 characters from str beginning at index2<span class="sy0">,</span>
+&nbsp;
+  beginning at index in str<span class="sy0">,</span>
+&nbsp;
+  with num2 characters from str beginning at index2<span class="sy0">,</span>
+&nbsp;
+  with num2 copies of ch<span class="sy0">,</span></pre>
+<p>
+
+* replaces characters in the current string from start to end with num
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">  characters from str<span class="sy0">,</span>
+&nbsp;
+  copies of ch.</pre>
+<p>
+
+For example, the following code displays the string “They say he carved it
+himself…find your soul-mate, Homer.”
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">string</span> s <span class="sy0">=</span> <span class="st0">&quot;They say he carved it himself...from a BIGGER spoon&quot;</span>;
+     <span class="kw4">string</span> s2 <span class="sy0">=</span> <span class="st0">&quot;find your soul-mate, Homer.&quot;</span>;
+     s.<span class="me1">replace</span><span class="br0">&#40;</span> <span class="nu0">32</span><span class="sy0">,</span> s2.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> s2 <span class="br0">&#41;</span>;
+     <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> s <span class="sy0">&lt;&lt;</span> endl;</pre>
+<p>
+Related Topics: <a href="insert" class="wikilink1" title="string:insert">insert</a>
+</p>
+
+</div>
+<!-- SECTION "replace" [3-] --></div>
+</body>
+</html>

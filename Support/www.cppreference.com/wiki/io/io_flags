@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>io:io_flags</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-15T08:25:13-0700" />
+<meta name="keywords" content="io,io_flags" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/io/io_flags?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=io" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/io/io_flags" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/io/io_flags" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="io_flags#c_io_flags" class="toc">C++ I/O Flags</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="io_flags#format_flags" class="toc">Format flags</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="io_flags#manipulators" class="toc">Manipulators</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="io_flags#state_flags" class="toc">State flags</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="io_flags#mode_flags" class="toc">Mode flags</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h2><a name="c_io_flags" id="c_io_flags">C++ I/O Flags</a></h2>
+<div class="level2">
+
+</div>
+<!-- SECTION "C++ I/O Flags" [1-25] -->
+<h3><a name="format_flags" id="format_flags">Format flags</a></h3>
+<div class="level3">
+
+<p>
+
+C++ defines some format flags for standard input and output, which can be
+manipulated with the <a href="flags" class="wikilink1" title="io:flags">flags</a>, <a href="setf" class="wikilink1" title="io:setf">setf</a>, and <a href="unsetf" class="wikilink1" title="io:unsetf">unsetf</a> functions. For example,
+</p>
+<pre class="c code c++" style="font-family:monospace;">   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a>.<span class="me1">setf</span><span class="br0">&#40;</span>ios_base<span class="sy0">::</span><span class="me2">left</span><span class="sy0">,</span> ios_base<span class="sy0">::</span><span class="me2">adjustfield</span><span class="br0">&#41;</span>;</pre>
+<p>
+turns on left justification for all output directed to cout.
+</p>
+
+<p>
+These flags and fields are defined in the base class ios_base.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Flag</th><th class="col1">Meaning</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">boolalpha</td><td class="col1">Boolean values can be input/output using words.</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">dec</td><td class="col1">Numeric values are displayed in decimal.</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">fixed</td><td class="col1">Display floating point values using normal notation (as opposed to scientific).</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">hex</td><td class="col1">Numeric values are displayed in hexidecimal.</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">internal</td><td class="col1">If a numeric value is padded to fill a field, spaces are inserted between the sign and base character.</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">left</td><td class="col1">Output is left justified.</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">oct</td><td class="col1">Numeric values are displayed in octal.</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">right</td><td class="col1">Output is right justified.</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">scientific</td><td class="col1">Display floating point values using scientific notation.</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0">showbase</td><td class="col1">Display the base of all numeric values.</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0">showpoint</td><td class="col1">Display a decimal and extra zeros, even when not needed.</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0">showpos</td><td class="col1">Display a leading plus sign before positive numeric values.</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0">skipws</td><td class="col1">Discard whitespace characters (spaces, tabs, newlines) when reading from a stream.</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0">unitbuf</td><td class="col1">Flush the buffer after each insertion.</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0">uppercase</td><td class="col1">Display the “e” of scientific notation and the “x” of hexidecimal notation as capital letters.</td>
+	</tr>
+</table>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Field</th><th class="col1">Value</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">adjustfield</td><td class="col1">left | right | internal</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">basefield</td><td class="col1">dec | oct | hex</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">floatfield</td><td class="col1">scientific | fixed</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "Format flags" [26-1521] -->
+<h3><a name="manipulators" id="manipulators">Manipulators</a></h3>
+<div class="level3">
+
+<p>
+
+You can also manipulate flags indirectly, using the following manipulators.
+Most programmers are familiar with the endl manipulator, which might give you
+an idea of how manipulators are used. For example, to set the boolalpha flag, you
+might use the following command:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> boolalpha;</pre>
+<p>
+This is equivalent to:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a>.<span class="me1">setf</span><span class="br0">&#40;</span>ios_base<span class="sy0">::</span><span class="me2">boolalpha</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="manipulators_defined_in_ios" id="manipulators_defined_in_ios">Manipulators defined in &lt;ios&gt;</a></h4>
+<div class="level4">
+
+<p>
+
+Manipulators from &lt;ios&gt; may be used on both input and output streams.
+</p>
+
+<p>
+Formatting controlled by a boolean has two manipulators with names matching the flag name.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> boolalpha / noboolalpha</div>
+</li>
+<li class="level1"><div class="li"> showbase / noshowbase</div>
+</li>
+<li class="level1"><div class="li"> showpoint / noshowpoint</div>
+</li>
+<li class="level1"><div class="li"> showpos / noshowpos</div>
+</li>
+<li class="level1"><div class="li"> uppercase / nouppercase</div>
+</li>
+<li class="level1"><div class="li"> unitbuf / nounitbuf</div>
+</li>
+</ul>
+
+<p>
+
+Formatting controlled by a field has one manipulator for each flag, which turns off the others:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> ios_base::adjustfield</div>
+<ul>
+<li class="level2"><div class="li"> internal</div>
+</li>
+<li class="level2"><div class="li"> left</div>
+</li>
+<li class="level2"><div class="li"> right</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> ios_base::basefield</div>
+<ul>
+<li class="level2"><div class="li"> dec</div>
+</li>
+<li class="level2"><div class="li"> hex</div>
+</li>
+<li class="level2"><div class="li"> oct</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> ios_base::floatfield</div>
+<ul>
+<li class="level2"><div class="li"> fixed</div>
+</li>
+<li class="level2"><div class="li"> scientific</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+
+For example, the following two statements are equivalent:
+</p>
+<pre class="c code c++" style="font-family:monospace;">   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> left;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a>.<span class="me1">setf</span><span class="br0">&#40;</span>ios_base<span class="sy0">::</span><span class="me2">left</span><span class="sy0">,</span> ios_base<span class="sy0">::</span><span class="me2">adjustfield</span><span class="br0">&#41;</span>;</pre>
+</div>
+
+<h4><a name="manipulators_defined_in_istream" id="manipulators_defined_in_istream">Manipulators defined in &lt;istream&gt;</a></h4>
+<div class="level4">
+
+<p>
+
+There is one input manipulator, ws, which extracts whitespace from the stream, effectively skipping it before the next operation.  This is rarely used directly, as streams with the skipws flag set should skip whitespace before any extraction.  (All the standard extractors do this, user-defined extractors should use istream::sentry, which will also do this.)
+</p>
+
+</div>
+
+<h4><a name="manipulators_defined_in_ostream" id="manipulators_defined_in_ostream">Manipulators defined in &lt;ostream&gt;</a></h4>
+<div class="level4">
+
+<p>
+
+These manipulators may only be used with output streams.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Manipulator</th><th class="col1">Description</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">endl</td><td class="col1">Output a newline character and flush the stream</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">ends</td><td class="col1">Output a null character (does not flush)</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">flush</td><td class="col1">Flush the stream</td>
+	</tr>
+</table>
+
+</div>
+
+<h4><a name="manipulators_defined_in_iomanip" id="manipulators_defined_in_iomanip">Manipulators defined in &lt;iomanip&gt;</a></h4>
+<div class="level4">
+
+<p>
+
+These manipulators may be used with both input and output streams.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Manipulator</th><th class="col1">Description</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">resetiosflags( ios_base::fmtflags f )</td><td class="col1">Turn off the flags specified by f</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">setiosflags( ios_base::fmtflags f )</td><td class="col1">Turn on the flags specified by f</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">setbase( int base )</td><td class="col1">Sets the number base to base</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">setfill( char ch )</td><td class="col1">Sets the fill character to ch</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">setprecision( int p )</td><td class="col1">Sets the number of digits of precision</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">setw( int w )</td><td class="col1">Sets the field width to w</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "Manipulators" [1522-3848] -->
+<h3><a name="state_flags" id="state_flags">State flags</a></h3>
+<div class="level3">
+
+<p>
+
+The I/O stream state flags tell you the current state of an I/O stream. The
+flags are:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Flag</th><th class="col1">Meaning</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">ios_base::badbit</td><td class="col1">a fatal error has occurred</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">ios_base::eofbit</td><td class="col1"><acronym title="End of file">EOF</acronym> has been found</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">ios_base::failbit</td><td class="col1">a nonfatal error has occurred</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">ios_base::goodbit</td><td class="col1">no errors have occurred</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "State flags" [3849-4152] -->
+<h3><a name="mode_flags" id="mode_flags">Mode flags</a></h3>
+<div class="level3">
+
+<p>
+
+The I/O stream mode flags allow you to access files in different ways. The
+flags are:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Mode</th><th class="col1">Meaning</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">ios_base::app</td><td class="col1">append output</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">ios_base::ate</td><td class="col1">seek to <acronym title="End of file">EOF</acronym> when opened</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">ios_base::binary</td><td class="col1">open the file in binary mode</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">ios_base::in</td><td class="col1">open the file for reading</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">ios_base::out</td><td class="col1">open the file for writing</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">ios_base::trunc</td><td class="col1">overwrite the existing file</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "Mode flags" [4153-] --></div>
+</body>
+</html>

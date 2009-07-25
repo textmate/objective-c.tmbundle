@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string:append</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-08T20:35:28-0800" />
+<meta name="keywords" content="string,append" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/string/append?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/string/append" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/string/append" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="append" id="append">append</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;string&gt;</span>
+    string<span class="sy0">&amp;</span> append<span class="br0">&#40;</span> <span class="kw4">const</span> string<span class="sy0">&amp;</span> str <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> append<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> append<span class="br0">&#40;</span> <span class="kw4">const</span> string<span class="sy0">&amp;</span> str<span class="sy0">,</span> size_type index<span class="sy0">,</span> size_type len <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> append<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str<span class="sy0">,</span> size_type num <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> append<span class="br0">&#40;</span> size_type num<span class="sy0">,</span> <span class="kw4">char</span> ch <span class="br0">&#41;</span>;
+    string<span class="sy0">&amp;</span> append<span class="br0">&#40;</span> input_iterator start<span class="sy0">,</span> input_iterator end <span class="br0">&#41;</span>;</pre>
+<p>
+The append function either:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> (1&amp;2)appends <code>str</code> on to the end of the current string,</div>
+</li>
+<li class="level1"><div class="li"> (3)appends a substring of <code>str</code> starting at <code>index</code> that is <code>len</code> characters long on to the end of the current string,</div>
+</li>
+<li class="level1"><div class="li"> (4)appends first num characters from str on to string  </div>
+</li>
+<li class="level1"><div class="li"> (5)appends <code>num</code> repetitions of <code>ch</code> on to the end of the current string,</div>
+</li>
+<li class="level1"><div class="li"> (6)appends the sequence denoted by <code>start</code> and <code>end</code> on to the end of the current string.</div>
+</li>
+</ul>
+
+<p>
+
+For example, the following code uses append to add 10 copies of the &#039;!&#039; character to a string:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">string</span> str <span class="sy0">=</span> <span class="st0">&quot;Hello World&quot;</span>;
+     str.<span class="me1">append</span><span class="br0">&#40;</span> <span class="nu0">10</span><span class="sy0">,</span> <span class="st0">'!'</span> <span class="br0">&#41;</span>;
+     <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> str <span class="sy0">&lt;&lt;</span> endl;</pre>
+<p>
+That code displays:
+</p>
+<pre class="code">
+     Hello World!!!!!!!!!!</pre>
+<p>
+In the next example, append() is used to concatenate a substring of one string onto another string:
+</p>
+<pre class="c code c++" style="font-family:monospace;">   <span class="kw4">string</span> str1 <span class="sy0">=</span> <span class="st0">&quot;Eventually I stopped caring... &quot;</span>;
+   <span class="kw4">string</span> str2 <span class="sy0">=</span> <span class="st0">&quot;but that was the '80s so nobody noticed.&quot;</span>;
+&nbsp;
+   str1.<span class="me1">append</span><span class="br0">&#40;</span> str2<span class="sy0">,</span> <span class="nu0">25</span><span class="sy0">,</span> <span class="nu0">15</span> <span class="br0">&#41;</span>;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;str1 is &quot;</span> <span class="sy0">&lt;&lt;</span> str1 <span class="sy0">&lt;&lt;</span> endl;</pre>
+<p>
+When run, the above code displays:
+</p>
+<pre class="code">
+   str1 is Eventually I stopped caring... nobody noticed.</pre>
+</div>
+<!-- SECTION "append" [3-] --></div>
+</body>
+</html>

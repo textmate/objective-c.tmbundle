@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>io:sstream:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-15T08:41:10-0700" />
+<meta name="keywords" content="io,sstream,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/io/sstream/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=io:sstream" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/io/sstream/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/io/sstream/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="c_string_streams" id="c_string_streams">C++ String Streams</a></h1>
+<div class="level1">
+
+<p>
+
+String streams are similar to the &lt;iostream&gt; and &lt;fstream&gt; libraries,
+except that string streams allow you to perform I/O on strings instead
+of streams. The &lt;sstream&gt; library provides functionality similar to
+<a href="../../c/io/sscanf" class="wikilink1" title="c:io:sscanf">sscanf</a> and <a href="../../c/io/sprintf" class="wikilink1" title="c:io:sprintf">sprintf</a> in the standard C library.
+</p>
+
+<p>
+Three main classes are available in &lt;sstream&gt;:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> stringstream - allows input and output</div>
+</li>
+<li class="level1"><div class="li"> istringstream - allows input only</div>
+</li>
+<li class="level1"><div class="li"> ostringstream - allows output only</div>
+</li>
+</ul>
+
+<p>
+
+String streams are actually subclasses of iostreams, so all of the
+functions available for iostreams are also available for
+stringstream. See the <a href="../start" class="wikilink1" title="io:start">C++ I/O functions</a> for more information.
+</p>
+
+<p>
+In addition, string streams also supply the following functions:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="constructors" class="wikilink1" title="io:sstream:constructors">Constructors</a></td><td class="col1">create new string streams</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="operators" class="wikilink1" title="io:sstream:operators">Operators</a></td><td class="col1">read from and write to string streams</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="rdbuf" class="wikilink1" title="io:sstream:rdbuf">rdbuf</a></td><td class="col1">get the buffer for a string stream</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="str" class="wikilink1" title="io:sstream:str">str</a></td><td class="col1">get or set the stream&#039;s string</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

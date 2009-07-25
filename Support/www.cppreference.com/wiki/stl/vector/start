@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:vector:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-09T05:26:14-0700" />
+<meta name="keywords" content="stl,vector,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/vector/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:vector" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/vector/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/vector/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="c_vectors" id="c_vectors">C++ Vectors</a></h1>
+<div class="level1">
+
+<p>
+
+Vectors contain contiguous elements stored as an array. 
+</p>
+
+<p>
+Accessing members of a vector can be done in <a href="../../complexity" class="wikilink1" title="complexity">constant time</a>, appending
+elements to a vector can be done in <a href="../../complexity" class="wikilink1" title="complexity">amortized constant time</a>, whereas locating a
+specific value or inserting elements into the vector takes <a href="../../complexity" class="wikilink1" title="complexity">linear time</a>.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="vector_constructors" class="wikilink1" title="stl:vector:vector_constructors">Constructors</a></td><td class="col1">create vectors and initialize them with some data</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="vector_operators" class="wikilink1" title="stl:vector:vector_operators">Operators</a></td><td class="col1">compare, assign, and access elements of a vector</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="assign" class="wikilink1" title="stl:vector:assign">assign</a></td><td class="col1">assign elements to a vector</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="at" class="wikilink1" title="stl:vector:at">at</a></td><td class="col1">returns an element at a specific location</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="back" class="wikilink1" title="stl:vector:back">back</a></td><td class="col1">returns a reference to last element of a vector</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="begin" class="wikilink1" title="stl:vector:begin">begin</a></td><td class="col1">returns an iterator to the beginning of the vector</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="capacity" class="wikilink1" title="stl:vector:capacity">capacity</a></td><td class="col1">returns the number of elements that the vector can hold</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="clear" class="wikilink1" title="stl:vector:clear">clear</a></td><td class="col1">removes all elements from the vector</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="empty" class="wikilink1" title="stl:vector:empty">empty</a></td><td class="col1">true if the vector has no elements</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="end" class="wikilink1" title="stl:vector:end">end</a></td><td class="col1">returns an iterator just past the last element of a vector</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="erase" class="wikilink1" title="stl:vector:erase">erase</a></td><td class="col1">removes elements from a vector</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="front" class="wikilink1" title="stl:vector:front">front</a></td><td class="col1">returns a reference to the first element of a vector</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="insert" class="wikilink1" title="stl:vector:insert">insert</a></td><td class="col1">inserts elements into the vector</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="max_size" class="wikilink1" title="stl:vector:max_size">max_size</a></td><td class="col1">returns the maximum number of elements that the vector can hold</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="pop_back" class="wikilink1" title="stl:vector:pop_back">pop_back</a></td><td class="col1">removes the last element of a vector</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="push_back" class="wikilink1" title="stl:vector:push_back">push_back</a></td><td class="col1">add an element to the end of the vector</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="rbegin" class="wikilink1" title="stl:vector:rbegin">rbegin</a></td><td class="col1">returns a reverse_iterator to the end of the vector</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="rend" class="wikilink1" title="stl:vector:rend">rend</a></td><td class="col1">returns a reverse_iterator to the beginning of the vector</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="reserve" class="wikilink1" title="stl:vector:reserve">reserve</a></td><td class="col1">sets the minimum capacity of the vector</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="resize" class="wikilink1" title="stl:vector:resize">resize</a></td><td class="col1">change the size of the vector</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="size" class="wikilink1" title="stl:vector:size">size</a></td><td class="col1">returns the number of items in the vector</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="swap" class="wikilink1" title="stl:vector:swap">swap</a></td><td class="col1">swap the contents of this vector with another</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "C++ Vectors" [1-1666] -->
+<h3><a name="notes" id="notes">Notes:</a></h3>
+<div class="level3">
+
+<p>
+
+Note that a boolean vector (vector&lt;bool&gt;) is a specialization of the vector template that is designed to use less memory.  A normal boolean variable usually uses 1-4 bytes of memory, but a boolean vector should use only one bit per boolean value.
+</p>
+
+</div>
+<!-- SECTION "Notes:" [1667-] --></div>
+</body>
+</html>

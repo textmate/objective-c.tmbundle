@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:algorithm:inner_product</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-02T11:30:30-0800" />
+<meta name="keywords" content="stl,algorithm,inner_product" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/algorithm/inner_product?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:algorithm" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/algorithm/inner_product" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/algorithm/inner_product" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="inner_product" id="inner_product">inner_product</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;numeric&gt;</span>
+    TYPE inner_product<span class="br0">&#40;</span> iterator start1<span class="sy0">,</span> iterator end1<span class="sy0">,</span> iterator start2<span class="sy0">,</span> TYPE val <span class="br0">&#41;</span>;
+    TYPE inner_product<span class="br0">&#40;</span> iterator start1<span class="sy0">,</span> iterator end1<span class="sy0">,</span> iterator start2<span class="sy0">,</span> TYPE val<span class="sy0">,</span> BinaryFunction f1<span class="sy0">,</span> BinaryFunction f2 <span class="br0">&#41;</span>;</pre>
+<p>
+The inner_product function computes the inner product of <code>[start1,end1)</code> and a
+range of the same size starting at <code>start2</code>.
+</p>
+
+<p>
+inner_product() runs in <a href="../../complexity" class="wikilink1" title="complexity">linear time</a>.
+</p>
+
+<p>
+For example, the following code shows how inner_product (or, alternatively, <a href="accumulate" class="wikilink1" title="stl:algorithm:accumulate">accumulate</a>) can be used to compute the sums of squares of some data:
+</p>
+<pre class="c code c++" style="font-family:monospace;"><span class="co1">// Examples of std::accumulate and std::inner_product from wordaligned.org</span>
+<span class="co2">#include &lt;functional&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;numeric&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;valarray&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+&nbsp;
+<span class="kw4">typedef</span> std<span class="sy0">::</span><span class="me2">valarray</span><span class="sy0">&lt;</span>double<span class="sy0">&gt;</span> xyz;
+&nbsp;
+<span class="co1">// Xyz output operator</span>
+std<span class="sy0">::</span><span class="me2">ostream</span> <span class="sy0">&amp;</span> operator<span class="sy0">&lt;&lt;</span><span class="br0">&#40;</span>std<span class="sy0">::</span><span class="me2">ostream</span> <span class="sy0">&amp;</span> os<span class="sy0">,</span> xyz <span class="kw4">const</span> <span class="sy0">&amp;</span> pt<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    os <span class="sy0">&lt;&lt;</span> <span class="st0">'('</span>;
+    <span class="kw4">char</span> <span class="kw4">const</span> <span class="sy0">*</span> sep <span class="sy0">=</span> <span class="st0">&quot;&quot;</span>;
+    <span class="kw1">for</span><span class="br0">&#40;</span> size_t i <span class="sy0">=</span> <span class="nu19">0</span>; i <span class="sy0">!=</span> pt.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; sep <span class="sy0">=</span> <span class="st0">&quot;, &quot;</span><span class="sy0">,</span> <span class="sy0">++</span>i <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        os <span class="sy0">&lt;&lt;</span> sep <span class="sy0">&lt;&lt;</span> pt<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+    <span class="br0">&#125;</span>
+    os <span class="sy0">&lt;&lt;</span> <span class="st0">')'</span>;
+    <span class="kw1">return</span> os;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="co1">// Bitwise or function, for use in reductions</span>
+<span class="kw4">unsigned</span> bit_or<span class="br0">&#40;</span><span class="kw4">unsigned</span> u<span class="sy0">,</span> <span class="kw4">unsigned</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">return</span> u | v;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="co1">// Create and return a triangle</span>
+std<span class="sy0">::</span><span class="me2">vector</span><span class="sy0">&lt;</span>xyz<span class="sy0">&gt;</span> create_triangle<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    std<span class="sy0">::</span><span class="me2">vector</span><span class="sy0">&lt;</span>xyz<span class="sy0">&gt;</span> pts;
+    <span class="kw4">double</span> <span class="kw4">const</span> p<span class="br0">&#91;</span><span class="nu0">9</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span><span class="nu19">1.</span><span class="sy0">,</span><span class="nu19">1.</span><span class="sy0">,</span><span class="nu19">0.</span><span class="sy0">,</span><span class="nu19">1.</span><span class="sy0">,</span><span class="nu19">0.</span><span class="sy0">,</span><span class="nu19">1.</span><span class="sy0">,</span><span class="nu19">0.</span><span class="sy0">,</span><span class="nu19">1.</span><span class="sy0">,</span><span class="nu19">1.</span><span class="br0">&#125;</span>;
+    pts.<span class="me1">push_back</span><span class="br0">&#40;</span>xyz<span class="br0">&#40;</span>p <span class="sy0">+</span> <span class="nu19">0</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+    pts.<span class="me1">push_back</span><span class="br0">&#40;</span>xyz<span class="br0">&#40;</span>p <span class="sy0">+</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+    pts.<span class="me1">push_back</span><span class="br0">&#40;</span>xyz<span class="br0">&#40;</span>p <span class="sy0">+</span> <span class="nu0">6</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+    <span class="kw1">return</span> pts;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="co1">// Set up some test arrays, accumulate them and print the results to stdout.</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw4">int</span> <span class="kw4">const</span> a<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">3</span> <span class="br0">&#125;</span>;
+    <span class="kw4">int</span> <span class="kw4">const</span> b<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">&#125;</span>;
+    std<span class="sy0">::</span><span class="kw4">string</span> <span class="kw4">const</span> s<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="st0">&quot;http://&quot;</span><span class="sy0">,</span> <span class="st0">&quot;wordaligned&quot;</span><span class="sy0">,</span> <span class="st0">&quot;.org&quot;</span> <span class="br0">&#125;</span>;
+    bool <span class="kw4">const</span> t<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="kw2">false</span><span class="sy0">,</span> <span class="kw2">true</span><span class="sy0">,</span> <span class="kw2">false</span> <span class="br0">&#125;</span>;
+    std<span class="sy0">::</span><span class="me2">vector</span><span class="sy0">&lt;</span>xyz<span class="sy0">&gt;</span> tri <span class="sy0">=</span> create_triangle<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    <span class="kw4">unsigned</span> m<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu0">1</span><span class="sy0">&lt;&lt;</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">&lt;&lt;</span><span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">&lt;&lt;</span><span class="nu0">5</span> <span class="br0">&#125;</span>;
+&nbsp;
+    std<span class="sy0">::</span><a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sum(a) &quot;</span>
+        <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">accumulate</span><span class="br0">&#40;</span>a<span class="sy0">,</span> a <span class="sy0">+</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu19">0</span><span class="br0">&#41;</span>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;<span class="es0">\n</span>prod(a) &quot;</span>
+        <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">accumulate</span><span class="br0">&#40;</span>a<span class="sy0">,</span> a <span class="sy0">+</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> std<span class="sy0">::</span><span class="me2">multiplies</span><span class="sy0">&lt;</span>int<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;<span class="es0">\n</span>sum_sqs(a) &quot;</span>
+        <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">inner_product</span><span class="br0">&#40;</span>a<span class="sy0">,</span> a <span class="sy0">+</span> <span class="nu0">3</span><span class="sy0">,</span> a<span class="sy0">,</span> <span class="nu19">0</span><span class="br0">&#41;</span>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;<span class="es0">\n</span>dot(a, b) &quot;</span>
+        <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">inner_product</span><span class="br0">&#40;</span>a<span class="sy0">,</span> a <span class="sy0">+</span> <span class="nu0">3</span><span class="sy0">,</span> b<span class="sy0">,</span> <span class="nu19">0</span><span class="br0">&#41;</span>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;<span class="es0">\n</span>concat(s) &quot;</span>
+        <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">accumulate</span><span class="br0">&#40;</span>s<span class="sy0">,</span> s <span class="sy0">+</span> <span class="nu0">3</span><span class="sy0">,</span> std<span class="sy0">::</span><span class="kw4">string</span><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;<span class="es0">\n</span>any(t) &quot;</span> <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">boolalpha</span>
+        <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">accumulate</span><span class="br0">&#40;</span>t<span class="sy0">,</span> t <span class="sy0">+</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="kw2">false</span><span class="sy0">,</span> std<span class="sy0">::</span><span class="me2">logical_or</span><span class="sy0">&lt;</span>bool<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;<span class="es0">\n</span>centroid(tri) &quot;</span>
+        <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">accumulate</span><span class="br0">&#40;</span>tri.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> tri.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> xyz<span class="br0">&#40;</span><span class="nu19">0.</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">/</span> <span class="nu19">3.</span>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;<span class="es0">\n</span>bitor(m) &quot;</span> <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">hex</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;0x&quot;</span>
+        <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">accumulate</span><span class="br0">&#40;</span>m<span class="sy0">,</span> m <span class="sy0">+</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu19">0</span><span class="sy0">,</span> bit_or<span class="br0">&#41;</span>
+        <span class="sy0">&lt;&lt;</span> <span class="st0">'<span class="es0">\n</span>'</span>;
+&nbsp;
+    <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+When run, this code generates the following output:
+</p>
+<pre class="code">
+sum(a) 6
+prod(a) 6
+sum_sqs(a) 14
+dot(a, b) 10
+concat(s) http://wordaligned.org
+any(t) true
+centroid(tri) (0.666667, 0.666667, 0.666667)
+bitor(m) 0x2a</pre>
+<p>
+
+Related Topics: <a href="accumulate" class="wikilink1" title="stl:algorithm:accumulate">accumulate</a>, <a href="adjacent_difference" class="wikilink1" title="stl:algorithm:adjacent_difference">adjacent_difference</a>, <a href="count" class="wikilink1" title="stl:algorithm:count">count</a>, <a href="partial_sum" class="wikilink1" title="stl:algorithm:partial_sum">partial_sum</a>
+</p>
+
+</div>
+<!-- SECTION "inner_product" [3-] --></div>
+</body>
+</html>

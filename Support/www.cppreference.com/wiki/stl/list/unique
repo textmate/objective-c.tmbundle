@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:list:unique</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:06-0700" />
+<meta name="keywords" content="stl,list,unique" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/list/unique?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:list" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/list/unique" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/list/unique" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="unique" id="unique">unique</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;list&gt;</span>
+    <span class="kw4">void</span> unique<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    <span class="kw4">void</span> unique<span class="br0">&#40;</span> BinPred pr <span class="br0">&#41;</span>;</pre>
+<p>
+The function unique() removes all consecutive duplicate elements from the list.
+</p>
+
+<p>
+Note that only consecutive duplicates are removed, which may require that you
+sort() the list first.
+</p>
+
+<p>
+Equality is tested using the == operator, unless pr is specified as a
+replacement. The ordering of the elements in a list should not change after a
+call to unique().
+</p>
+
+<p>
+unique() runs in <a href="../../complexity" class="wikilink1" title="complexity">linear time</a>.
+</p>
+
+<p>
+Related Topics: <a href="list_operators" class="wikilink1" title="stl:list:list_operators">List operators</a>, <a href="remove" class="wikilink1" title="stl:list:remove">remove</a>, <a href="remove_if" class="wikilink1" title="stl:list:remove_if">remove_if</a>
+</p>
+
+</div>
+<!-- SECTION "unique" [3-] --></div>
+</body>
+</html>

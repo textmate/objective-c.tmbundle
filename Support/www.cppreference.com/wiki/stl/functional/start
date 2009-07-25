@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:functional:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-29T23:11:23-0700" />
+<meta name="keywords" content="stl,functional,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/functional/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:functional" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/functional/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/functional/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="the_functional_header_file" id="the_functional_header_file">The &lt;functional&gt; header file</a></h2>
+<div class="level2">
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="bind1st" class="wikilink1" title="stl:functional:bind1st">bind1st</a></td><td class="col1">bind the first argument of the binary function</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="bind2nd" class="wikilink1" title="stl:functional:bind2nd">bind2nd</a></td><td class="col1">bind the second argument of the binary function</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/equal_to" class="wikilink2" title="stl:functional:equal_to" rel="nofollow">equal_to</a></td><td class="col1">whether the first argument is equal to the second argument</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/greater" class="wikilink2" title="stl:functional:greater" rel="nofollow">greater</a></td><td class="col1">whether the first argument is greater than the second argument</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/greater_equal" class="wikilink2" title="stl:functional:greater_equal" rel="nofollow">greater_equal</a></td><td class="col1">whether the first argument is greater than or equal to the second argument</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/less" class="wikilink2" title="stl:functional:less" rel="nofollow">less</a></td><td class="col1">whether the first argument is less than the second argument</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/less_equal" class="wikilink2" title="stl:functional:less_equal" rel="nofollow">less_equal</a></td><td class="col1">whether the first argument is less than or equal to the second argument</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/mem_fun" class="wikilink2" title="stl:functional:mem_fun" rel="nofollow">mem_fun</a></td><td class="col1">construct a functor from a member function(pointer type)</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/mem_fun_ref" class="wikilink2" title="stl:functional:mem_fun_ref" rel="nofollow">mem_fun_ref</a></td><td class="col1">construct a functor from a member function(reference type)</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/not1" class="wikilink2" title="stl:functional:not1" rel="nofollow">not1</a></td><td class="col1">negation of a unary predicate</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/not2" class="wikilink2" title="stl:functional:not2" rel="nofollow">not2</a></td><td class="col1">negation of a binary predicate</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/stl/functional/ptr_fun" class="wikilink2" title="stl:functional:ptr_fun" rel="nofollow">ptr_fun</a></td><td class="col1">construct a functor from a function pointer</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

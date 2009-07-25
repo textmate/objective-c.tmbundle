@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>io:sstream:str</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-17T10:37:09-0700" />
+<meta name="keywords" content="io,sstream,str" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/io/sstream/str?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=io:sstream" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/io/sstream/str" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/io/sstream/str" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="str" id="str">str</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;sstream&gt;</span>
+    <span class="kw4">void</span> str<span class="br0">&#40;</span> <span class="kw4">string</span> s <span class="br0">&#41;</span>;
+    <span class="kw4">string</span> str<span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+
+The function str() can be used in two ways. First, it can be used to get a copy
+of the string that is being manipulated by the current stream string. This is
+most useful with output strings. For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    ostringstream stream1;
+    stream1 <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Testing!&quot;</span> <span class="sy0">&lt;&lt;</span> endl;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> stream1.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Second, str() can be used to copy a string into the stream. This is most useful
+with input strings. For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    istringstream stream1;
+    <span class="kw4">string</span> string1 <span class="sy0">=</span> <span class="st0">&quot;25&quot;</span>;
+    stream1.<span class="me1">str</span><span class="br0">&#40;</span>string1<span class="br0">&#41;</span>;</pre>
+<p>
+N.B.:This leaves the “get” pointer and the “put” pointer set to 0. This can lead to confusing results when initializing a stringstream used for bidirectional operations.
+</p>
+
+<p>
+str() is also handy when you need to clear and reset the stream so that it can be reused:
+</p>
+
+<p>
+Warning: the member function clear() does *not* erase the content of the underlying string object,
+it merely clears the state of the ios object, i.e. it executes basic_ios::clear().
+</p>
+<pre class="c code c++" style="font-family:monospace;">    istringstream stream1;
+    <span class="kw4">float</span> num;
+&nbsp;
+    <span class="co1">// use it once</span>
+    <span class="kw4">string</span> string1 <span class="sy0">=</span> <span class="st0">&quot;25 1 3.235<span class="es0">\n</span>1111111<span class="es0">\n</span>222222&quot;</span>;
+    stream1.<span class="me1">str</span><span class="br0">&#40;</span>string1<span class="br0">&#41;</span>;
+    <span class="kw1">while</span><span class="br0">&#40;</span> stream1 <span class="sy0">&gt;&gt;</span> num <span class="br0">&#41;</span> <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;num: &quot;</span> <span class="sy0">&lt;&lt;</span> num <span class="sy0">&lt;&lt;</span> endl;  <span class="co1">// displays numbers, one per line</span>
+&nbsp;
+    <span class="co1">// use the same string stream again with str()</span>
+    <span class="kw4">string</span> string2 <span class="sy0">=</span> <span class="st0">&quot;1 2 3 4 5  6 7 8 9 10&quot;</span>;
+    stream1.<span class="me1">clear</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; <span class="co1">// not what you think!  But still required to clear the stream's IO state</span>
+    stream1.<span class="me1">str</span><span class="br0">&#40;</span>string2<span class="br0">&#41;</span>;
+&nbsp;
+    <span class="kw1">while</span><span class="br0">&#40;</span> stream1 <span class="sy0">&gt;&gt;</span> num <span class="br0">&#41;</span> <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;num: &quot;</span> <span class="sy0">&lt;&lt;</span> num <span class="sy0">&lt;&lt;</span> endl;  <span class="co1">// displays numbers, one per line</span></pre>
+<p>
+Related Topics: <a href="rdbuf" class="wikilink1" title="io:sstream:rdbuf">rdbuf</a>, <a href="../start" class="wikilink1" title="io:start">C++ I/O Streams</a>
+</p>
+
+</div>
+<!-- SECTION "str" [3-] --></div>
+</body>
+</html>

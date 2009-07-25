@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:string:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-14T23:50:52-0700" />
+<meta name="keywords" content="c,string,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/string/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/string/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/string/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="standard_c_string_and_character" id="standard_c_string_and_character">Standard C String and Character</a></h1>
+<div class="level1">
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="atof" class="wikilink1" title="c:string:atof">atof</a></td><td class="col1">converts a string to a double</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="atoi" class="wikilink1" title="c:string:atoi">atoi</a></td><td class="col1">converts a string to an integer</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="atol" class="wikilink1" title="c:string:atol">atol</a></td><td class="col1">converts a string to a long</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="isalnum" class="wikilink1" title="c:string:isalnum">isalnum</a></td><td class="col1">true if a character is alphanumeric</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="isalpha" class="wikilink1" title="c:string:isalpha">isalpha</a></td><td class="col1">true if a character is alphabetic</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="iscntrl" class="wikilink1" title="c:string:iscntrl">iscntrl</a></td><td class="col1">true if a character is a control character</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="isdigit" class="wikilink1" title="c:string:isdigit">isdigit</a></td><td class="col1">true if a character is a digit</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="isgraph" class="wikilink1" title="c:string:isgraph">isgraph</a></td><td class="col1">true if a character is a graphical character</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="islower" class="wikilink1" title="c:string:islower">islower</a></td><td class="col1">true if a character is lowercase</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="isprint" class="wikilink1" title="c:string:isprint">isprint</a></td><td class="col1">true if a character is a printing character</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="ispunct" class="wikilink1" title="c:string:ispunct">ispunct</a></td><td class="col1">true if a character is punctuation</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="isspace" class="wikilink1" title="c:string:isspace">isspace</a></td><td class="col1">true if a character is a space character</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="isupper" class="wikilink1" title="c:string:isupper">isupper</a></td><td class="col1">true if a character is an uppercase character</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="isxdigit" class="wikilink1" title="c:string:isxdigit">isxdigit</a></td><td class="col1">true if a character is a hexadecimal character</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="memchr" class="wikilink1" title="c:string:memchr">memchr</a></td><td class="col1">searches an array for the first occurance of a character</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="memcmp" class="wikilink1" title="c:string:memcmp">memcmp</a></td><td class="col1">compares two buffers</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="memcpy" class="wikilink1" title="c:string:memcpy">memcpy</a></td><td class="col1">copies one buffer to another</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="memmove" class="wikilink1" title="c:string:memmove">memmove</a></td><td class="col1">moves one buffer to another</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="memset" class="wikilink1" title="c:string:memset">memset</a></td><td class="col1">fills a buffer with a character</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="strcat" class="wikilink1" title="c:string:strcat">strcat</a></td><td class="col1">concatenates two strings</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="strchr" class="wikilink1" title="c:string:strchr">strchr</a></td><td class="col1">finds the first occurance of a character in a string</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="strcmp" class="wikilink1" title="c:string:strcmp">strcmp</a></td><td class="col1">compares two strings</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><a href="strcoll" class="wikilink1" title="c:string:strcoll">strcoll</a></td><td class="col1">compares two strings in accordance to the current locale</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><a href="strcpy" class="wikilink1" title="c:string:strcpy">strcpy</a></td><td class="col1">copies one string to another</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><a href="strcspn" class="wikilink1" title="c:string:strcspn">strcspn</a></td><td class="col1">searches one string for any characters in another</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><a href="strerror" class="wikilink1" title="c:string:strerror">strerror</a></td><td class="col1">returns a text version of a given error code</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><a href="strlen" class="wikilink1" title="c:string:strlen">strlen</a></td><td class="col1">returns the length of a given string</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><a href="strncat" class="wikilink1" title="c:string:strncat">strncat</a></td><td class="col1">concatenates a certain amount of characters of two strings</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"><a href="strncmp" class="wikilink1" title="c:string:strncmp">strncmp</a></td><td class="col1">compares a certain amount of characters of two strings</td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"><a href="strncpy" class="wikilink1" title="c:string:strncpy">strncpy</a></td><td class="col1">copies a certain amount of characters from one string to another</td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"><a href="strpbrk" class="wikilink1" title="c:string:strpbrk">strpbrk</a></td><td class="col1">finds the first location of any character in one string, in another string</td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"><a href="strrchr" class="wikilink1" title="c:string:strrchr">strrchr</a></td><td class="col1">finds the last occurance of a character in a string</td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"><a href="strspn" class="wikilink1" title="c:string:strspn">strspn</a></td><td class="col1">returns the length of a substring of characters of a string</td>
+	</tr>
+	<tr class="row33">
+		<td class="col0"><a href="strstr" class="wikilink1" title="c:string:strstr">strstr</a></td><td class="col1">finds the first occurance of a substring of characters</td>
+	</tr>
+	<tr class="row34">
+		<td class="col0"><a href="strtod" class="wikilink1" title="c:string:strtod">strtod</a></td><td class="col1">converts a string to a double</td>
+	</tr>
+	<tr class="row35">
+		<td class="col0"><a href="strtok" class="wikilink1" title="c:string:strtok">strtok</a></td><td class="col1">finds the next token in a string</td>
+	</tr>
+	<tr class="row36">
+		<td class="col0"><a href="strtol" class="wikilink1" title="c:string:strtol">strtol</a></td><td class="col1">converts a string to a long</td>
+	</tr>
+	<tr class="row37">
+		<td class="col0"><a href="strtoul" class="wikilink1" title="c:string:strtoul">strtoul</a></td><td class="col1">converts a string to an unsigned long</td>
+	</tr>
+	<tr class="row38">
+		<td class="col0"><a href="strxfrm" class="wikilink1" title="c:string:strxfrm">strxfrm</a></td><td class="col1">converts a substring so that it can be used by string comparison functions</td>
+	</tr>
+	<tr class="row39">
+		<td class="col0"><a href="tolower" class="wikilink1" title="c:string:tolower">tolower</a></td><td class="col1">converts a character to lowercase</td>
+	</tr>
+	<tr class="row40">
+		<td class="col0"><a href="toupper" class="wikilink1" title="c:string:toupper">toupper</a></td><td class="col1">converts a character to uppercase</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

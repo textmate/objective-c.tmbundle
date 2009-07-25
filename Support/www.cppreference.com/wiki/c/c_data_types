@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:c_data_types</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-26T00:39:26-0700" />
+<meta name="keywords" content="c,c_data_types" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/c_data_types?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/c_data_types" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/c_data_types" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+<strong>C++ fundamental (primitive) types:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> bool</div>
+</li>
+<li class="level1"><div class="li"> char</div>
+</li>
+<li class="level1"><div class="li"> int</div>
+</li>
+<li class="level1"><div class="li"> float</div>
+</li>
+<li class="level1"><div class="li"> double</div>
+</li>
+</ul>
+
+<p>
+<em>Optionally:</em>
+</p>
+<ul>
+<li class="level1"><div class="li"> void </div>
+</li>
+</ul>
+
+<p>
+
+<strong>Additional qualifiers for the primitive types:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> signed</div>
+</li>
+<li class="level1"><div class="li"> unsigned</div>
+</li>
+<li class="level1"><div class="li"> short</div>
+</li>
+<li class="level1"><div class="li"> long</div>
+</li>
+</ul>
+
+<p>
+
+<strong>Using the two together:</strong>
+</p>
+
+<p>
+<em class="u">bool</em>: 1 byte (Range: true or false)
+</p>
+
+<p>
+signed char = <em class="u">char</em>: 1 byte, (Range: -128 to 127)
+</p>
+
+<p>
+unsigned char: 1 byte (Range: 0 to 255)
+</p>
+
+<p>
+short = short int = signed short int: 2 bytes (Range: -2^15 to 2^15-1)
+</p>
+
+<p>
+unsigned short = unsigned short int: 2 bytes (Range: 0 to 2^16-1)
+</p>
+
+<p>
+long = long int = signed long int = signed int = <em class="u">int</em>: 4 bytes (Range: -2^31 to 2^31-1)
+</p>
+
+<p>
+usigned long = unsigned long int = unsigned int: 4 bytes (Range: 0 to 2^32-1)
+</p>
+
+<p>
+<em class="u">float</em>: 4 bytes (Cannot be unsigned, short, long. Range: 3.4e-38 to 3.4e+38, 7 digits)
+</p>
+
+<p>
+<em class="u">double</em>: 8 bytes (Cannot be unsigned, short. Range: 1.7e-308 to 1.7e+308, 15 digits)
+</p>
+
+<p>
+long double: 10 bytes (Range:)
+
+</p>
+<hr />
+
+<p>
+
+For VC++, check <acronym title="Microsoft Developer Network">MSDN</acronym>: <a href="http://msdn.microsoft.com/en-us/library/s3f49ktz(VS.80).aspx" class="urlextern" title="http://msdn.microsoft.com/en-us/library/s3f49ktz(VS.80).aspx"  rel="nofollow">http://msdn.microsoft.com/en-us/library/s3f49ktz(VS.80).aspx</a>
+
+</p>
+</div>
+</body>
+</html>

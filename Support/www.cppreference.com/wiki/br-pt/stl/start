@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="br-pt"
+ lang="br-pt" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>br-pt:stl:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="date" content="2009-07-24T16:28:26-0700" />
+<meta name="keywords" content="br-pt,stl,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/br-pt/stl/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=br-pt:stl" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/br-pt/stl/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/br-pt/stl/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="start#c_standard_template_library" class="toc">C++ Standard Template Library</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="start#estruturas_de_dados" class="toc">Estruturas de Dados</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="start#algorithms" class="toc">Algorithms</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="start#iteradores" class="toc">Iteradores</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="start#objetos_de_funcao" class="toc">Objetos de Função</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="start#memoria" class="toc">Memória</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="start#utilidades" class="toc">Utilidades</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h2><a name="c_standard_template_library" id="c_standard_template_library">C++ Standard Template Library</a></h2>
+<div class="level2">
+
+<p>
+
+A STL (Standard Template Library, Biblioteca Padrão de Templates) é um conjunto genérico de templates de classes e algoritmos que permitem aos programadores implementar facilmente estruturas de dados comuns, como filas, listas e pilhas
+</p>
+
+</div>
+<!-- SECTION "C++ Standard Template Library" [1-281] -->
+<h3><a name="estruturas_de_dados" id="estruturas_de_dados">Estruturas de Dados</a></h3>
+<div class="level3">
+
+<p>
+
+A STL fornece aos programadores as seguintes contruções, agrupadas em três categorias:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Sequências</div>
+<ul>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/vector/start" class="wikilink2" title="br-pt:stl:vector:start" rel="nofollow">C++ Vectors (vetores)</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="list/start" class="wikilink1" title="br-pt:stl:list:start">C++ Lists (listas)</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/deque/start" class="wikilink2" title="br-pt:stl:deque:start" rel="nofollow">C++ Double-Ended Queues (deques)</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Adaptadores de Container</div>
+<ul>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/stack/start" class="wikilink2" title="br-pt:stl:stack:start" rel="nofollow">C++ Stacks (pilhas)</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/queue/start" class="wikilink2" title="br-pt:stl:queue:start" rel="nofollow">C++ Queues (filas)</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/priority_queue/start" class="wikilink2" title="br-pt:stl:priority_queue:start" rel="nofollow">C++ Priority Queues (filas com prioridade)</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Containers Associativos</div>
+<ul>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/bitset/start" class="wikilink2" title="br-pt:stl:bitset:start" rel="nofollow">C++ Bitsets</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/map/start" class="wikilink2" title="br-pt:stl:map:start" rel="nofollow">C++ Maps</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/multimap/start" class="wikilink2" title="br-pt:stl:multimap:start" rel="nofollow">C++ Multimaps</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/set/start" class="wikilink2" title="br-pt:stl:set:start" rel="nofollow">C++ Sets</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.cppreference.com/wiki/br-pt/stl/multiset/start" class="wikilink2" title="br-pt:stl:multiset:start" rel="nofollow">C++ Multisets</a></div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+
+A idéia por trás da STL é que a parte difícil dos tipos de dados complexos já foi feita. Se um programador quiser usar uma pilha de inteiros, tudo que ele precisa fazer é usar o seguinte código:
+</p>
+<pre class="c code c++" style="font-family:monospace;">  stack<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> myStack;</pre>
+<p>
+Com um esforço mínimo, pode agora usar <a href="http://www.cppreference.com/wiki/br-pt/stl/stack/push" class="wikilink2" title="br-pt:stl:stack:push" rel="nofollow">push</a> e <a href="http://www.cppreference.com/wiki/br-pt/stl/stack/pop" class="wikilink2" title="br-pt:stl:stack:pop" rel="nofollow">pop</a> nesse pilha. A STL é feita de tal maneira que pode-se usar qualquer tipo de dados, não só inteiros. A STL fornece as funções genéricas de uma pilha, não importa qual o tipo dos dados armazenados na pilha,
+</p>
+
+</div>
+<!-- SECTION "Estruturas de Dados" [282-1544] -->
+<h3><a name="algorithms" id="algorithms">Algorithms</a></h3>
+<div class="level3">
+
+<p>
+
+Além disso, a STL também provê vários <a href="http://www.cppreference.com/wiki/br-pt/stl/algorithm/start" class="wikilink2" title="br-pt:stl:algorithm:start" rel="nofollow">algoritmos</a> úteis – como <a href="http://www.cppreference.com/wiki/br-pt/stl/algorithm/binary_search" class="wikilink2" title="br-pt:stl:algorithm:binary_search" rel="nofollow">binary_search</a>,
+<a href="http://www.cppreference.com/wiki/br-pt/stl/algorithm/sort" class="wikilink2" title="br-pt:stl:algorithm:sort" rel="nofollow">sort</a>, e <a href="http://www.cppreference.com/wiki/br-pt/stl/algorithm/for_each" class="wikilink2" title="br-pt:stl:algorithm:for_each" rel="nofollow">for_each</a> – que podem ser usados em vários containers ou estruturas de dados.
+</p>
+
+</div>
+<!-- SECTION "Algorithms" [1545-1832] -->
+<h3><a name="iteradores" id="iteradores">Iteradores</a></h3>
+<div class="level3">
+
+<p>
+
+<a href="http://www.cppreference.com/wiki/br-pt/stl/iterators" class="wikilink2" title="br-pt:stl:iterators" rel="nofollow">iterators</a> fornecem uma maneira genérica de percorrer as estruturas de dados da STL.
+</p>
+
+</div>
+<!-- SECTION "Iteradores" [1833-1952] -->
+<h3><a name="objetos_de_funcao" id="objetos_de_funcao">Objetos de Função</a></h3>
+<div class="level3">
+
+<p>
+
+O <a href="http://www.cppreference.com/wiki/br-pt/stl/functional/start" class="wikilink2" title="br-pt:stl:functional:start" rel="nofollow">cabeçalho &lt;functional&gt;</a> define funções relacionadas com a criação de objetos de função.
+</p>
+
+</div>
+<!-- SECTION "Objetos de Função" [1953-2104] -->
+<h3><a name="memoria" id="memoria">Memória</a></h3>
+<div class="level3">
+
+<p>
+
+O <a href="http://www.cppreference.com/wiki/br-pt/stl/memory/start" class="wikilink2" title="br-pt:stl:memory:start" rel="nofollow">cabeçalho &lt;memory&gt;</a> fornece estruturas simples de grenciamento de memória como <a href="http://www.cppreference.com/wiki/br-pt/stl/memory/auto_ptr" class="wikilink2" title="br-pt:stl:memory:auto_ptr" rel="nofollow">auto_ptr</a>.
+</p>
+
+</div>
+<!-- SECTION "Memória" [2105-2258] -->
+<h3><a name="utilidades" id="utilidades">Utilidades</a></h3>
+<div class="level3">
+
+<p>
+
+Existem várias funções utilitárias genéricas como <a href="http://www.cppreference.com/wiki/br-pt/stl/utility/make_pair" class="wikilink2" title="br-pt:stl:utility:make_pair" rel="nofollow">make_pair</a> no <a href="http://www.cppreference.com/wiki/br-pt/stl/utility/start" class="wikilink2" title="br-pt:stl:utility:start" rel="nofollow">cabeçalho &lt;utility&gt;</a>.
+
+</p>
+
+</div>
+<!-- SECTION "Utilidades" [2259-] --></div>
+</body>
+</html>

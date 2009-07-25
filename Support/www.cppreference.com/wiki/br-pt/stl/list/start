@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="br-pt"
+ lang="br-pt" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>br-pt:stl:list:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="date" content="2009-07-24T13:28:53-0700" />
+<meta name="keywords" content="br-pt,stl,list,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/br-pt/stl/list/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=br-pt:stl:list" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/br-pt/stl/list/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/br-pt/stl/list/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="c_lists" id="c_lists">C++ Lists</a></h1>
+<div class="level1">
+
+<p>
+
+Listas são sequências de elementos armazenados em forma de uma lista encadeada. Em comparação com <a href="http://www.cppreference.com/wiki/br-pt/stl/vector/start" class="wikilink2" title="br-pt:stl:vector:start" rel="nofollow">vectors</a>, elas permitem inserções e retiradas mais rápidas, mas têm um acesso aleatório mais lento.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="list_constructors" class="wikilink1" title="br-pt:stl:list:list_constructors">Construtores</a></td><td class="col1">criam uma lista e a inicializam com algum dado</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="list_operators" class="wikilink1" title="br-pt:stl:list:list_operators">Operadores</a></td><td class="col1">atribuem e comparam listas</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="assign" class="wikilink1" title="br-pt:stl:list:assign">assign</a></td><td class="col1">atribui elementos a uma lista</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="back" class="wikilink1" title="br-pt:stl:list:back">back</a></td><td class="col1">retorna uma referência ao último elemento de uma lista</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="begin" class="wikilink1" title="br-pt:stl:list:begin">begin</a></td><td class="col1">retorna um iterador apontando para o início da lista</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="clear" class="wikilink1" title="br-pt:stl:list:clear">clear</a></td><td class="col1">remove todos os elementos de uma lista</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="empty" class="wikilink1" title="br-pt:stl:list:empty">empty</a></td><td class="col1">retorna verdadeiro se a lista estiver vazia</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="end" class="wikilink1" title="br-pt:stl:list:end">end</a></td><td class="col1">retorna um iterator que aponta para logo após o último elemento da lista</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="erase" class="wikilink1" title="br-pt:stl:list:erase">erase</a></td><td class="col1">remove elementos de uma lista</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="front" class="wikilink1" title="br-pt:stl:list:front">front</a></td><td class="col1">retorna uma referência para o primeiro elemento de uma lista</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="insert" class="wikilink1" title="br-pt:stl:list:insert">insert</a></td><td class="col1">insere elementos na lista</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="max_size" class="wikilink1" title="br-pt:stl:list:max_size">max_size</a></td><td class="col1">returna o número máximo de elementos que a lista pode armazenar</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="merge" class="wikilink1" title="br-pt:stl:list:merge">merge</a></td><td class="col1">une duas listas</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="pop_back" class="wikilink1" title="br-pt:stl:list:pop_back">pop_back</a></td><td class="col1">remove o último elemento da lista</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="pop_front" class="wikilink1" title="br-pt:stl:list:pop_front">pop_front</a></td><td class="col1">remove o primero elemento da lista</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="push_back" class="wikilink1" title="br-pt:stl:list:push_back">push_back</a></td><td class="col1">adiciona um elemento ao final da lista</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="push_front" class="wikilink1" title="br-pt:stl:list:push_front">push_front</a></td><td class="col1">adiciona um elemento ao início da lista</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="rbegin" class="wikilink1" title="br-pt:stl:list:rbegin">rbegin</a></td><td class="col1">retorna um reverse_iterator apontando para o final da lista</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="remove" class="wikilink1" title="br-pt:stl:list:remove">remove</a></td><td class="col1">remove elementos de uma lista</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="remove_if" class="wikilink1" title="br-pt:stl:list:remove_if">remove_if</a></td><td class="col1">remove element condicionalmente</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="rend" class="wikilink1" title="br-pt:stl:list:rend">rend</a></td><td class="col1">retorna um reverse_iterator apontando para o início da lista</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="resize" class="wikilink1" title="br-pt:stl:list:resize">resize</a></td><td class="col1">muda o tamanho da lista</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><a href="reverse" class="wikilink1" title="br-pt:stl:list:reverse">reverse</a></td><td class="col1">muda a ordem dos elementos de trás para a frente</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><a href="size" class="wikilink1" title="br-pt:stl:list:size">size</a></td><td class="col1">retorna o número de elementos em uma lista</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><a href="sort" class="wikilink1" title="br-pt:stl:list:sort">sort</a></td><td class="col1">ordens a lista em ordem crescente</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/br-pt/stl/list/splice" class="wikilink2" title="br-pt:stl:list:splice" rel="nofollow">splice</a></td><td class="col1">une duas listas em <a href="http://www.cppreference.com/wiki/br-pt/complexity" class="wikilink2" title="br-pt:complexity" rel="nofollow">tempo constante</a></td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/br-pt/stl/list/swap" class="wikilink2" title="br-pt:stl:list:swap" rel="nofollow">swap</a></td><td class="col1">troca o conteúdo da lista com o de outra</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/br-pt/stl/list/unique" class="wikilink2" title="br-pt:stl:list:unique" rel="nofollow">unique</a></td><td class="col1">remove elementos duplicados consecutivos</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

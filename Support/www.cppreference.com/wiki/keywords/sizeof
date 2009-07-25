@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keywords:sizeof</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-12-02T12:27:07-0800" />
+<meta name="keywords" content="keywords,sizeof" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/keywords/sizeof?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/keywords/sizeof" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/keywords/sizeof" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="sizeof" id="sizeof">sizeof</a></h2>
+<div class="level2">
+
+<p>
+The sizeof operator is a compile-time operator that returns the size of the
+argument passed to it. The size is a multiple of the size of a char, which on
+many personal computers is 1 byte (or 8 bits). The number of bits in a char is
+stored in the CHAR_BIT constant defined in the &lt;climits&gt; header file.
+For example, the following code uses sizeof to display the sizes of a number of
+variables:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw4">struct</span> EmployeeRecord <span class="br0">&#123;</span>
+      <span class="kw4">int</span> ID;
+      <span class="kw4">int</span> age;
+      <span class="kw4">double</span> salary;
+      EmployeeRecord<span class="sy0">*</span> boss;
+    <span class="br0">&#125;</span>;
+&nbsp;
+    ...
+&nbsp;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(int): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl
+         <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(float): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">float</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl
+         <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(double): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">double</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl
+         <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(char): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl
+         <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(EmployeeRecord): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>EmployeeRecord<span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl;
+&nbsp;
+    <span class="kw4">int</span> i;
+    <span class="kw4">float</span> f;
+    <span class="kw4">double</span> d;
+    <span class="kw4">char</span> c;
+    EmployeeRecord er;
+&nbsp;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(i): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl
+         <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(f): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>f<span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl
+         <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(d): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>d<span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl
+         <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(c): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl
+         <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;sizeof(er): &quot;</span> <span class="sy0">&lt;&lt;</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span>er<span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl;</pre>
+<p>
+
+On some machines, the above code displays this output:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">4</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">float</span><span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">4</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">double</span><span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">8</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">1</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span>EmployeeRecord<span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">20</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">4</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">4</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span>d<span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">8</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">1</span>
+    <span class="kw4">sizeof</span><span class="br0">&#40;</span>er<span class="br0">&#41;</span><span class="sy0">:</span> <span class="nu0">20</span></pre>
+<p>
+
+Note that sizeof can either take a variable type (such as int) or a variable
+name (such as i in the example above).
+It is also important to note that the sizes of various types of variables can
+change depending on what system you&#039;re on. Check out a_description_of_the_C_and
+C++_<a href="../data_types" class="wikilink1" title="data_types">data types</a> for more information.
+The parentheses around the argument are only required if you are using sizeof
+with a variable type (e.g. sizeof(int)).  Parentheses can be left out if the argument is a variable or array (e.g. sizeof x, sizeof myArray).
+</p>
+
+<p>
+Related Topics: <a href="../c/c_data_types" class="wikilink1" title="c:c_data_types">C++_Data_Types</a>
+</p>
+
+</div>
+<!-- SECTION "sizeof" [3-] --></div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keywords:typename</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-19T06:08:36-0700" />
+<meta name="keywords" content="keywords,typename" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/keywords/typename?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/keywords/typename" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/keywords/typename" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="typename" id="typename">typename</a></h2>
+<div class="level2">
+
+</div>
+
+<h4><a name="specifying_type_parameters_to_templates" id="specifying_type_parameters_to_templates">Specifying Type Parameters To Templates</a></h4>
+<div class="level4">
+
+<p>
+
+In <a href="template" class="wikilink1" title="keywords:template">template</a> argument lists <span class="curid"><a href="typename" class="wikilink1" title="keywords:typename">typename</a></span> can be used interchangeably with <a href="class" class="wikilink1" title="keywords:class">class</a> to indicate type parameters.  Although there is no difference to the compiler, Alexandrescu recommends using <a href="class" class="wikilink1" title="keywords:class">class</a> when the template argument is expected to be a <a href="class" class="wikilink1" title="keywords:class">class</a> or <a href="struct" class="wikilink1" title="keywords:struct">struct</a>, and <span class="curid"><a href="typename" class="wikilink1" title="keywords:typename">typename</a></span> for other classes of types.  This is purely to encourage source readability.
+</p>
+
+</div>
+
+<h4><a name="disambiguating_dependent_names" id="disambiguating_dependent_names">Disambiguating Dependent Names</a></h4>
+<div class="level4">
+
+<p>
+
+The <span class="curid"><a href="typename" class="wikilink1" title="keywords:typename">typename</a></span> keyword is also used to indicate that a <a href="dependent_name" class="wikilink1" title="keywords:dependent_name">Dependent Names</a> in a template definition refers to a type.
+</p>
+<pre class="c code c++" style="font-family:monospace;"><span class="kw4">struct</span> Foo <span class="br0">&#123;</span>
+  <span class="kw4">typedef</span> <span class="kw4">int</span> Type;
+<span class="br0">&#125;</span>;
+&nbsp;
+template<span class="sy0">&lt;</span>class T<span class="sy0">&gt;</span>
+<span class="kw4">struct</span> Bar <span class="br0">&#123;</span>
+  <span class="kw4">typedef</span> typename T<span class="sy0">::</span><span class="me2">Type</span> BarType; <span class="co1">// In a typedef</span>
+  <span class="kw4">void</span> baz<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+     typename T<span class="sy0">::</span><span class="me2">Type</span> instance;     <span class="co1">// In a declaration</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw4">typedef</span> Bar<span class="sy0">&lt;</span>Foo<span class="sy0">&gt;</span> FooBar;</pre>
+<p>
+
+Related Topics: <a href="class" class="wikilink1" title="keywords:class">class</a>, <a href="template" class="wikilink1" title="keywords:template">template</a>
+</p>
+
+</div>
+<!-- SECTION "typename" [3-] --></div>
+</body>
+</html>

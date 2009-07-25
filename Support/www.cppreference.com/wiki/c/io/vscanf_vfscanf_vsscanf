@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:io:vscanf_vfscanf_vsscanf</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:01-0700" />
+<meta name="keywords" content="c,io,vscanf_vfscanf_vsscanf" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/io/vscanf_vfscanf_vsscanf?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:io" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/io/vscanf_vfscanf_vsscanf" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/io/vscanf_vfscanf_vsscanf" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="vscanf_vfscanf_and_vsscanf" id="vscanf_vfscanf_and_vsscanf">vscanf, vfscanf and vsscanf</a></h2>
+<div class="level2">
+
+<p>
+
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstdarg&gt;</span>
+    <span class="co2">#include &lt;cstdio&gt;</span>
+    <span class="kw4">int</span> vscanf<span class="br0">&#40;</span> <span class="kw4">char</span> <span class="sy0">*</span>format<span class="sy0">,</span> va_list arg_ptr <span class="br0">&#41;</span>;
+    <span class="kw4">int</span> vfscanf<span class="br0">&#40;</span> FILE <span class="sy0">*</span>stream<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>format<span class="sy0">,</span> va_list arg_ptr <span class="br0">&#41;</span>;
+    <span class="kw4">int</span> vsscanf<span class="br0">&#40;</span> <span class="kw4">char</span> <span class="sy0">*</span>buffer<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>format<span class="sy0">,</span> va_list arg_ptr <span class="br0">&#41;</span>;</pre>
+<p>
+
+These functions are very much like scanf(), fscanf(), and sscanf(). The
+difference is that the argument list is a pointer to a list of arguments.
+va_list is defined in cstdarg, and is also used by <a href="../other/va_arg" class="wikilink1" title="c:other:va_arg">va_arg</a>. For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">int</span> scanf_<span class="br0">&#40;</span> <span class="kw4">char</span> <span class="sy0">*</span>fmt<span class="sy0">,</span> ... <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+       va_list args;
+       va_start<span class="br0">&#40;</span> args<span class="sy0">,</span> fmt <span class="br0">&#41;</span>;
+       <span class="kw4">int</span> r <span class="sy0">=</span> vscanf<span class="br0">&#40;</span>frmt<span class="sy0">,</span> args<span class="br0">&#41;</span>;
+       scanf<span class="br0">&#40;</span><span class="st0">&quot;%*[^<span class="es0">\n</span>]&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span> getchar<span class="br0">&#40;</span><span class="br0">&#41;</span>; <span class="co1">//Empty buffer</span>
+       va_end<span class="br0">&#40;</span> args <span class="br0">&#41;</span>;
+       <span class="kw1">return</span> r;
+     <span class="br0">&#125;</span></pre>
+</div>
+</div>
+</body>
+</html>

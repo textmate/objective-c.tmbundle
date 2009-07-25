@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl"
+ lang="pl" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pl:string:c_str</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-16T16:42:57-0700" />
+<meta name="keywords" content="pl,string,c_str" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/pl/string/c_str?do=index" title="Indeks" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=pl:string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/pl/string/c_str" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/pl/string/c_str" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="c_str" id="c_str">c_str</a></h2>
+<div class="level2">
+
+<p>
+Składnia:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;string&gt;</span>
+    <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> c_str<span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre>
+<p>
+Funkcja c_str() zwraca stały wskaźnik do standardowego C-stringa, identycznego z aktualnym stringiem. Zwrócony łańcuch znaków jest zakończony znakiem NULL.
+</p>
+
+<p>
+Zauważ, że skoro zwrócony jest stały wskaźnik, to string otrzymany po wywołaniu c_str() nie może być modyfikowany. Co więcej, nie musisz wywoływać <a href="../../c/mem/free" class="wikilink1" title="c:mem:free">free</a> lub <a href="../../keywords/delete" class="wikilink1" title="keywords:delete">delete</a> na rzecz tego wskaźnika.
+</p>
+
+<p>
+Powiązane tematy: <a href="string_operators" class="wikilink1" title="pl:string:string_operators">Operatory stringów</a>, <a href="http://www.cppreference.com/wiki/pl/string/data" class="wikilink2" title="pl:string:data" rel="nofollow">data</a>
+</p>
+
+</div>
+<!-- SECTION "c_str" [3-] --></div>
+</body>
+</html>

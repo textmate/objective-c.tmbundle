@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:math:value</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-12-12T23:43:58-0800" />
+<meta name="keywords" content="c,math,value" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/math/value?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:math" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/math/value" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/math/value" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+float expdcm(int y)
+{
+</p>
+<pre class="code">int i;float a;</pre>
+<pre class="code">a=1.0;if (y &gt; 0) for (i=0;i &lt; y;i++) a*=10.0;
+      if (y &lt; 0) for (i=0;i &gt; y;i--) a/=10.0;
+return a;</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+int cvalue(char *str,float *a,int *intflg)
+{
+</p>
+<pre class="code">int c,ist,err;
+int ix,ie;
+int ictr1,ictr2;
+float dx;</pre>
+<ul>
+<li class="level1"><div class="li">a=0.0;*intflg=ON;</div>
+</li>
+</ul>
+
+<p>
+	ie=0;ist=0;err=0;
+</p>
+<pre class="code">ictr1=0;ictr2=0;</pre>
+<pre class="code">while ((c=(*str++)) != &#039;\0&#039;) {
+	if (c &gt;= &#039;0&#039; &amp;&amp; c &lt;= &#039;9&#039;) {		   //only 0-9 and &quot;.&quot;
+		ix=c-&#039;0&#039;;dx=ix;				   //dx = the int.
+		if      (ist &gt;= 0 &amp;&amp; ist &lt;= 2) {
+			*a=*a*10.0+dx;			   //a is added by the current int to be equivalent value.
+			if (ictr1 != 0 || c != &#039;0&#039;) ictr1++;  //0 comes at the beginin&#039; --&gt; ictr1++.
+			ist=2;					   //ist = 2
+		}
+		else if (ist &gt;= 3 &amp;&amp; ist &lt;= 4) {	  //After the DOT.
+			ictr2++;
+			*a=*a+dx*expdcm(-ictr2);
+			ist=4;
+			intflg=OFF;
+		}
+		
+		else {								 //exception
+			err=3;*a=0.0;
+			return err;
+		}
+	}</pre>
+<pre class="code">	else if (c == &#039;.&#039;) {		
+		if (ist &gt;= 0 &amp;&amp; ist &lt;= 2) {
+			ist=3;
+			*intflg=OFF;
+		}
+		else {					//if the DOT appear twice.
+			err=7;*a=0.0;
+			return err;
+		}
+	}
+	else {						//exception.
+		err=1;*a=0.0;
+		return err;
+	}
+}
+if ((ist &gt;= 2 &amp;&amp; ist &lt;= 4)) {</pre>
+<ul>
+<li class="level1"><div class="li">a=*a*expdcm(ie);</div>
+</li>
+</ul>
+
+<p>
+		err=0;
+</p>
+<pre class="code">	if ((*a-(int)(*a)) != 0.0) *intflg=OFF;
+	return err;
+}
+else {
+	err=2;*a=0.0;
+	return err;
+}</pre>
+
+<p>
+}
+<em>===============================================================================</em>
+<em> Purpose: Change a string to a float number
+</em>===============================================================================<em>
+int value(char *str,float *a)
+{
+	int intflg;
+
+	return cvalue(str,a,&amp;intflg);
+}
+
+</p>
+</div>
+</body>
+</html>

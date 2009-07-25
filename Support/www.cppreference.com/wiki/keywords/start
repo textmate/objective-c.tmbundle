@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keywords:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-17T19:09:38-0700" />
+<meta name="keywords" content="keywords,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/keywords/start?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/keywords/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/keywords/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="c_keywords" id="c_keywords">C++ Keywords</a></h1>
+<div class="level1">
+
+<p>
+
+This is a list of reserved keywords in C++.  Since they are used by the language, these keywords are not
+available for re-definition (or overloading) by programmers.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Keyword</th><th class="col1">Description</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="asm" class="wikilink1" title="keywords:asm">asm</a></td><td class="col1">insert an assembly instruction</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="auto" class="wikilink1" title="keywords:auto">auto</a></td><td class="col1">declare a local variable</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="bool" class="wikilink1" title="keywords:bool">bool</a></td><td class="col1">declare a boolean variable</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="break" class="wikilink1" title="keywords:break">break</a></td><td class="col1">break out of a loop</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="case" class="wikilink1" title="keywords:case">case</a></td><td class="col1">a block of code in a switch statement</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="catch" class="wikilink1" title="keywords:catch">catch</a></td><td class="col1">handles exceptions from throw</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="char" class="wikilink1" title="keywords:char">char</a></td><td class="col1">declare a character variable</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="class" class="wikilink1" title="keywords:class">class</a></td><td class="col1">declare a class</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="const" class="wikilink1" title="keywords:const">const</a></td><td class="col1">declare immutable data or functions that do not change data</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="const_cast" class="wikilink1" title="keywords:const_cast">const_cast</a></td><td class="col1">cast from const variables</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="continue" class="wikilink1" title="keywords:continue">continue</a></td><td class="col1">bypass iterations of a loop</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="default" class="wikilink1" title="keywords:default">default</a></td><td class="col1">default handler in a case statement</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="delete" class="wikilink1" title="keywords:delete">delete</a></td><td class="col1">make dynamic memory available</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="do" class="wikilink1" title="keywords:do">do</a></td><td class="col1">looping construct</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="double" class="wikilink1" title="keywords:double">double</a></td><td class="col1">declare a double precision floating-point variable</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="dynamic_cast" class="wikilink1" title="keywords:dynamic_cast">dynamic_cast</a></td><td class="col1">perform runtime casts</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="else" class="wikilink1" title="keywords:else">else</a></td><td class="col1">alternate case for an if statement</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="enum" class="wikilink1" title="keywords:enum">enum</a></td><td class="col1">create enumeration types</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="explicit" class="wikilink1" title="keywords:explicit">explicit</a></td><td class="col1">only use constructors when they exactly match</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="export" class="wikilink1" title="keywords:export">export</a></td><td class="col1">allows template definitions to be separated from their declarations</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="extern" class="wikilink1" title="keywords:extern">extern</a></td><td class="col1">tell the compiler about variables defined elsewhere</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><a href="false" class="wikilink1" title="keywords:false">false</a></td><td class="col1">a constant representing the boolean false value</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><a href="float" class="wikilink1" title="keywords:float">float</a></td><td class="col1">declare a floating-point variable</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><a href="for" class="wikilink1" title="keywords:for">for</a></td><td class="col1">looping construct</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><a href="friend" class="wikilink1" title="keywords:friend">friend</a></td><td class="col1">grant non-member function access to private data</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><a href="goto" class="wikilink1" title="keywords:goto">goto</a></td><td class="col1">jump to a different part of the program</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><a href="if" class="wikilink1" title="keywords:if">if</a></td><td class="col1">execute code based on the result of a test</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"><a href="inline" class="wikilink1" title="keywords:inline">inline</a></td><td class="col1">optimize calls to short functions</td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"><a href="int" class="wikilink1" title="keywords:int">int</a></td><td class="col1">declare an integer variable</td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"><a href="long" class="wikilink1" title="keywords:long">long</a></td><td class="col1">declare a long integer variable</td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"><a href="mutable" class="wikilink1" title="keywords:mutable">mutable</a></td><td class="col1">override a const variable</td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"><a href="namespace" class="wikilink1" title="keywords:namespace">namespace</a></td><td class="col1">partition the global namespace by defining a scope</td>
+	</tr>
+	<tr class="row33">
+		<td class="col0"><a href="new" class="wikilink1" title="keywords:new">new</a></td><td class="col1">allocate dynamic memory for a new variable</td>
+	</tr>
+	<tr class="row34">
+		<td class="col0"><a href="operator" class="wikilink1" title="keywords:operator">operator</a></td><td class="col1">create overloaded operator functions</td>
+	</tr>
+	<tr class="row35">
+		<td class="col0"><a href="private" class="wikilink1" title="keywords:private">private</a></td><td class="col1">declare private members of a class</td>
+	</tr>
+	<tr class="row36">
+		<td class="col0"><a href="protected" class="wikilink1" title="keywords:protected">protected</a></td><td class="col1">declare protected members of a class</td>
+	</tr>
+	<tr class="row37">
+		<td class="col0"><a href="public" class="wikilink1" title="keywords:public">public</a></td><td class="col1">declare public members of a class</td>
+	</tr>
+	<tr class="row38">
+		<td class="col0"><a href="register" class="wikilink1" title="keywords:register">register</a></td><td class="col1">request that a variable be optimized for speed</td>
+	</tr>
+	<tr class="row39">
+		<td class="col0"><a href="reinterpret_cast" class="wikilink1" title="keywords:reinterpret_cast">reinterpret_cast</a></td><td class="col1">change the type of a variable</td>
+	</tr>
+	<tr class="row40">
+		<td class="col0"><a href="return" class="wikilink1" title="keywords:return">return</a></td><td class="col1">return from a function</td>
+	</tr>
+	<tr class="row41">
+		<td class="col0"><a href="short" class="wikilink1" title="keywords:short">short</a></td><td class="col1">declare a short integer variable</td>
+	</tr>
+	<tr class="row42">
+		<td class="col0"><a href="signed" class="wikilink1" title="keywords:signed">signed</a></td><td class="col1">modify variable type declarations</td>
+	</tr>
+	<tr class="row43">
+		<td class="col0"><a href="sizeof" class="wikilink1" title="keywords:sizeof">sizeof</a></td><td class="col1">return the size of a variable or type</td>
+	</tr>
+	<tr class="row44">
+		<td class="col0"><a href="static" class="wikilink1" title="keywords:static">static</a></td><td class="col1">create permanent storage for a variable</td>
+	</tr>
+	<tr class="row45">
+		<td class="col0"><a href="static_cast" class="wikilink1" title="keywords:static_cast">static_cast</a></td><td class="col1">perform a nonpolymorphic cast</td>
+	</tr>
+	<tr class="row46">
+		<td class="col0"><a href="struct" class="wikilink1" title="keywords:struct">struct</a></td><td class="col1">define a new structure</td>
+	</tr>
+	<tr class="row47">
+		<td class="col0"><a href="switch" class="wikilink1" title="keywords:switch">switch</a></td><td class="col1">execute code based on different possible values for a variable</td>
+	</tr>
+	<tr class="row48">
+		<td class="col0"><a href="template" class="wikilink1" title="keywords:template">template</a></td><td class="col1">create generic functions</td>
+	</tr>
+	<tr class="row49">
+		<td class="col0"><a href="this" class="wikilink1" title="keywords:this">this</a></td><td class="col1">a pointer to the current object</td>
+	</tr>
+	<tr class="row50">
+		<td class="col0"><a href="throw" class="wikilink1" title="keywords:throw">throw</a></td><td class="col1">throws an exception</td>
+	</tr>
+	<tr class="row51">
+		<td class="col0"><a href="true" class="wikilink1" title="keywords:true">true</a></td><td class="col1">a constant representing the boolean true value</td>
+	</tr>
+	<tr class="row52">
+		<td class="col0"><a href="try" class="wikilink1" title="keywords:try">try</a></td><td class="col1">execute code that can throw an exception</td>
+	</tr>
+	<tr class="row53">
+		<td class="col0"><a href="typedef" class="wikilink1" title="keywords:typedef">typedef</a></td><td class="col1">create a new type name from an existing type</td>
+	</tr>
+	<tr class="row54">
+		<td class="col0"><a href="typeid" class="wikilink1" title="keywords:typeid">typeid</a></td><td class="col1">describes an object</td>
+	</tr>
+	<tr class="row55">
+		<td class="col0"><a href="typename" class="wikilink1" title="keywords:typename">typename</a></td><td class="col1">declare a class or undefined type</td>
+	</tr>
+	<tr class="row56">
+		<td class="col0"><a href="union" class="wikilink1" title="keywords:union">union</a></td><td class="col1">a structure that assigns multiple variables to the same memory location</td>
+	</tr>
+	<tr class="row57">
+		<td class="col0"><a href="unsigned" class="wikilink1" title="keywords:unsigned">unsigned</a></td><td class="col1">declare an unsigned integer variable</td>
+	</tr>
+	<tr class="row58">
+		<td class="col0"><a href="using" class="wikilink1" title="keywords:using">using</a></td><td class="col1">import complete or partial namespaces into the current scope</td>
+	</tr>
+	<tr class="row59">
+		<td class="col0"><a href="virtual" class="wikilink1" title="keywords:virtual">virtual</a></td><td class="col1">create a function that can be overridden by a derived class</td>
+	</tr>
+	<tr class="row60">
+		<td class="col0"><a href="void" class="wikilink1" title="keywords:void">void</a></td><td class="col1">declare functions or data with no associated data type</td>
+	</tr>
+	<tr class="row61">
+		<td class="col0"><a href="volatile" class="wikilink1" title="keywords:volatile">volatile</a></td><td class="col1">warn the compiler about variables that can be modified unexpectedly</td>
+	</tr>
+	<tr class="row62">
+		<td class="col0"><a href="wchar_t" class="wikilink1" title="keywords:wchar_t">wchar_t</a></td><td class="col1">declare a wide-character variable</td>
+	</tr>
+	<tr class="row63">
+		<td class="col0"><a href="while" class="wikilink1" title="keywords:while">while</a></td><td class="col1">looping construct</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

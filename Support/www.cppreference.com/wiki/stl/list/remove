@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:list:remove</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:06-0700" />
+<meta name="keywords" content="stl,list,remove" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/list/remove?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:list" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/list/remove" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/list/remove" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="remove" id="remove">remove</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;list&gt;</span>
+    <span class="kw4">void</span> remove<span class="br0">&#40;</span> <span class="kw4">const</span> TYPE <span class="sy0">&amp;</span>val <span class="br0">&#41;</span>;</pre>
+<p>
+The function remove() removes all elements that are equal to val from the list.
+For example, the following code creates a list of the first 10 characters of
+the alphabet, then uses remove() to remove the letter &#039;E&#039; from the list:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="co1">// Create a list that has the first 10 letters of the alphabet</span>
+     list<span class="sy0">&lt;</span>char<span class="sy0">&gt;</span> charList;
+     <span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i<span class="sy0">=</span><span class="nu19">0</span>; i <span class="sy0">&lt;</span> <span class="nu0">10</span>; i<span class="sy0">++</span> <span class="br0">&#41;</span>
+       charList.<span class="me1">push_front</span><span class="br0">&#40;</span> i <span class="sy0">+</span> <span class="nu0">65</span> <span class="br0">&#41;</span>;
+     <span class="co1">// Remove all instances of 'E'</span>
+     charList.<span class="me1">remove</span><span class="br0">&#40;</span> <span class="st0">'E'</span> <span class="br0">&#41;</span>;</pre>
+<p>
+Remove runs in <a href="../../complexity" class="wikilink1" title="complexity">linear time</a>.
+</p>
+
+<p>
+Related Topics: <a href="erase" class="wikilink1" title="stl:list:erase">erase</a>, <a href="remove_if" class="wikilink1" title="stl:list:remove_if">remove_if</a>, <a href="unique" class="wikilink1" title="stl:list:unique">unique</a>
+</p>
+
+</div>
+<!-- SECTION "remove" [3-] --></div>
+</body>
+</html>

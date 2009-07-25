@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string:find_first_of</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-12-30T07:33:15-0800" />
+<meta name="keywords" content="string,find_first_of" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/string/find_first_of?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/string/find_first_of" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/string/find_first_of" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="find_first_of" id="find_first_of">find_first_of</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;string&gt;</span>
+    size_type find_first_of<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">string</span> <span class="sy0">&amp;</span>str<span class="sy0">,</span> size_type index <span class="sy0">=</span> <span class="nu19">0</span> <span class="br0">&#41;</span>;
+    size_type find_first_of<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str<span class="sy0">,</span> size_type index <span class="sy0">=</span> <span class="nu19">0</span> <span class="br0">&#41;</span>;
+    size_type find_first_of<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str<span class="sy0">,</span> size_type index<span class="sy0">,</span> size_type num <span class="br0">&#41;</span>;
+    size_type find_first_of<span class="br0">&#40;</span> <span class="kw4">char</span> ch<span class="sy0">,</span> size_type index <span class="sy0">=</span> <span class="nu19">0</span> <span class="br0">&#41;</span>;</pre>
+<p>
+The find_first_of function either:
+
+</p>
+<ul>
+<li class="level1"><div class="li">  returns the index of the first character within the current string that matches any character in <code>str</code>, beginning the search at <code>index</code>, string::npos if nothing is found,</div>
+</li>
+<li class="level1"><div class="li"> searches the current string, beginning at <code>index</code>, for any of the first <code>num</code> characters in <code>str</code>, returning the index in the current string of the first character found, or string::npos if no characters match,</div>
+</li>
+<li class="level1"><div class="li"> or returns the index of the first occurrence of <code>ch</code> in the current string, starting the search at <code>index</code>, string::npos if nothing is found.</div>
+</li>
+</ul>
+
+<p>
+
+For example, the following code uses find_first_of to replace all the vowels in a string with asterisks:
+</p>
+<pre class="c code c++" style="font-family:monospace;">  <span class="kw4">string</span> str <span class="sy0">=</span> <span class="st0">&quot;In this house, we obey the laws of thermodynamics!&quot;</span>;
+  size_type found <span class="sy0">=</span> str.<span class="me1">find_first_of</span><span class="br0">&#40;</span><span class="st0">&quot;aeiouAEIOU&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+  <span class="kw1">while</span><span class="br0">&#40;</span> found <span class="sy0">!=</span> <span class="kw4">string</span><span class="sy0">::</span><span class="me2">npos</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    str<span class="br0">&#91;</span>found<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="st0">'*'</span>;
+    found <span class="sy0">=</span> str.<span class="me1">find_first_of</span><span class="br0">&#40;</span><span class="st0">&quot;aeiouAEIUO&quot;</span><span class="sy0">,</span>found<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+  <span class="br0">&#125;</span>
+&nbsp;
+  <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> str <span class="sy0">&lt;&lt;</span> <span class="st0">'<span class="es0">\n</span>'</span>;  <span class="co1">// displays &quot;*n th*s h**s*, w* *b*y th* l*ws *f th*rm*dyn*m*cs!&quot;</span></pre>
+<p>
+Related Topics: <a href="find" class="wikilink1" title="string:find">find</a>, <a href="find_first_not_of" class="wikilink1" title="string:find_first_not_of">find_first_not_of</a>, <a href="find_last_not_of" class="wikilink1" title="string:find_last_not_of">find_last_not_of</a>, <a href="find_last_of" class="wikilink1" title="string:find_last_of">find_last_of</a>, <a href="rfind" class="wikilink1" title="string:rfind">rfind</a>
+</p>
+
+</div>
+<!-- SECTION "find_first_of" [3-] --></div>
+</body>
+</html>

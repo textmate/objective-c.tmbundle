@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:deque:insert</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-11-15T14:39:48-0800" />
+<meta name="keywords" content="stl,deque,insert" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/deque/insert?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:deque" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/deque/insert" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/deque/insert" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="insert" id="insert">insert</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;deque&gt;</span>
+    iterator insert<span class="br0">&#40;</span> iterator loc<span class="sy0">,</span> <span class="kw4">const</span> TYPE<span class="sy0">&amp;</span> val <span class="br0">&#41;</span>;
+    <span class="kw4">void</span> insert<span class="br0">&#40;</span> iterator loc<span class="sy0">,</span> size_type num<span class="sy0">,</span> <span class="kw4">const</span> TYPE<span class="sy0">&amp;</span> val <span class="br0">&#41;</span>;
+    template<span class="sy0">&lt;</span>TYPE<span class="sy0">&gt;</span> <span class="kw4">void</span> insert<span class="br0">&#40;</span> iterator loc<span class="sy0">,</span> input_iterator start<span class="sy0">,</span> input_iterator end <span class="br0">&#41;</span>;</pre>
+<p>
+The insert() function either:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> inserts <code>val</code> before <code>loc</code>, returning an iterator to the element inserted,</div>
+</li>
+<li class="level1"><div class="li"> inserts <code>num</code> copies of <code>val</code> before <code>loc</code>, or</div>
+</li>
+<li class="level1"><div class="li"> inserts the elements from <code>start</code> to <code>end</code> before <code>loc</code>.</div>
+</li>
+</ul>
+
+<p>
+
+For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;"><span class="co1">// Create a deque, load it with the first 10 characters of the alphabet</span>
+deque<span class="sy0">&lt;</span>char<span class="sy0">&gt;</span> alphaDeque;
+<span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i<span class="sy0">=</span><span class="nu19">0</span>; i <span class="sy0">&lt;</span> <span class="nu0">10</span>; i<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  alphaDeque.<span class="me1">push_back</span><span class="br0">&#40;</span> i <span class="sy0">+</span> <span class="nu0">65</span> <span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="co1">// Insert four C's into the deque</span>
+deque<span class="sy0">&lt;</span>char<span class="sy0">&gt;::</span><span class="me2">iterator</span> theIterator <span class="sy0">=</span> alphaDeque.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+alphaDeque.<span class="me1">insert</span><span class="br0">&#40;</span> theIterator<span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="st0">'C'</span> <span class="br0">&#41;</span>;
+&nbsp;
+<span class="co1">// Display the deque</span>
+<span class="kw1">for</span><span class="br0">&#40;</span> theIterator <span class="sy0">=</span> alphaDeque.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; theIterator <span class="sy0">!=</span> alphaDeque.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; theIterator<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="sy0">*</span>theIterator;
+<span class="br0">&#125;</span></pre>
+<p>
+This code would display:
+</p>
+<pre class="code">
+CCCCABCDEFGHIJ</pre>
+<p>
+This next example uses several different methods to add data to a deque, and then uses the <a href="../algorithm/copy" class="wikilink1" title="stl:algorithm:copy">copy algorithm</a> to display the deque:
+</p>
+<pre class="c code c++" style="font-family:monospace;">deque<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> dq;
+dq.<span class="me1">push_back</span><span class="br0">&#40;</span><span class="nu0">42</span><span class="br0">&#41;</span>;
+dq.<span class="me1">push_front</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+dq.<span class="me1">insert</span><span class="br0">&#40;</span> dq.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">2</span> <span class="br0">&#41;</span>;
+dq<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">16</span>;
+copy<span class="br0">&#40;</span> dq.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> dq.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> ostream_iterator<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span><span class="br0">&#40;</span><a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a><span class="sy0">,</span><span class="st0">&quot; &quot;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span>;  <span class="co1">// displays &quot;1 2 16&quot;</span></pre>
+<p>
+Related Topics: <a href="assign" class="wikilink1" title="stl:deque:assign">assign</a>, <a href="erase" class="wikilink1" title="stl:deque:erase">erase</a>, <a href="push_back" class="wikilink1" title="stl:deque:push_back">push_back</a>, <a href="push_front" class="wikilink1" title="stl:deque:push_front">push_front</a>, <a href="../algorithm/copy" class="wikilink1" title="stl:algorithm:copy">copy</a>
+</p>
+
+</div>
+<!-- SECTION "insert" [3-] --></div>
+</body>
+</html>

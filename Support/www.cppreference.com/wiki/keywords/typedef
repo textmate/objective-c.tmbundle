@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keywords:typedef</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-05-14T11:47:42-0700" />
+<meta name="keywords" content="keywords,typedef" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/keywords/typedef?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/keywords/typedef" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/keywords/typedef" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="typedef" id="typedef">typedef</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw4">typedef</span> existing<span class="sy0">-</span>type new<span class="sy0">-</span>type;</pre>
+<p>
+
+The typedef keyword allows you to create a new alias for an existing data type.
+This is often useful if you find yourself using a unwieldy data type – you can
+use typedef to create a shorter, easier-to-use name for that data type. For
+example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw4">typedef</span> <span class="kw4">unsigned</span> <span class="kw4">int</span><span class="sy0">*</span> pui_t;
+&nbsp;
+    <span class="co1">// data1 and data2 have the same type</span>
+    pui_t data1;
+    <span class="kw4">unsigned</span> <span class="kw4">int</span><span class="sy0">*</span> data2;</pre>
+<p>
+The syntax above is a simplification. More generally, after the word “typedef”,
+the syntax looks exactly like what you would do to declare a variable of the
+existing type with the variable name of the new type name. Therefore, for more
+complicated types, the new type name might be in the middle of the syntax for the
+existing type. For example:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw4">typedef</span> <span class="kw4">char</span> <span class="br0">&#40;</span><span class="sy0">*</span>pa<span class="br0">&#41;</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span>; <span class="co1">// &quot;pa&quot; is now a type for a pointer to an array of 3 chars</span>
+    <span class="kw4">typedef</span> <span class="kw4">int</span> <span class="br0">&#40;</span><span class="sy0">*</span>pf<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">float</span><span class="br0">&#41;</span>; <span class="co1">// &quot;pf&quot; is now a type for a pointer to a function which takes 1 float argument and returns an int</span></pre>
+</div>
+<!-- SECTION "typedef" [3-] --></div>
+</body>
+</html>

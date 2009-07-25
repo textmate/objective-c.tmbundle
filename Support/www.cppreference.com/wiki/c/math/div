@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:math:div</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-03-20T00:03:11-0700" />
+<meta name="keywords" content="c,math,div" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/math/div?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:math" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/math/div" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/math/div" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="div" id="div">div</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstdlib&gt;</span>
+    div_t div<span class="br0">&#40;</span> <span class="kw4">int</span> numerator<span class="sy0">,</span> <span class="kw4">int</span> denominator <span class="br0">&#41;</span>;</pre>
+<p>
+
+The function div() returns the quotient and remainder of the operation
+numerator / denominator. The div_t structure is defined in cstdlib, and has at
+least:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">int</span> quot;   <span class="co1">// The quotient</span>
+     <span class="kw4">int</span> rem;    <span class="co1">// The remainder</span></pre>
+<p>
+
+For example, the following code displays the quotient and remainder of x/y:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     div_t temp;
+     temp <span class="sy0">=</span> div<span class="br0">&#40;</span> x<span class="sy0">,</span> y <span class="br0">&#41;</span>;
+     <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;%d divided by %d yields %d with a remainder of %d<span class="es0">\n</span>&quot;</span><span class="sy0">,</span>
+             x<span class="sy0">,</span> y<span class="sy0">,</span> temp.<span class="me1">quot</span><span class="sy0">,</span> temp.<span class="me1">rem</span> <span class="br0">&#41;</span>;</pre>
+<p>
+C++ also provides the following overloaded form:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstdlib&gt;</span>
+    ldiv_t div<span class="br0">&#40;</span> <span class="kw4">long</span> numerator<span class="sy0">,</span> <span class="kw4">long</span> denominator <span class="br0">&#41;</span>; <span class="co1">// same as ldiv()</span></pre>
+<p>
+Related Topics: <a href="ldiv" class="wikilink1" title="c:math:ldiv">ldiv</a>
+</p>
+
+</div>
+<!-- SECTION "div" [3-] --></div>
+</body>
+</html>

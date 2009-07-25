@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>examples_2</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-09T04:58:07-0700" />
+<meta name="keywords" content="examples_2" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/examples_2?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/examples_2" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/examples_2" />
+<link rel="stylesheet" media="all" type="text/css" href="lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+#include “CPE.h”
+using namespace std;
+#include &lt;cstdlib&gt;
+#include &lt;sstream&gt;
+</p>
+
+<p>
+enum assinatura { MENSAL, DIARIO };
+</p>
+
+<p>
+unsigned int Parque::carregaClientes(istream&amp; is) {
+</p>
+<pre class="code">unsigned int contador=0;
+while (!is.eof()) {
+	string nome, local, modalidade, lixo;
+	unsigned int tel=0;
+	assinatura tipo;
+	if (!getline(is, nome))
+		break;
+	if (!getline(is, local))
+		break;
+	if (!(is &gt;&gt; tel))
+		break;
+	getline(is, lixo);	
+	if (!getline(is, modalidade))
+		break;
+	if ((modalidade.compare(&quot;MENSAL&quot;) == 0) || (modalidade.compare(&quot;mensal&quot;) == 0))				
+	else
+		tipo = DIARIO;</pre>
+<pre class="code">	if (nome.length() &gt; 0) {
+		if (tipo == MENSAL) {
+			ClienteMensal* pCliente = new ClienteMensal(nome, local, tel, valorMes);
+			clientes.push_back(pCliente);
+		}
+		else {
+			ClienteDiario* pCliente = new ClienteDiario(nome, local, tel, valorHora);
+			clientes.push_back(pCliente);
+		}
+		contador++;
+	}
+}
+return contador;</pre>
+
+<p>
+}
+</p>
+
+<p>
+string Pessoa::lista() const {		
+</p>
+<pre class="code">      ostringstream oss;
+oss &lt;&lt; nome &lt;&lt;&quot;, &quot;&lt;&lt; localidade &lt;&lt;&quot;, &quot;&lt;&lt; telefone;</pre>
+
+<p>
+return oss.str();
+}
+</p>
+
+<p>
+double Funcionario::leValor() const {	
+</p>
+<pre class="code">return valor;</pre>
+
+<p>
+}
+</p>
+
+<p>
+string Funcionario::lista() const {	
+</p>
+<pre class="code">ostringstream oss;
+oss &lt;&lt; &quot;Funcionario: &quot; &lt;&lt; Pessoa::lista() &lt;&lt; &quot;, &quot;&lt;&lt;leValor()&lt;&lt; &quot; euros&quot;;</pre>
+
+<p>
+return oss.str();
+}
+</p>
+
+<p>
+double Cliente::leValor() const {		
+</p>
+<pre class="code">return valorAPagar;</pre>
+
+<p>
+}
+</p>
+
+<p>
+string Cliente::lista() const {
+</p>
+<pre class="code">	ostringstream oss;
+	oss &lt;&lt; Pessoa::lista() &lt;&lt; &quot;, &quot;&lt;&lt; leValor()&lt;&lt; &quot; euros, &quot; &lt;&lt;  (presente?&quot;estacionado&quot;:&quot;fora&quot;);
+	return oss.str();</pre>
+
+<p>
+}
+</p>
+
+<p>
+string ClienteDiario::lista() const {	
+</p>
+<pre class="code">ostringstream oss;
+oss &lt;&lt; &quot;Cliente diario : &quot; &lt;&lt; Cliente::lista();
+return oss.str();</pre>
+
+<p>
+}
+</p>
+
+<p>
+string ClienteMensal::lista() const {	
+</p>
+<pre class="code">ostringstream oss;
+oss &lt;&lt; &quot;Cliente mensal : &quot; &lt;&lt; Cliente::lista();
+return oss.str();</pre>
+
+<p>
+}
+</p>
+
+<p>
+Pessoa::Pessoa(string umNome, string umaLocalidade, unsigned int umTelefone) {
+</p>
+<pre class="code">nome = umNome;	
+localidade = umaLocalidade;	
+telefone = umTelefone;	</pre>
+
+<p>
+}
+</p>
+
+<p>
+Funcionario::Funcionario(string umNome, string umaLocalidade, unsigned int umTelefone, double umVencimento)
+</p>
+<pre class="code">: Pessoa(umNome, umaLocalidade, umTelefone) {</pre>
+<pre class="code">valor = umVencimento;</pre>
+
+<p>
+}
+Cliente::Cliente(string umNome, string umaLocalidade, unsigned int umTelefone, double valorTaxa): Pessoa(umNome, umaLocalidade, umTelefone) {
+
+</p>
+<pre class="code">presente = false;
+valor = valorTaxa;
+valorAPagar = 0;	</pre>
+
+<p>
+}
+</p>
+
+<p>
+ClienteDiario::ClienteDiario(string umNome, string umaLocalidade, unsigned int umTelefone, double valorTaxa): 
+</p>
+<pre class="code">Cliente(umNome, umaLocalidade, umTelefone, valorTaxa) {</pre>
+
+<p>
+}
+</p>
+
+<p>
+ClienteMensal::ClienteMensal(string umNome, string umaLocalidade, unsigned int umTelefone, double valorTaxa): 
+</p>
+<pre class="code">Cliente(umNome, umaLocalidade, umTelefone, valorTaxa) {</pre>
+
+<p>
+}
+</p>
+
+<p>
+Parque::Parque(string umNome, unsigned int maxLotacao, float valHora, float valMes): valorHora(valHora), valorMes(valMes) {
+</p>
+<pre class="code">nome = umNome;	
+lotacao = maxLotacao;	
+ocupados = 0;	</pre>
+
+<p>
+}
+</p>
+
+<p>
+Parque::~Parque() {
+</p>
+<pre class="code">vector&lt;Cliente*&gt;::iterator itc;
+vector&lt;Funcionario*&gt;::iterator itf;
+for(itc=clientes.begin(); itc!=clientes.end(); itc++ )
+	{ delete *itc; } 
+clientes.clear();	
+for(itf=funcionarios.begin(); itf!=funcionarios.end(); itf++)
+	{ delete *itf; } 
+funcionarios.clear();	</pre>
+
+<p>
+}
+unsigned int Parque::carregaFuncionarios(istream&amp; is) {
+</p>
+<pre class="code">unsigned int contador=0;
+while (!is.eof()) {
+	string nome, local, venc, lixo;
+	unsigned int tel;
+	double vencimento;
+	if (!getline(is, nome))
+		break;
+	if (!getline(is, local))
+		break;
+	if (!(is &gt;&gt; tel))
+		break;
+	getline(is, lixo);	
+	if (!getline(is, venc))
+		break;
+	vencimento = atof(venc.c_str());
+	if (nome.length() &gt; 0) {
+		Funcionario*  pFuncionario = new Funcionario(nome, local, tel, vencimento);
+		funcionarios.push_back(pFuncionario);
+		contador++;
+	}
+}
+return contador;</pre>
+
+<p>
+}
+</p>
+
+<p>
+unsigned int Parque::numClientes() {
+</p>
+<pre class="code">return clientes.size();} </pre>
+
+<p>
+
+unsigned int Parque::numFuncionarios() {
+</p>
+<pre class="code">return funcionarios.size(); </pre>
+
+<p>
+
+void Parque::listaClientes(ostream&amp; os) {
+</p>
+<pre class="code">vector&lt;Cliente*&gt;::iterator itc;
+for(itc=clientes.begin(); itc!=clientes.end(); itc++ )
+	{ os &lt;&lt; ((*itc)-&gt;lista()) &lt;&lt; endl; }</pre>
+
+<p>
+}
+</p>
+
+<p>
+void Parque::listaFuncionarios(ostream&amp; os) {
+</p>
+<pre class="code">vector&lt;Funcionario*&gt;::iterator itf;
+for(itf=funcionarios.begin(); itf!=funcionarios.end(); itf++ )
+	os &lt;&lt; ((*itf)-&gt;lista()) &lt;&lt; endl; </pre>
+
+<p>
+}
+</p>
+
+<p>
+bool Cliente::entra() {
+</p>
+<pre class="code">if (presente==false) {
+	presente = true;
+	return true;
+}
+else
+	return false;</pre>
+
+<p>
+}
+</p>
+
+<p>
+bool Cliente::sai(float tempo){
+</p>
+<pre class="code">if (presente==true) {
+	presente = false;
+	return true;
+}
+else
+	return false;</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+bool ClienteDiario::sai(float tempo){
+</p>
+<pre class="code">bool estaNoParque=Cliente::sai(tempo);
+if (estaNoParque==false) return false;
+valorAPagar += tempo*valor;
+return true;</pre>
+
+<p>
+}
+</p>
+
+<p>
+bool ClienteMensal::sai(float tempo){
+</p>
+<pre class="code">bool estaNoParque=Cliente::sai(tempo);
+if (estaNoParque==false) return false;
+if (valorAPagar==0) valorAPagar=valor;
+return true;</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+unsigned int Parque::numLugaresVagos() {
+</p>
+<pre class="code">return (lotacao-ocupados);</pre>
+
+<p>
+}
+</p>
+
+<p>
+bool Parque::entra(const string &amp;nome) {	
+</p>
+<pre class="code">vector&lt;Cliente*&gt;::iterator itc;
+for (itc=clientes.begin(); itc!=clientes.end(); itc++) {
+	if (((*itc)-&gt;getNome()) == nome &amp;&amp; ocupados&lt;lotacao)
+		if ((**itc).entra()) {
+			ocupados++;
+			return true;
+		}
+}
+return false; </pre>
+
+<p>
+}
+</p>
+
+<p>
+bool Parque::sai(const string &amp;nome, float tempo) {	
+</p>
+<pre class="code">vector&lt;Cliente*&gt;::iterator itc;
+for (itc=clientes.begin(); itc!=clientes.end(); itc++) {
+	if (((*itc)-&gt;getNome()) == nome)
+		if ((**itc).sai(tempo)) {
+			ocupados--;
+			return true;
+		}
+}
+return false; </pre>
+
+<p>
+}
+</p>
+
+<p>
+void Parque::listaClientesEstacionados(ostream&amp; os) {
+</p>
+<pre class="code">vector&lt;Cliente*&gt;::iterator itc;
+for(itc=clientes.begin(); itc!=clientes.end(); itc++ )
+{
+	if ((**itc).estacionado())
+		os &lt;&lt; (*itc)-&gt;getNome() &lt;&lt; endl;
+}</pre>
+
+<p>
+}
+</p>
+
+<p>
+
+double Parque::totalValorMes() {
+</p>
+<pre class="code">vector&lt;Cliente*&gt;::iterator itc;
+double tot=0;
+for(itc=clientes.begin(); itc!=clientes.end(); itc++ )
+{
+	tot += (*itc)-&gt;leValor();
+}
+return tot;</pre>
+
+<p>
+}
+</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keywords:template</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-19T05:54:23-0700" />
+<meta name="keywords" content="keywords,template" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/keywords/template?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/keywords/template" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/keywords/template" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="template" id="template">template</a></h2>
+<div class="level2">
+
+</div>
+
+<h4><a name="declaring_generic_objects" id="declaring_generic_objects">Declaring Generic Objects</a></h4>
+<div class="level4">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    template <span class="sy0">&lt;</span>class data<span class="sy0">-</span>type<span class="sy0">&gt;</span> return<span class="sy0">-</span>type name<span class="br0">&#40;</span> parameter<span class="sy0">-</span>list <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    statement<span class="sy0">-</span>list;
+    <span class="br0">&#125;</span></pre>
+<p>
+
+Templates are used to create generic functions and generic classes and can operate on data without
+knowing the nature of that data. They accomplish this by using a placeholder
+data-type for which many other <a href="../data_types" class="wikilink1" title="data_types">data types</a> can be substituted.
+Example code:
+For example, the following code uses a template to define a generic swap
+function that can swap two variables of any type:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     template<span class="sy0">&lt;</span>class X<span class="sy0">&gt;</span> <span class="kw4">void</span> genericSwap<span class="br0">&#40;</span> X <span class="sy0">&amp;</span>a<span class="sy0">,</span> X <span class="sy0">&amp;</span>b <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+       X tmp;
+&nbsp;
+       tmp <span class="sy0">=</span> a;
+       a <span class="sy0">=</span> b;
+       b <span class="sy0">=</span> tmp;
+     <span class="br0">&#125;</span>
+     <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+       ...
+       <span class="kw4">int</span> num1 <span class="sy0">=</span> <span class="nu0">5</span>;
+       <span class="kw4">int</span> num2 <span class="sy0">=</span> <span class="nu0">21</span>;
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Before, num1 is &quot;</span> <span class="sy0">&lt;&lt;</span> num1 <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; and num2 is &quot;</span> <span class="sy0">&lt;&lt;</span> num2 <span class="sy0">&lt;&lt;</span> endl;
+       genericSwap<span class="br0">&#40;</span> num1<span class="sy0">,</span> num2 <span class="br0">&#41;</span>;
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;After, num1 is &quot;</span> <span class="sy0">&lt;&lt;</span> num1 <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; and num2 is &quot;</span> <span class="sy0">&lt;&lt;</span> num2 <span class="sy0">&lt;&lt;</span> endl;
+       <span class="kw4">char</span> c1 <span class="sy0">=</span> <span class="st0">'a'</span>;
+       <span class="kw4">char</span> c2 <span class="sy0">=</span> <span class="st0">'z'</span>;
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Before, c1 is &quot;</span> <span class="sy0">&lt;&lt;</span> c1 <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; and c2 is &quot;</span> <span class="sy0">&lt;&lt;</span> c2 <span class="sy0">&lt;&lt;</span> endl;
+       genericSwap<span class="br0">&#40;</span> c1<span class="sy0">,</span> c2 <span class="br0">&#41;</span>;
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;After, c1 is &quot;</span> <span class="sy0">&lt;&lt;</span> c1 <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; and c2 is &quot;</span> <span class="sy0">&lt;&lt;</span> c2 <span class="sy0">&lt;&lt;</span> endl;
+       ...
+       <span class="kw1">return</span><span class="br0">&#40;</span> <span class="nu19">0</span> <span class="br0">&#41;</span>;
+     <span class="br0">&#125;</span></pre>
+<p>
+The next template is used to descibe a generic class:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;"><span class="co2">#include &lt;cassert&gt;</span>
+&nbsp;
+<span class="kw4">const</span> <span class="kw4">unsigned</span> <span class="kw4">int</span> maxSize <span class="sy0">=</span> <span class="nu0">20</span>;
+&nbsp;
+template<span class="sy0">&lt;</span>class T<span class="sy0">&gt;</span>
+class simpleStack
+<span class="br0">&#123;</span>
+   public<span class="sy0">:</span>
+     simpleStack<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">:</span> amount<span class="br0">&#40;</span><span class="nu19">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+     bool empty<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> amount <span class="sy0">==</span> <span class="nu19">0</span>; <span class="br0">&#125;</span>
+     bool full<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> amount <span class="sy0">==</span> maxSize; <span class="br0">&#125;</span>
+     <span class="kw4">unsigned</span> <span class="kw4">int</span> size<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> amount; <span class="br0">&#125;</span>
+     <span class="kw4">void</span> clear<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> amount <span class="sy0">=</span> <span class="nu19">0</span>; <span class="br0">&#125;</span>
+     <span class="kw4">const</span> T<span class="sy0">&amp;</span> top<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>;
+     <span class="kw4">void</span> pop<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+     <span class="kw4">void</span> push<span class="br0">&#40;</span> <span class="kw4">const</span> T <span class="sy0">&amp;</span>x<span class="br0">&#41;</span>;
+   private<span class="sy0">:</span>
+     <span class="kw4">unsigned</span> <span class="kw4">int</span> amount;
+     T array<span class="br0">&#91;</span> maxSize <span class="br0">&#93;</span>;
+<span class="br0">&#125;</span>;
+&nbsp;
+template<span class="sy0">&lt;</span>class T<span class="sy0">&gt;</span>
+<span class="kw4">const</span> T<span class="sy0">&amp;</span> simpleStack<span class="sy0">&lt;</span>T<span class="sy0">&gt;::</span><span class="me2">top</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
+<span class="br0">&#123;</span>
+   assert<span class="br0">&#40;</span> <span class="sy0">!</span>empty<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span>;
+   <span class="kw1">return</span> array<span class="br0">&#91;</span> amount <span class="sy0">-</span> <span class="nu0">1</span> <span class="br0">&#93;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+template<span class="sy0">&lt;</span>typename T<span class="sy0">&gt;</span> <span class="coMULTI">/*it's allowed and equal to replace class with typename*/</span>
+<span class="kw4">void</span> simpleStack<span class="sy0">&lt;</span>T<span class="sy0">&gt;::</span><span class="me2">pop</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+   assert<span class="br0">&#40;</span> <span class="sy0">!</span>empty<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span>;
+   <span class="sy0">--</span>amount;
+<span class="br0">&#125;</span>
+&nbsp;
+template<span class="sy0">&lt;</span>typename T<span class="sy0">&gt;</span>
+<span class="kw4">void</span> simpleStack<span class="sy0">&lt;</span>T<span class="sy0">&gt;::</span><span class="me2">push</span><span class="br0">&#40;</span><span class="kw4">const</span> T <span class="sy0">&amp;</span>x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+   assert<span class="br0">&#40;</span> <span class="sy0">!</span>full<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span>;
+   array<span class="br0">&#91;</span> amount<span class="sy0">++</span> <span class="br0">&#93;</span> <span class="sy0">=</span> x;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="co2">#include &lt;iostream.h&gt;</span>
+&nbsp;
+<span class="coMULTI">/* main code */</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  simpleStack<span class="sy0">&lt;</span> <span class="kw4">int</span> <span class="sy0">&gt;</span> aIntStack;
+&nbsp;
+  <span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">100</span>;
+  <span class="kw1">while</span> <span class="br0">&#40;</span> <span class="sy0">!</span>aIntStack.<span class="me1">full</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span>
+      aIntStack.<span class="me1">push</span><span class="br0">&#40;</span> i<span class="sy0">++</span> <span class="br0">&#41;</span>;
+  <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span>  <span class="st0">&quot;stack size: &quot;</span> <span class="sy0">&lt;&lt;</span> aIntStack.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> endl;
+  <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span></pre>
+</div>
+
+<h4><a name="disambiguating_dependent-names" id="disambiguating_dependent-names">Disambiguating Dependent-Names</a></h4>
+<div class="level4">
+
+<p>
+
+The <span class="curid"><a href="template" class="wikilink1" title="keywords:template">template</a></span> keyword is also used to indicate that a <a href="dependent_name" class="wikilink1" title="keywords:dependent_name">Dependent Names</a> refers to a template.  In contrast to the placement of the <a href="typename" class="wikilink1" title="keywords:typename">typename</a> keyword, the <span class="curid"><a href="template" class="wikilink1" title="keywords:template">template</a></span> keyword is placed just before the name of the template member.  For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;"><span class="kw4">struct</span> Foo <span class="br0">&#123;</span>
+  template<span class="sy0">&lt;</span>typename T<span class="sy0">&gt;</span>
+  <span class="kw4">struct</span> Member <span class="br0">&#123;</span>
+    <span class="kw4">typedef</span> <span class="kw4">int</span> type;
+  <span class="br0">&#125;</span>;
+<span class="br0">&#125;</span>;
+&nbsp;
+template<span class="sy0">&lt;</span>class T<span class="sy0">&gt;</span>
+<span class="kw4">struct</span> Bar <span class="br0">&#123;</span>
+  <span class="kw4">typedef</span> typename T<span class="sy0">::</span><span class="me2">template</span> Member<span class="sy0">&lt;</span>int<span class="sy0">&gt;::</span><span class="me2">type</span> bar;
+<span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw4">typedef</span> Bar<span class="sy0">&lt;</span>Foo<span class="sy0">&gt;</span> FooBar;</pre>
+<p>
+Related Topics: <a href="typename" class="wikilink1" title="keywords:typename">typename</a>
+</p>
+
+</div>
+<!-- SECTION "template" [2-] --></div>
+</body>
+</html>

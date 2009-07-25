@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:algorithm:unique</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-11-13T05:42:40-0800" />
+<meta name="keywords" content="stl,algorithm,unique" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/algorithm/unique?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:algorithm" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/algorithm/unique" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/algorithm/unique" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="unique" id="unique">unique</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;algorithm&gt;</span>
+    iterator unique<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end <span class="br0">&#41;</span>;
+    iterator unique<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> BinPred p <span class="br0">&#41;</span>;</pre>
+<p>
+The unique() algorithm removes all consecutive duplicate elements from the
+range [start,end). If the binary predicate p is given, then it is used to test
+two elements to see if they are duplicates.
+</p>
+
+<p>
+The return value of unique() is an iterator to the end of the modified range.
+</p>
+
+<p>
+unique() runs in <a href="../../complexity" class="wikilink1" title="complexity">linear time</a>.
+</p>
+
+<p>
+Related Topics: <a href="adjacent_find" class="wikilink1" title="stl:algorithm:adjacent_find">adjacent_find</a>, <a href="remove" class="wikilink1" title="stl:algorithm:remove">remove</a>, <a href="unique_copy" class="wikilink1" title="stl:algorithm:unique_copy">unique_copy</a>
+</p>
+
+</div>
+<!-- SECTION "unique" [3-] --></div>
+</body>
+</html>

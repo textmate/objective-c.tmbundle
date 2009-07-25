@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="tr"
+ lang="tr" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tr:io:getline</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-07T06:04:39-0700" />
+<meta name="keywords" content="tr,io,getline" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/tr/io/getline?do=index" title="İndeks" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=tr:io" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/tr/io/getline" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/tr/io/getline" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="getline" id="getline">getline</a></h2>
+<div class="level2">
+
+<p>
+Sözdizimi:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    istream<span class="sy0">&amp;</span> istream<span class="sy0">::</span><span class="me2">getline</span><span class="br0">&#40;</span> <span class="kw4">char</span><span class="sy0">*</span> tampon<span class="sy0">,</span> streamsize num <span class="br0">&#41;</span>;
+    istream<span class="sy0">&amp;</span> istream<span class="sy0">::</span><span class="me2">getline</span><span class="br0">&#40;</span> <span class="kw4">char</span><span class="sy0">*</span> tampon<span class="sy0">,</span> streamsize num<span class="sy0">,</span> <span class="kw4">char</span> ayrac <span class="br0">&#41;</span>;</pre>
+<p>
+get() fonksiyonu giriş akımlarıyla kullanılır. char ayrac parametresi olmayan biçimi, ayraç olarak yeni satır karakterini kullanır. getline() aşağıdaki durumlardan biri gerçekleşene kadar tampon belleğe karakterleri okur:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> num - 1 karakter okunmuş olması</div>
+</li>
+<li class="level1"><div class="li"> <acronym title="End of file">EOF</acronym> ile karşılaşılmış olması,</div>
+</li>
+<li class="level1"><div class="li"> veya, ayrac karakteri okunmuş olması. Ayraç karakteri tampona yerleştirilmez.</div>
+</li>
+</ul>
+
+<p>
+
+Ayraç karakteri (normalde yeni satır) okunmadığında, giriş akımı <a href="../../io/fail" class="wikilink1" title="io:fail">hata durumu</a>na ayarlanır.
+</p>
+
+<p>
+Örneğin, aşağıdaki kod getline fonksiyonunu kullanarak bir metin dosyasının ilk 99 karakterini (bir karakter sonlandırma karakteri olarak ayrılmıştır) veya tek tek her bir satırını –hangisi daha önce gerçekleşirse– ekrana gösterir. (<acronym title="End of file">EOF</acronym> gelene veya 99 karakterden uzun bir satırla karşılaşılana kadar):
+</p>
+<pre class="c code c++" style="font-family:monospace;">    ifstream fin<span class="br0">&#40;</span><span class="st0">&quot;tmp.dat&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+    <span class="kw4">int</span> MAX_LENGTH <span class="sy0">=</span> <span class="nu0">100</span>;
+    <span class="kw4">char</span> satir<span class="br0">&#91;</span>MAX_LENGTH<span class="br0">&#93;</span>;
+&nbsp;
+    <span class="kw1">while</span><span class="br0">&#40;</span> fin.<span class="me1">getline</span><span class="br0">&#40;</span>satir<span class="sy0">,</span> MAX_LENGTH<span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;okunan satir: &quot;</span> <span class="sy0">&lt;&lt;</span> satir <span class="sy0">&lt;&lt;</span> endl;
+    <span class="br0">&#125;</span></pre>
+<p>
+Eğer dosyadan satırları karakter dizileri yerine string nesnelerine doğrudan okumak istiyorsanız, <a href="../../string/getline" class="wikilink1" title="string:getline">string getline</a> fonksiyonunu kullanabilirsiniz.
+</p>
+
+<p>
+Microsoft derleyicisi kullananlar getline&#039;ın bir karakter fazladan okuması sorunuyla karşılaşabilirler. Bu sorunla ilgili olarak  <a href="http://support.microsoft.com/kb/240015" class="urlextern" title="http://support.microsoft.com/kb/240015"  rel="nofollow">Microsoft getline bug</a> adresindeki belgeye başvurabilirler.
+</p>
+
+<p>
+İlgili Başlıklar: <a href="http://www.cppreference.com/wiki/tr/io/gcount" class="wikilink2" title="tr:io:gcount" rel="nofollow">gcount</a>, <a href="http://www.cppreference.com/wiki/tr/io/get" class="wikilink2" title="tr:io:get" rel="nofollow">get</a>, <a href="../../string/getline" class="wikilink1" title="string:getline">string getline</a>, <a href="http://www.cppreference.com/wiki/tr/io/ignore" class="wikilink2" title="tr:io:ignore" rel="nofollow">ignore</a>, <a href="http://www.cppreference.com/wiki/tr/io/read" class="wikilink2" title="tr:io:read" rel="nofollow">read</a>
+</p>
+
+</div>
+<!-- SECTION "getline" [3-] --></div>
+</body>
+</html>

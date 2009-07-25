@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:vector:vector_operators</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:10-0700" />
+<meta name="keywords" content="stl,vector,vector_operators" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/vector/vector_operators?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:vector" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/vector/vector_operators" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/vector/vector_operators" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="vector_operators" id="vector_operators">Vector operators</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;vector&gt;</span>
+    TYPE<span class="sy0">&amp;</span> operator<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span> size_type index <span class="br0">&#41;</span>;
+    <span class="kw4">const</span> TYPE<span class="sy0">&amp;</span> operator<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span> size_type index <span class="br0">&#41;</span> <span class="kw4">const</span>;
+    vector operator<span class="sy0">=</span><span class="br0">&#40;</span><span class="kw4">const</span> vector<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">==</span><span class="br0">&#40;</span><span class="kw4">const</span> vector<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> vector<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">!=</span><span class="br0">&#40;</span><span class="kw4">const</span> vector<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> vector<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">&lt;</span><span class="br0">&#40;</span><span class="kw4">const</span> vector<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> vector<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="kw4">const</span> vector<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> vector<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">&lt;=</span><span class="br0">&#40;</span><span class="kw4">const</span> vector<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> vector<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;
+    bool operator<span class="sy0">&gt;=</span><span class="br0">&#40;</span><span class="kw4">const</span> vector<span class="sy0">&amp;</span> c1<span class="sy0">,</span> <span class="kw4">const</span> vector<span class="sy0">&amp;</span> c2<span class="br0">&#41;</span>;</pre>
+<p>
+All of the C++ containers can be compared and assigned with the standard
+comparison operators: ==, !=, &lt;=, &gt;=, &lt;, &gt;, and =. Individual elements of a
+vector can be examined with the [] operator.
+</p>
+
+<p>
+Performing a comparison or assigning one vector to another takes <a href="../../complexity" class="wikilink1" title="complexity">linear time</a>.
+</p>
+
+<p>
+The [] operator runs in <a href="../../complexity" class="wikilink1" title="complexity">constant time</a>.
+</p>
+
+<p>
+Two vectors are equal if:
+
+</p>
+<ol>
+<li class="level1"><div class="li"> Their size is the same, and</div>
+</li>
+<li class="level1"><div class="li"> Each member in location i in one vector is equal to the the member in location i in the other vector.</div>
+</li>
+</ol>
+
+<p>
+
+Comparisons among vectors are done lexicographically.
+</p>
+
+<p>
+For example, the following code uses the [] operator to access all of the
+elements of a vector:
+</p>
+<pre class="c code c++" style="font-family:monospace;">   vector<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> v<span class="br0">&#40;</span> <span class="nu0">5</span><span class="sy0">,</span> <span class="nu0">1</span> <span class="br0">&#41;</span>;
+   <span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu19">0</span>; i <span class="sy0">&lt;</span> v.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; i<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+     <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Element &quot;</span> <span class="sy0">&lt;&lt;</span> i <span class="sy0">&lt;&lt;</span> <span class="st0">&quot; is &quot;</span> <span class="sy0">&lt;&lt;</span> v<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&lt;&lt;</span> endl;
+   <span class="br0">&#125;</span></pre>
+<p>
+Related Topics: <a href="at" class="wikilink1" title="stl:vector:at">at</a>
+</p>
+
+</div>
+<!-- SECTION "Vector operators" [3-] --></div>
+</body>
+</html>

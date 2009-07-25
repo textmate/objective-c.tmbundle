@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru"
+ lang="ru" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ru:data_types</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-19T07:19:36-0700" />
+<meta name="keywords" content="ru,data_types" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/ru/data_types?do=index" title="Все страницы" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=ru" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/ru/data_types" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/ru/data_types" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Содержание</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="data_types#типы_данных_c" class="toc">Типы данных C++</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="data_types#модификаторы_типа" class="toc">Модификаторы типа</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="data_types#размеры_и_диапазоны_типов" class="toc">Размеры и диапазоны типов</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="data_types#как_читать_объявление_типа" class="toc">Как читать объявление типа</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h2><a name="типы_данных_c" id="типы_данных_c">Типы данных C++</a></h2>
+<div class="level2">
+
+<p>
+Программисты на C++ могут использовать пять типов данных из C: void, int, float, double и char.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Тип</th><th class="col1">Описание</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">void</td><td class="col1">не соответствует никакому типу</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">int</td><td class="col1">целый</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">float</td><td class="col1">вещественный <em>очень малой</em> точности</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">double</td><td class="col1">вещественный двойной точности</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">char</td><td class="col1">символьный</td>
+	</tr>
+</table>
+
+<p>
+
+Кроме того в C++ есть типы: bool и wchar_t.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Тип</th><th class="col1">Описание</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">bool</td><td class="col1">логический, true (истина) или false (ложь) </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">wchar_t</td><td class="col1">расширенный символьный (должен поддерживать все представимые в системе символы)</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "Типы данных C++" [1-786] -->
+<h3><a name="модификаторы_типа" id="модификаторы_типа">Модификаторы типа</a></h3>
+<div class="level3">
+
+<p>
+
+Некоторые из перечисленных типов можно можно модифицировать ключевыми словами signed (знаковый), unsigned (беззнаковый), short (короткий) и long (длинный). Если тип не указывается, то подразумевается тип int. Полный набор возможных типов с модификаторами показан ниже (одинаковые типы записаны в одной строке):
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0" colspan="4">целочисленные типы</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0" colspan="4">bool</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0" colspan="4">char</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0" colspan="4">signed char</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0" colspan="4">unsigned char</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0" colspan="4">wchar_t</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">short</td><td class="col1">short int</td><td class="col2">signed short</td><td class="col3">signed short int</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0" colspan="2">unsigned short</td><td class="col2" colspan="2">unsigned short int</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">int</td><td class="col1">signed</td><td class="col2" colspan="2">signed int</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0" colspan="2">unsigned</td><td class="col2" colspan="2">unsigned int</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0">long</td><td class="col1">long int</td><td class="col2">signed long</td><td class="col3">signed long int</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0" colspan="2">unsigned long</td><td class="col2" colspan="2">unsigned long int</td>
+	</tr>
+	<tr class="row12">
+		<th class="col0" colspan="4">вещественные типы</th>
+	</tr>
+	<tr class="row13">
+		<td class="col0" colspan="4">float</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0" colspan="4">double</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0" colspan="4">long double</td>
+	</tr>
+	<tr class="row16">
+		<th class="col0" colspan="4">частично поддерживаемые целочисленные типы</th>
+	</tr>
+	<tr class="row17">
+		<td class="col0">long long</td><td class="col1">long long int</td><td class="col2">signed long long</td><td class="col3">signed long long int</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0" colspan="2">unsigned long long</td><td class="col2" colspan="2">unsigned long long int</td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "Модификаторы типа" [787-1974] -->
+<h3><a name="размеры_и_диапазоны_типов" id="размеры_и_диапазоны_типов">Размеры и диапазоны типов</a></h3>
+<div class="level3">
+
+<p>
+
+Размеры и диапазоны значений типов зависят от используемого процессора и компилятора. Заголовочный файл
+«cfloat» (или «float.h») содержит характеристики для вещественных типов, а «climits» (или «limits.h») - для целочисленных типов. Вы можете использовать операцию <a href="../keywords/sizeof" class="wikilink1" title="keywords:sizeof">sizeof</a> для определения размера любого типа (в байтах). Однако для большинства архитектур эти размеры совпадают: int и float обычно 32 бита, char - 8 бит, а
+double - 64 бита; для хранения bool используется 8 бит, long long - 64 бита.
+</p>
+
+<p>
+Ограничения для числовых типов определены в заголовочном файле &lt;limits&gt;. Методы и константы шаблонного класса numeric_limits описаны ниже. Специализация этого класса может быть определена для любого пользовательского типа данных.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Метод или<br/>
+ константа</th><th class="col1">Тип результата</th><th class="col2">Описание</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0">is_specialized</td><td class="col1">bool</td><td class="col2"> </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">radix</td><td class="col1">int</td><td class="col2">основание показателя степени</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">digits</td><td class="col1">int</td><td class="col2">количество (двоичных) цифр в мантиссе</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">digits10</td><td class="col1">int</td><td class="col2">количество десятичных цифр в мантиссе</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">is_signed</td><td class="col1">bool</td><td class="col2">число со знаком?</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">is_integer</td><td class="col1">bool</td><td class="col2">целое?</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">is_exact</td><td class="col1">bool</td><td class="col2">точное?</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">min()</td><td class="col1">&lt;тип&gt;</td><td class="col2">нормализованное минимальное значение (для вещественных положительное)</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">max()</td><td class="col1">&lt;тип&gt;</td><td class="col2">наибольшее значение</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0">epsilon()</td><td class="col1">&lt;тип&gt;</td><td class="col2">точность, такое что 1+epsilon-1 &gt; 0</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0">round_error()</td><td class="col1">&lt;тип&gt;</td><td class="col2">ошибка округления</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0">infinity()</td><td class="col1">&lt;тип&gt;</td><td class="col2">бесконечность</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0">quiet_NaN()</td><td class="col1">&lt;тип&gt;</td><td class="col2">неверное число, не сигнализирующее об ошибке</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0">signaling_NaN()</td><td class="col1">&lt;тип&gt;</td><td class="col2">неверное число, сигнализирующее об ошибке</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0">denorm_min()</td><td class="col1">&lt;тип&gt;</td><td class="col2">ненормализованное минимальное значение</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0">min_exponent</td><td class="col1">int</td><td class="col2">минимальная (двоичная) экспонента</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0">min_exponent10</td><td class="col1">int</td><td class="col2">минимальная десятичная экспонента</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0">max_exponent</td><td class="col1">int</td><td class="col2">максимальная (двоичная) экспонента</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0">max_exponent10</td><td class="col1">int</td><td class="col2">максимальная десятичная экспонента</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0">has_infinity</td><td class="col1">bool</td><td class="col2">есть бесконечность?</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0">has_quiet_NaN</td><td class="col1">bool</td><td class="col2"> </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0">has_signaling_NaN</td><td class="col1">bool</td><td class="col2"> </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0">has_denorm</td><td class="col1">&lt;тип&gt;_denorm_style</td><td class="col2"> </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0">has_denorm_loss</td><td class="col1">bool</td><td class="col2"> </td>
+	</tr>
+	<tr class="row25">
+		<td class="col0">is_iec559</td><td class="col1">bool</td><td class="col2">соответствует IEC-559?</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0">is_bounded</td><td class="col1">bool</td><td class="col2">ограничен?</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0">is_modulo</td><td class="col1">bool</td><td class="col2">по модулю?</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0">traps</td><td class="col1">bool</td><td class="col2"> </td>
+	</tr>
+	<tr class="row29">
+		<td class="col0">tinyness_before</td><td class="col1">bool</td><td class="col2"> </td>
+	</tr>
+	<tr class="row30">
+		<td class="col0">round_style</td><td class="col1">float_round_style<br/>
+ { round_to_nearest, … }</td><td class="col2">тип округления</td>
+	</tr>
+</table>
+
+<p>
+
+В основном используется для проверки границ, определения максимальных и минимальных значений,держаться в переменной этого типа. Код ниже печатает минимум и максимум для short для конкретного компьютера.
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">  <span class="co2">#include &lt;limits&gt;</span>
+  std<span class="sy0">::</span><a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Maximum short value: &quot;</span> <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">numeric_limits</span><span class="sy0">&lt;</span>short<span class="sy0">&gt;::</span><span class="me2">max</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">endl</span>;
+  std<span class="sy0">::</span><a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Minimum short value: &quot;</span> <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">numeric_limits</span><span class="sy0">&lt;</span>short<span class="sy0">&gt;::</span><span class="me2">min</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> std<span class="sy0">::</span><span class="me2">endl</span>;</pre>
+</div>
+<!-- SECTION "Размеры и диапазоны типов" [1975-5774] -->
+<h3><a name="как_читать_объявление_типа" id="как_читать_объявление_типа">Как читать объявление типа</a></h3>
+<div class="level3">
+
+<p>
+
+Объявление с простым типом несложно понять:
+</p>
+<pre class="c code c++" style="font-family:monospace;">  <span class="kw4">int</span> i</pre>
+<p>
+Но как понять эти более сложные объявления:
+</p>
+<pre class="c code c++" style="font-family:monospace;">  <span class="kw4">double</span> <span class="sy0">**</span>d<span class="br0">&#91;</span><span class="nu0">8</span><span class="br0">&#93;</span>              <span class="co1">// хмм...</span>
+  <span class="kw4">char</span> <span class="sy0">*</span><span class="br0">&#40;</span><span class="sy0">*</span><span class="br0">&#40;</span><span class="sy0">**</span>foo <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">8</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="co1">// черт! что такое foo?</span></pre>
+<p>
+Чтобы понять эти объявления используйте следующие три правила:
+
+</p>
+<ol>
+<li class="level1"><div class="li"> Начинайте с имени переменной (<code>d</code> или <code>foo</code> в примерах выше)</div>
+</li>
+<li class="level1"><div class="li"> Заканчивайте на имени типа (<code>double</code> или <code>char</code> выше)</div>
+</li>
+<li class="level1"><div class="li"> Идите вправо пока можно, затем влево (влево необходимо идти при обнаружении закрывающейся скобки).</div>
+</li>
+</ol>
+
+<p>
+
+Например:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Выражение</th><th class="col1">Значение</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> <code>double **d[8];</code> </td><td class="col1"> </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <code><del>double</del> **<del>d</del>[8];</code> </td><td class="col1"> <strong>d это … double</strong> </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <code><del>double</del> **<del>d[8]</del>;</code> </td><td class="col1"> d это <strong>массив из 8</strong> … double </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <code><del>double</del> *<del>*d[8]</del>;</code> </td><td class="col1"> d это массив из 8 <strong>указателей на</strong> … double </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> <code><del>double **d[8]</del>;</code> </td><td class="col1"> d это массив из 8 указателей на <strong>указатель на</strong> double </td>
+	</tr>
+</table>
+
+<p>
+
+Второй пример:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0">Выражение</th><th class="col1">Значение</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> <code>char *(*(**foo [][8])())[]</code> </td><td class="col1"> </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <code><del>char</del> *(*(**<del>foo</del> [][8])())[]</code> </td><td class="col1"> <strong>foo это … char</strong> </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> <code><del>char</del> *(*(**<del>foo []</del>[8])())[]</code> </td><td class="col1"> foo это <strong>массив из</strong> … char </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <code><del>char</del> *(*(**<del>foo [][8]</del>)())[]</code> </td><td class="col1"> foo это массив из <strong>массивов из 8</strong> … char </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> <code><del>char</del> *(*(*<del>*foo [][8]</del>)())[]</code> </td><td class="col1"> foo это массив из массивов из 8 <strong>указателей на</strong> … char </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> <code><del>char</del> *(*<del>(**foo [][8])</del>())[]</code> </td><td class="col1"> foo это массив из массивов из 8 указателей на <strong>указатель на</strong><br/>
+ … char </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> <code><del>char</del> *(*<del>(**foo [][8])()</del>)[]</code> </td><td class="col1"> foo это массив из массивов из 8 указателей на указатель на<br/>
+ <strong>функцию, возвращающую</strong> … char </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> <code><del>char</del> *<del>(*(**foo [][8])())</del>[]</code> </td><td class="col1"> foo это массив из массивов из 8 указателей на указатель на<br/>
+ функцию, возвращающую <strong>указатель на</strong> … char </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> <code><del>char</del> *<del>(*(**foo [][8])())[]</del></code> </td><td class="col1"> foo это массив из массивов из 8 указателей на указатель на<br/>
+ функцию, возвращающую указатель на <strong>массив из</strong> … char </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> <code><del>char *(*(**foo [][8])())[]</del></code> </td><td class="col1"> foo это массив из массивов из 8 указателей на указатель на<br/>
+ функцию, возвращающую указатель на массив из <strong>указателей на</strong> char </td>
+	</tr>
+</table>
+
+<p>
+
+Другие примеры можно посмотреть в прекрасном руководстве Steve Friedl о чтении объявлений на C: <a href="http://www.unixwiz.net/techtips/reading-cdecl.html" class="urlextern" title="http://www.unixwiz.net/techtips/reading-cdecl.html"  rel="nofollow">http://www.unixwiz.net/techtips/reading-cdecl.html</a>.
+</p>
+
+</div>
+<!-- SECTION "Как читать объявление типа" [5775-] --></div>
+</body>
+</html>

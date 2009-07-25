@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:deque:size</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-11-15T15:06:37-0800" />
+<meta name="keywords" content="stl,deque,size" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/deque/size?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:deque" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/deque/size" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/deque/size" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="size" id="size">size</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;"><span class="co2">#include &lt;deque&gt;</span>
+size_type size<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>;</pre>
+<p>
+The size function returns the number of elements in the current deque.
+</p>
+
+<p>
+For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">deque<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> myints;
+<a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;initial size: &quot;</span> <span class="sy0">&lt;&lt;</span> myints.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">'<span class="es0">\n</span>'</span>;
+&nbsp;
+<span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu19">0</span>; i <span class="sy0">&lt;</span> <span class="nu0">5</span>; <span class="sy0">++</span>i <span class="br0">&#41;</span> myints.<span class="me1">push_back</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span>;
+<a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;after five additions: &quot;</span> <span class="sy0">&lt;&lt;</span> myints.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">'<span class="es0">\n</span>'</span>;
+&nbsp;
+myints.<span class="me1">insert</span><span class="br0">&#40;</span> myints.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="nu0">5</span><span class="sy0">,</span> <span class="nu0">100</span> <span class="br0">&#41;</span>;
+<a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;after five insertions: &quot;</span> <span class="sy0">&lt;&lt;</span> myints.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">'<span class="es0">\n</span>'</span>;
+&nbsp;
+myints.<span class="me1">pop_back</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;after a removal: &quot;</span> <span class="sy0">&lt;&lt;</span> myints.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">'<span class="es0">\n</span>'</span>;</pre>
+<p>
+The above code produces the following output:
+</p>
+<pre class="code">
+initial size: 0
+after five additions: 5
+after five insertions: 10
+after a removal: 9</pre>
+<p>
+Related Topics: <a href="max_size" class="wikilink1" title="stl:deque:max_size">max_size</a>, <a href="resize" class="wikilink1" title="stl:deque:resize">resize</a>
+</p>
+
+</div>
+<!-- SECTION "size" [3-] --></div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:io:putc</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:01-0700" />
+<meta name="keywords" content="c,io,putc" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/io/putc?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:io" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/io/putc" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/io/putc" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="putc" id="putc">putc</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstdio&gt;</span>
+    <span class="kw4">int</span> putc<span class="br0">&#40;</span> <span class="kw4">int</span> ch<span class="sy0">,</span> FILE <span class="sy0">*</span>stream <span class="br0">&#41;</span>;</pre>
+<p>
+
+The putc() function writes the character ch to stream. The return value is the
+character written, or <acronym title="End of file">EOF</acronym> if there is an error. For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">int</span> ch;
+     FILE <span class="sy0">*</span>input<span class="sy0">,</span> <span class="sy0">*</span>output;
+     input <span class="sy0">=</span> fopen<span class="br0">&#40;</span> <span class="st0">&quot;tmp.c&quot;</span><span class="sy0">,</span> <span class="st0">&quot;r&quot;</span> <span class="br0">&#41;</span>;
+     output <span class="sy0">=</span> fopen<span class="br0">&#40;</span> <span class="st0">&quot;tmpCopy.c&quot;</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span> <span class="br0">&#41;</span>;
+     ch <span class="sy0">=</span> getc<span class="br0">&#40;</span> input <span class="br0">&#41;</span>;
+     <span class="kw1">while</span><span class="br0">&#40;</span> ch <span class="sy0">!=</span> EOF <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+       putc<span class="br0">&#40;</span> ch<span class="sy0">,</span> output <span class="br0">&#41;</span>;
+       ch <span class="sy0">=</span> getc<span class="br0">&#40;</span> input <span class="br0">&#41;</span>;
+     <span class="br0">&#125;</span>
+     fclose<span class="br0">&#40;</span> input <span class="br0">&#41;</span>;
+     fclose<span class="br0">&#40;</span> output <span class="br0">&#41;</span>;</pre>
+<p>
+
+generates a copy of the file tmp.c called tmpCopy.c.
+</p>
+
+<p>
+Related Topics: <a href="feof" class="wikilink1" title="c:io:feof">feof</a>, <a href="fflush" class="wikilink1" title="c:io:fflush">fflush</a>, <a href="fgetc" class="wikilink1" title="c:io:fgetc">fgetc</a>, <a href="fputc" class="wikilink1" title="c:io:fputc">fputc</a>, <a href="getc" class="wikilink1" title="c:io:getc">getc</a>, <a href="getchar" class="wikilink1" title="c:io:getchar">getchar</a>, <a href="putchar" class="wikilink1" title="c:io:putchar">putchar</a>, <a href="puts" class="wikilink1" title="c:io:puts">puts</a>
+</p>
+
+</div>
+<!-- SECTION "putc" [3-] --></div>
+</body>
+</html>

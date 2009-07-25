@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:memory:auto_ptr</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:07-0700" />
+<meta name="keywords" content="stl,memory,auto_ptr" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/memory/auto_ptr?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:memory" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/memory/auto_ptr" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/memory/auto_ptr" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="auto_ptr" id="auto_ptr">auto_ptr</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;memory&gt;</span>
+    auto_ptr<span class="sy0">&lt;</span>class TYPE<span class="sy0">&gt;</span> name</pre>
+<p>
+The auto_ptr class allows the programmer to create pointers that point to other
+objects. When auto_ptr pointers are destroyed, the objects to which they point
+are also destroyed.
+</p>
+
+<p>
+The auto_ptr class supports normal pointer operations like =, *, and -&gt;, as
+well as two functions TYPE* get() and TYPE* release(). The get() function
+returns a pointer to the object that the auto_ptr points to. The release()
+function acts similarily to the get() function, but also relieves the auto_ptr
+of its memory destruction duties. When an auto_ptr that has been released goes
+out of scope, it will not call the destructor of the object that it points to.
+</p>
+
+<p>
+Warning: It is generally a bad idea to put auto_ptr objects inside C++ STL
+containers. C++ containers can do funny things with the data inside them,
+including frequent reallocation (when being copied, for instance). Since
+calling the destructor of an auto_ptr object will free up the memory associated
+with that object, any C++ container reallocation will cause any auto_ptr
+objects to become invalid.
+</p>
+
+<p>
+Example code:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;"> <span class="co2">#include &lt;memory&gt;</span>
+ using namespace std;
+&nbsp;
+ class MyClass <span class="br0">&#123;</span>
+ public<span class="sy0">:</span>
+   MyClass<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="co1">// nothing</span>
+   ~MyClass<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="co1">// nothing</span>
+   <span class="kw4">void</span> myFunc<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="co1">// nothing</span>
+ <span class="br0">&#125;</span>;
+&nbsp;
+ <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   auto_ptr<span class="sy0">&lt;</span>MyClass<span class="sy0">&gt;</span> ptr1<span class="br0">&#40;</span>new MyClass<span class="br0">&#41;</span><span class="sy0">,</span> ptr2;
+&nbsp;
+   ptr2 <span class="sy0">=</span> ptr1;
+   ptr2<span class="sy0">-&gt;</span>myFunc<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+&nbsp;
+   MyClass<span class="sy0">*</span> ptr <span class="sy0">=</span> ptr2.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+&nbsp;
+   ptr<span class="sy0">-&gt;</span>myFunc<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+&nbsp;
+   <span class="kw1">return</span> <span class="nu19">0</span>;
+ <span class="br0">&#125;</span></pre>
+</div>
+<!-- SECTION "auto_ptr" [3-] --></div>
+</body>
+</html>

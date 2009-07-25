@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl"
+ lang="pl" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pl:c:math:start</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-07T11:22:30-0700" />
+<meta name="keywords" content="pl,c,math,start" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/pl/c/math/start?do=index" title="Indeks" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=pl:c:math" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/pl/c/math/start" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/pl/c/math/start" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="standardowe_funkcje_matematyczne_w_c" id="standardowe_funkcje_matematyczne_w_c">Standardowe funkcje matematyczne w C</a></h1>
+<div class="level1">
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="abs" class="wikilink1" title="pl:c:math:abs">abs</a></td><td class="col1">wartość bezwzględna</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/acos" class="wikilink2" title="pl:c:math:acos" rel="nofollow">acos</a></td><td class="col1">arcus cosinus</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/asin" class="wikilink2" title="pl:c:math:asin" rel="nofollow">asin</a></td><td class="col1">arcus sinus</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/atan" class="wikilink2" title="pl:c:math:atan" rel="nofollow">atan</a></td><td class="col1">arcus tangens</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/atan2" class="wikilink2" title="pl:c:math:atan2" rel="nofollow">atan2</a></td><td class="col1">arcus tangens, z użyciem znaków argumentów w celu określenia ćwiartki</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="ceil" class="wikilink1" title="pl:c:math:ceil">ceil</a></td><td class="col1">najmniejsza liczba całkowita, nie mniejsza od podanej</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/cos" class="wikilink2" title="pl:c:math:cos" rel="nofollow">cos</a></td><td class="col1">cosinus</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/cosh" class="wikilink2" title="pl:c:math:cosh" rel="nofollow">cosh</a></td><td class="col1">cosinus hiperboliczny</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="div" class="wikilink1" title="pl:c:math:div">div</a></td><td class="col1">zwraca iloraz i resztę z dzielenia</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="exp" class="wikilink1" title="pl:c:math:exp">exp</a></td><td class="col1">zwraca <em>e</em> podniesione do podanej potęgi</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="fabs" class="wikilink1" title="pl:c:math:fabs">fabs</a></td><td class="col1">wartość bezwzględna liczby zmiennoprzecinkowej</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="floor" class="wikilink1" title="pl:c:math:floor">floor</a></td><td class="col1">największa liczba całkowita, nie większa od podanej</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="fmod" class="wikilink1" title="pl:c:math:fmod">fmod</a></td><td class="col1">zwraca resztę z dzielenia dwóch liczb</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/frexp" class="wikilink2" title="pl:c:math:frexp" rel="nofollow">frexp</a></td><td class="col1">zwraca podaną liczbę w postaci mantysy i wykładnika liczby <em>2</em></td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="labs" class="wikilink1" title="pl:c:math:labs">labs</a></td><td class="col1">wartość bezwzględna liczby typu <em>long</em> (<em>long integer</em>)</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/ldexp" class="wikilink2" title="pl:c:math:ldexp" rel="nofollow">ldexp</a></td><td class="col1">oblicza <em>num*2<sup>exp</sup></em></td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="ldiv" class="wikilink1" title="pl:c:math:ldiv">ldiv</a></td><td class="col1">zwraca iloraz i resztę z dzielenia dla liczb typu <em>long</em> (<em>long integer</em>)</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/log" class="wikilink2" title="pl:c:math:log" rel="nofollow">log</a></td><td class="col1">logarytm naturalny (o podstawie <em>e</em>)</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/log10" class="wikilink2" title="pl:c:math:log10" rel="nofollow">log10</a></td><td class="col1">logarytm dziesiętny</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/modf" class="wikilink2" title="pl:c:math:modf" rel="nofollow">modf</a></td><td class="col1">zwraca część całkowitą i ułamkową podanej liczby</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/pow" class="wikilink2" title="pl:c:math:pow" rel="nofollow">pow</a></td><td class="col1">zwraca wartość pierwszej liczby podniesionej do potęgi drugiej liczby</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/sin" class="wikilink2" title="pl:c:math:sin" rel="nofollow">sin</a></td><td class="col1">sinus</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/sinh" class="wikilink2" title="pl:c:math:sinh" rel="nofollow">sinh</a></td><td class="col1">sinus hiperboliczny</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/sqrt" class="wikilink2" title="pl:c:math:sqrt" rel="nofollow">sqrt</a></td><td class="col1">pierwiastek kwadratowy</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/tan" class="wikilink2" title="pl:c:math:tan" rel="nofollow">tan</a></td><td class="col1">tangens</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><a href="http://www.cppreference.com/wiki/pl/c/math/tanh" class="wikilink2" title="pl:c:math:tanh" rel="nofollow">tanh</a></td><td class="col1">tangens hiperboliczny</td>
+	</tr>
+</table>
+
+</div>
+
+<h5><a name="kompilacja_z_uzyciem_gcc" id="kompilacja_z_uzyciem_gcc">Kompilacja z użyciem gcc</a></h5>
+<div class="level5">
+
+<p>
+
+Aby wykorzystać niektóre z powyższych funkcji, pewne wersje kompilatora gcc wymagają jawnego dołączenia biblioteki funkcji matematycznych, poprzez użycie opcji: <em>-lm</em> w wierszu poleceń.
+</p>
+
+</div>
+</div>
+</body>
+</html>

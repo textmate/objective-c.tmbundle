@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:algorithm:partial_sort_copy</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:05-0700" />
+<meta name="keywords" content="stl,algorithm,partial_sort_copy" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/algorithm/partial_sort_copy?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:algorithm" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/algorithm/partial_sort_copy" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/algorithm/partial_sort_copy" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="partial_sort_copy" id="partial_sort_copy">partial_sort_copy</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;algorithm&gt;</span>
+    iterator partial_sort_copy<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> iterator result_start<span class="sy0">,</span> iterator result_end <span class="br0">&#41;</span>;
+    iterator partial_sort_copy<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> iterator result_start<span class="sy0">,</span> iterator result_end<span class="sy0">,</span> StrictWeakOrdering cmp <span class="br0">&#41;</span>;</pre>
+<p>
+The partial_sort_copy() algorithm behaves like partial_sort(), except that
+instead of partially sorting the range in-place, a copy of the range is created
+and the sorting takes place in the copy. The initial range is defined by
+[start,end) and the location of the copy is defined by
+[result_start,result_end).
+</p>
+
+<p>
+partial_sort_copy() returns an iterator to the end of the copied, partially-
+sorted range of elements.
+</p>
+
+<p>
+Related Topics: <a href="binary_search" class="wikilink1" title="stl:algorithm:binary_search">binary_search</a>, <a href="http://www.cppreference.com/wiki/stl/algorithm/is_sorted" class="wikilink2" title="stl:algorithm:is_sorted" rel="nofollow">is_sorted</a>, <a href="partial_sort" class="wikilink1" title="stl:algorithm:partial_sort">partial_sort</a>, <a href="sort" class="wikilink1" title="stl:algorithm:sort">sort</a>, <a href="stable_sort" class="wikilink1" title="stl:algorithm:stable_sort">stable_sort</a>
+</p>
+
+</div>
+<!-- SECTION "partial_sort_copy" [3-] --></div>
+</body>
+</html>

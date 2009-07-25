@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:deque:begin</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-05-13T09:16:08-0700" />
+<meta name="keywords" content="stl,deque,begin" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/deque/begin?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:deque" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/deque/begin" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/deque/begin" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="begin" id="begin">begin</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;deque&gt;</span>
+    iterator begin<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+    const_iterator begin<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>;</pre>
+<p>
+The function begin() returns an iterator to the first element of the deque.
+begin() should run in <a href="../../complexity" class="wikilink1" title="complexity">constant time</a>.
+</p>
+
+<p>
+For example, the following code uses begin() to initialize an iterator that is
+used to traverse a deque:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="co1">// Create a deque of characters</span>
+     deque<span class="sy0">&lt;</span>char<span class="sy0">&gt;</span> dq_char;
+     <span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i<span class="sy0">=</span><span class="nu19">0</span>; i <span class="sy0">&lt;</span> <span class="nu0">10</span>; i<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+       dq_char.<span class="me1">push_front</span><span class="br0">&#40;</span> i <span class="sy0">+</span> <span class="st0">'a'</span> <span class="br0">&#41;</span>;
+     <span class="br0">&#125;</span>
+     <span class="co1">// Display the deque</span>
+     deque<span class="sy0">&lt;</span>char<span class="sy0">&gt;::</span><span class="me2">iterator</span> theIterator;
+     <span class="kw1">for</span><span class="br0">&#40;</span> theIterator <span class="sy0">=</span> dq_char.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; theIterator <span class="sy0">!=</span> dq_char.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>; theIterator<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="sy0">*</span>theIterator;
+     <span class="br0">&#125;</span></pre>
+<p>
+The code produces the following Output:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;"> abcdefghij</pre>
+<p>
+Related Topics: <a href="end" class="wikilink1" title="stl:deque:end">end</a>, <a href="rbegin" class="wikilink1" title="stl:deque:rbegin">rbegin</a>, <a href="rend" class="wikilink1" title="stl:deque:rend">rend</a>
+</p>
+
+</div>
+<!-- SECTION "begin" [3-] --></div>
+</body>
+</html>

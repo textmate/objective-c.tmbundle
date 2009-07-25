@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl"
+ lang="pl" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pl:c:io:getc</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-07-07T14:10:36-0700" />
+<meta name="keywords" content="pl,c,io,getc" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/pl/c/io/getc?do=index" title="Indeks" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=pl:c:io" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/pl/c/io/getc" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/pl/c/io/getc" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="getc" id="getc">getc</a></h2>
+<div class="level2">
+
+<p>
+Składnia:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstdio&gt;</span>
+    <span class="kw4">int</span> getc<span class="br0">&#40;</span> FILE <span class="sy0">*</span>stream <span class="br0">&#41;</span>;</pre>
+<p>
+
+Funkcja getc() zwraca kolejny znak pobrany ze strumienia, lub <em><acronym title="End of file">EOF</acronym></em> w przypadku osiągnięcia końca pliku. Funkcja getc() jest identyczna z funkcją fgetc(). Poniższy, przykładowy kod:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw4">int</span> ch;
+    FILE <span class="sy0">*</span>input <span class="sy0">=</span> fopen<span class="br0">&#40;</span> <span class="st0">&quot;plik.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;r&quot;</span> <span class="br0">&#41;</span>;
+&nbsp;
+    ch <span class="sy0">=</span> getc<span class="br0">&#40;</span> input <span class="br0">&#41;</span>;
+    <span class="kw1">while</span><span class="br0">&#40;</span> ch <span class="sy0">!=</span> EOF <span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;%c&quot;</span><span class="sy0">,</span> ch <span class="br0">&#41;</span>;
+        ch <span class="sy0">=</span> getc<span class="br0">&#40;</span> input <span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span></pre>
+<p>
+
+wypisuje zawartość pliku na standardowe wyjście.
+</p>
+
+<p>
+Tematy pokrewne: <a href="http://www.cppreference.com/wiki/pl/c/io/feof" class="wikilink2" title="pl:c:io:feof" rel="nofollow">feof</a>, <a href="http://www.cppreference.com/wiki/pl/c/io/fflush" class="wikilink2" title="pl:c:io:fflush" rel="nofollow">fflush</a>, <a href="http://www.cppreference.com/wiki/pl/c/io/fgetc" class="wikilink2" title="pl:c:io:fgetc" rel="nofollow">fgetc</a>, <a href="http://www.cppreference.com/wiki/pl/c/io/fopen" class="wikilink2" title="pl:c:io:fopen" rel="nofollow">fopen</a>, <a href="http://www.cppreference.com/wiki/pl/c/io/fputc" class="wikilink2" title="pl:c:io:fputc" rel="nofollow">fputc</a>, <a href="http://www.cppreference.com/wiki/pl/c/io/fread" class="wikilink2" title="pl:c:io:fread" rel="nofollow">fread</a>, <a href="http://www.cppreference.com/wiki/pl/c/io/fwrite" class="wikilink2" title="pl:c:io:fwrite" rel="nofollow">fwrite</a>, <a href="http://www.cppreference.com/wiki/pl/c/io/putc" class="wikilink2" title="pl:c:io:putc" rel="nofollow">putc</a>, <a href="http://www.cppreference.com/wiki/pl/c/io/ungetc" class="wikilink2" title="pl:c:io:ungetc" rel="nofollow">ungetc</a>
+</p>
+
+</div>
+<!-- SECTION "getc" [3-] --></div>
+</body>
+</html>

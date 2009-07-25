@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string:getline</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-02T21:55:30-0700" />
+<meta name="keywords" content="string,getline" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/string/getline?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/string/getline" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/string/getline" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="getline" id="getline">getline</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;string&gt;</span>
+    istream<span class="sy0">&amp;</span> std<span class="sy0">::</span><span class="me2">getline</span><span class="br0">&#40;</span> istream<span class="sy0">&amp;</span> is<span class="sy0">,</span> string<span class="sy0">&amp;</span> s<span class="sy0">,</span> <span class="kw4">char</span> delimiter <span class="sy0">=</span> <span class="st0">'<span class="es0">\n</span>'</span> <span class="br0">&#41;</span>;</pre>
+<p>
+The C++ string header defines the global function getline() to read strings from
+an I/O stream. The getline() function, which is not part of the string class,
+reads a line from is and stores it into s. If a character delimiter is
+specified, then getline() will use delimiter to decide when to stop reading
+data. 
+</p>
+
+<p>
+For example, the following code reads a line of text from stdin and displays it
+to stdout:
+</p>
+<pre class="c code c++" style="font-family:monospace;">   <span class="kw4">string</span> s;
+   getline<span class="br0">&#40;</span> cin<span class="sy0">,</span> s <span class="br0">&#41;</span>;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;You entered &quot;</span> <span class="sy0">&lt;&lt;</span> s <span class="sy0">&lt;&lt;</span> endl;</pre>
+<p>
+After getting a line of data in a string, you may find that <a href="../io/sstream/start" class="wikilink1" title="io:sstream:start">stringstreams</a> are
+useful in extracting data from that string. For example, the following code
+reads numbers from standard input, ignoring any “commented” lines that begin
+with double slashes:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co1">// expects either space-delimited numbers or lines that start with</span>
+    <span class="co1">// two forward slashes (//)</span>
+    <span class="kw4">string</span> s;
+    <span class="kw1">while</span><span class="br0">&#40;</span> getline<span class="br0">&#40;</span>cin<span class="sy0">,</span>s<span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&gt;=</span> <span class="nu0">2</span> <span class="sy0">&amp;&amp;</span> s<span class="br0">&#91;</span><span class="nu19">0</span><span class="br0">&#93;</span> <span class="sy0">==</span> <span class="st0">'/'</span> <span class="sy0">&amp;&amp;</span> s<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">==</span> <span class="st0">'/'</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;  ignoring comment: &quot;</span> <span class="sy0">&lt;&lt;</span> s <span class="sy0">&lt;&lt;</span> endl;
+      <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        istringstream ss<span class="br0">&#40;</span>s<span class="br0">&#41;</span>;
+        <span class="kw4">double</span> d;
+        <span class="kw1">while</span><span class="br0">&#40;</span> ss <span class="sy0">&gt;&gt;</span> d <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+          <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;  got a number: &quot;</span> <span class="sy0">&lt;&lt;</span> d <span class="sy0">&lt;&lt;</span> endl;
+        <span class="br0">&#125;</span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span></pre>
+<p>
+When run with a user supplying input, the above code might produce this output:
+</p>
+<pre class="code">
+    // test
+      ignoring comment: // test
+    23.3 -1 3.14159
+      got a number: 23.3
+      got a number: -1
+      got a number: 3.14159
+    // next batch
+      ignoring comment: // next batch
+    1 2 3 4 5
+      got a number: 1
+      got a number: 2
+      got a number: 3
+      got a number: 4
+      got a number: 5
+    50
+      got a number: 50</pre>
+<p>
+Because the getline() function begins reading at the current file position, it can also 
+be used to read the remainder of a line, or any characters up to the specified delimiter. 
+</p>
+
+<p>
+Related Topics: <a href="../io/get" class="wikilink1" title="io:get">get</a>, <a href="../io/getline" class="wikilink1" title="io:getline">getline</a>, <a href="../io/sstream/start" class="wikilink1" title="io:sstream:start">stringstream</a>
+</p>
+
+</div>
+<!-- SECTION "getline" [3-] --></div>
+</body>
+</html>

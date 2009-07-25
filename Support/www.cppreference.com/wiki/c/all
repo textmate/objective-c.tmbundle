@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:all</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-04-12T09:26:52-0700" />
+<meta name="keywords" content="c,all" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/all?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/all" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/all" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="all_c_functions" id="all_c_functions">All C Functions</a></h1>
+<div class="level1">
+<table class="inline">
+	<tr class="row0">
+		<td class="col0"><a href="../preprocessor/sharp" class="wikilink1" title="preprocessor:sharp"># and ##</a></td><td class="col1">manipulate strings</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><a href="../preprocessor/define" class="wikilink1" title="preprocessor:define">#define</a></td><td class="col1">define variables</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="../preprocessor/error" class="wikilink1" title="preprocessor:error">#error</a></td><td class="col1">display an error message</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="../preprocessor/preprocessor_if" class="wikilink1" title="preprocessor:preprocessor_if">#if, #ifdef, #ifndef, #else, #elif, #endif</a></td><td class="col1">conditional operators</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="../preprocessor/include" class="wikilink1" title="preprocessor:include">#include</a></td><td class="col1">insert the contents of another file</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="../preprocessor/line" class="wikilink1" title="preprocessor:line">#line</a></td><td class="col1">set line and file information</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="../preprocessor/pragma" class="wikilink1" title="preprocessor:pragma">#pragma</a></td><td class="col1">implementation specific command</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="../preprocessor/undef" class="wikilink1" title="preprocessor:undef">#undef</a></td><td class="col1">used to undefine variables</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="../preprocessor/preprocessor_vars" class="wikilink1" title="preprocessor:preprocessor_vars">Predefined preprocessor variables</a></td><td class="col1">miscellaneous preprocessor variables</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="other/abort" class="wikilink1" title="c:other:abort">abort</a> </td><td class="col1">stops the program</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="math/abs" class="wikilink1" title="c:math:abs">abs</a> </td><td class="col1">absolute value</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="math/acos" class="wikilink1" title="c:math:acos">acos</a> </td><td class="col1">arc cosine</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="date/asctime" class="wikilink1" title="c:date:asctime">asctime</a> </td><td class="col1">a textual version of the time</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="math/asin" class="wikilink1" title="c:math:asin">asin</a> </td><td class="col1">arc sine</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="other/assert" class="wikilink1" title="c:other:assert">assert</a> </td><td class="col1">stops the program if an expression isn&#039;t true</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="math/atan" class="wikilink1" title="c:math:atan">atan</a> </td><td class="col1">arc tangent</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="math/atan2" class="wikilink1" title="c:math:atan2">atan2</a> </td><td class="col1">arc tangent, using signs to determine quadrants</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="other/atexit" class="wikilink1" title="c:other:atexit">atexit</a> </td><td class="col1">sets a function to be called when the program exits</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="string/atof" class="wikilink1" title="c:string:atof">atof</a> </td><td class="col1">converts a string to a double</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="string/atoi" class="wikilink1" title="c:string:atoi">atoi</a> </td><td class="col1">converts a string to an integer</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="string/atol" class="wikilink1" title="c:string:atol">atol</a> </td><td class="col1">converts a string to a long</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="other/bsearch" class="wikilink1" title="c:other:bsearch">bsearch</a> </td><td class="col1">perform a binary search</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><a href="mem/calloc" class="wikilink1" title="c:mem:calloc">calloc</a> </td><td class="col1">allocates and clears a two-dimensional chunk of memory</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><a href="math/ceil" class="wikilink1" title="c:math:ceil">ceil</a> </td><td class="col1">the smallest integer not less than a certain value</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><a href="io/clearerr" class="wikilink1" title="c:io:clearerr">clearerr</a> </td><td class="col1">clears errors</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><a href="date/clock" class="wikilink1" title="c:date:clock">clock</a> </td><td class="col1">returns the amount of time that the program has been running</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><a href="math/cos" class="wikilink1" title="c:math:cos">cos</a> </td><td class="col1">cosine</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><a href="math/cosh" class="wikilink1" title="c:math:cosh">cosh</a> </td><td class="col1">hyperbolic cosine</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"><a href="date/ctime" class="wikilink1" title="c:date:ctime">ctime</a> </td><td class="col1">returns a specifically formatted version of the time</td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"><a href="date/difftime" class="wikilink1" title="c:date:difftime">difftime</a> </td><td class="col1">the difference between two times</td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"><a href="math/div" class="wikilink1" title="c:math:div">div</a> </td><td class="col1">returns the quotient and remainder of a division</td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"><a href="other/exit" class="wikilink1" title="c:other:exit">exit</a> </td><td class="col1">stop the program</td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"><a href="math/exp" class="wikilink1" title="c:math:exp">exp</a> </td><td class="col1">returns “e” raised to a given power</td>
+	</tr>
+	<tr class="row33">
+		<td class="col0"><a href="math/fabs" class="wikilink1" title="c:math:fabs">fabs</a> </td><td class="col1">absolute value for floating-point numbers</td>
+	</tr>
+	<tr class="row34">
+		<td class="col0"><a href="io/fclose" class="wikilink1" title="c:io:fclose">fclose</a> </td><td class="col1">close a file</td>
+	</tr>
+	<tr class="row35">
+		<td class="col0"><a href="io/feof" class="wikilink1" title="c:io:feof">feof</a> </td><td class="col1">true if at the end-of-file</td>
+	</tr>
+	<tr class="row36">
+		<td class="col0"><a href="io/ferror" class="wikilink1" title="c:io:ferror">ferror</a> </td><td class="col1">checks for a file error</td>
+	</tr>
+	<tr class="row37">
+		<td class="col0"><a href="io/fflush" class="wikilink1" title="c:io:fflush">fflush</a> </td><td class="col1">writes the contents of the output buffer</td>
+	</tr>
+	<tr class="row38">
+		<td class="col0"><a href="io/fgetc" class="wikilink1" title="c:io:fgetc">fgetc</a> </td><td class="col1">get a character from a stream</td>
+	</tr>
+	<tr class="row39">
+		<td class="col0"><a href="io/fgetpos" class="wikilink1" title="c:io:fgetpos">fgetpos</a> </td><td class="col1">get the file position indicator</td>
+	</tr>
+	<tr class="row40">
+		<td class="col0"><a href="io/fgets" class="wikilink1" title="c:io:fgets">fgets</a> </td><td class="col1">get a string of characters from a stream</td>
+	</tr>
+	<tr class="row41">
+		<td class="col0"><a href="math/floor" class="wikilink1" title="c:math:floor">floor</a> </td><td class="col1">returns the largest integer not greater than a given value</td>
+	</tr>
+	<tr class="row42">
+		<td class="col0"><a href="math/fmod" class="wikilink1" title="c:math:fmod">fmod</a> </td><td class="col1">returns the remainder of a division</td>
+	</tr>
+	<tr class="row43">
+		<td class="col0"><a href="io/fopen" class="wikilink1" title="c:io:fopen">fopen</a> </td><td class="col1">open a file</td>
+	</tr>
+	<tr class="row44">
+		<td class="col0"><a href="io/fprintf" class="wikilink1" title="c:io:fprintf">fprintf</a> </td><td class="col1">print formatted output to a file</td>
+	</tr>
+	<tr class="row45">
+		<td class="col0"><a href="io/fputc" class="wikilink1" title="c:io:fputc">fputc</a> </td><td class="col1">write a character to a file</td>
+	</tr>
+	<tr class="row46">
+		<td class="col0"><a href="io/fputs" class="wikilink1" title="c:io:fputs">fputs</a> </td><td class="col1">write a string to a file</td>
+	</tr>
+	<tr class="row47">
+		<td class="col0"><a href="io/fread" class="wikilink1" title="c:io:fread">fread</a> </td><td class="col1">read from a file</td>
+	</tr>
+	<tr class="row48">
+		<td class="col0"><a href="mem/free" class="wikilink1" title="c:mem:free">free</a> </td><td class="col1">returns previously allocated memory to the operating system</td>
+	</tr>
+	<tr class="row49">
+		<td class="col0"><a href="io/freopen" class="wikilink1" title="c:io:freopen">freopen</a> </td><td class="col1">open an existing stream with a different name</td>
+	</tr>
+	<tr class="row50">
+		<td class="col0"><a href="math/frexp" class="wikilink1" title="c:math:frexp">frexp</a> </td><td class="col1">decomposes a number into scientific notation</td>
+	</tr>
+	<tr class="row51">
+		<td class="col0"><a href="io/fscanf" class="wikilink1" title="c:io:fscanf">fscanf</a> </td><td class="col1">read formatted input from a file</td>
+	</tr>
+	<tr class="row52">
+		<td class="col0"><a href="io/fseek" class="wikilink1" title="c:io:fseek">fseek</a> </td><td class="col1">move to a specific location in a file</td>
+	</tr>
+	<tr class="row53">
+		<td class="col0"><a href="io/fsetpos" class="wikilink1" title="c:io:fsetpos">fsetpos</a> </td><td class="col1">move to a specific location in a file</td>
+	</tr>
+	<tr class="row54">
+		<td class="col0"><a href="io/ftell" class="wikilink1" title="c:io:ftell">ftell</a> </td><td class="col1">returns the current file position indicator</td>
+	</tr>
+	<tr class="row55">
+		<td class="col0"><a href="io/fwrite" class="wikilink1" title="c:io:fwrite">fwrite</a> </td><td class="col1">write to a file</td>
+	</tr>
+	<tr class="row56">
+		<td class="col0"><a href="io/getc" class="wikilink1" title="c:io:getc">getc</a> </td><td class="col1">read a character from a file</td>
+	</tr>
+	<tr class="row57">
+		<td class="col0"><a href="io/getchar" class="wikilink1" title="c:io:getchar">getchar</a> </td><td class="col1">read a character from STDIN</td>
+	</tr>
+	<tr class="row58">
+		<td class="col0"><a href="other/getenv" class="wikilink1" title="c:other:getenv">getenv</a> </td><td class="col1">get enviornment information about a variable</td>
+	</tr>
+	<tr class="row59">
+		<td class="col0"><a href="io/gets" class="wikilink1" title="c:io:gets">gets</a> </td><td class="col1">read a string from STDIN</td>
+	</tr>
+	<tr class="row60">
+		<td class="col0"><a href="date/gmtime" class="wikilink1" title="c:date:gmtime">gmtime</a> </td><td class="col1">returns a pointer to the current Greenwich Mean Time</td>
+	</tr>
+	<tr class="row61">
+		<td class="col0"><a href="string/isalnum" class="wikilink1" title="c:string:isalnum">isalnum</a> </td><td class="col1">true if a character is alphanumeric</td>
+	</tr>
+	<tr class="row62">
+		<td class="col0"><a href="string/isalpha" class="wikilink1" title="c:string:isalpha">isalpha</a> </td><td class="col1">true if a character is alphabetic</td>
+	</tr>
+	<tr class="row63">
+		<td class="col0"><a href="string/iscntrl" class="wikilink1" title="c:string:iscntrl">iscntrl</a> </td><td class="col1">true if a character is a control character</td>
+	</tr>
+	<tr class="row64">
+		<td class="col0"><a href="string/isdigit" class="wikilink1" title="c:string:isdigit">isdigit</a> </td><td class="col1">true if a character is a digit</td>
+	</tr>
+	<tr class="row65">
+		<td class="col0"><a href="string/isgraph" class="wikilink1" title="c:string:isgraph">isgraph</a> </td><td class="col1">true if a character is a graphical character</td>
+	</tr>
+	<tr class="row66">
+		<td class="col0"><a href="string/islower" class="wikilink1" title="c:string:islower">islower</a> </td><td class="col1">true if a character is lowercase</td>
+	</tr>
+	<tr class="row67">
+		<td class="col0"><a href="string/isprint" class="wikilink1" title="c:string:isprint">isprint</a> </td><td class="col1">true if a character is a printing character</td>
+	</tr>
+	<tr class="row68">
+		<td class="col0"><a href="string/ispunct" class="wikilink1" title="c:string:ispunct">ispunct</a> </td><td class="col1">true if a character is punctuation</td>
+	</tr>
+	<tr class="row69">
+		<td class="col0"><a href="string/isspace" class="wikilink1" title="c:string:isspace">isspace</a> </td><td class="col1">true if a character is a space character</td>
+	</tr>
+	<tr class="row70">
+		<td class="col0"><a href="string/isupper" class="wikilink1" title="c:string:isupper">isupper</a> </td><td class="col1">true if a character is an uppercase character</td>
+	</tr>
+	<tr class="row71">
+		<td class="col0"><a href="string/isxdigit" class="wikilink1" title="c:string:isxdigit">isxdigit</a> </td><td class="col1">true if a character is a hexidecimal character</td>
+	</tr>
+	<tr class="row72">
+		<td class="col0"><a href="math/labs" class="wikilink1" title="c:math:labs">labs</a> </td><td class="col1">absolute value for long integers</td>
+	</tr>
+	<tr class="row73">
+		<td class="col0"><a href="math/ldexp" class="wikilink1" title="c:math:ldexp">ldexp</a> </td><td class="col1">computes a number in scientific notation</td>
+	</tr>
+	<tr class="row74">
+		<td class="col0"><a href="math/ldiv" class="wikilink1" title="c:math:ldiv">ldiv</a> </td><td class="col1">returns the quotient and remainder of a division, in long integer form</td>
+	</tr>
+	<tr class="row75">
+		<td class="col0"><a href="date/localtime" class="wikilink1" title="c:date:localtime">localtime</a> </td><td class="col1">returns a pointer to the current time</td>
+	</tr>
+	<tr class="row76">
+		<td class="col0"><a href="math/log" class="wikilink1" title="c:math:log">log</a> </td><td class="col1">natural logarithm</td>
+	</tr>
+	<tr class="row77">
+		<td class="col0"><a href="math/log10" class="wikilink1" title="c:math:log10">log10</a> </td><td class="col1">natural logarithm, in base 10</td>
+	</tr>
+	<tr class="row78">
+		<td class="col0"><a href="other/longjmp" class="wikilink1" title="c:other:longjmp">longjmp</a> </td><td class="col1">start execution at a certain point in the program</td>
+	</tr>
+	<tr class="row79">
+		<td class="col0"><a href="mem/malloc" class="wikilink1" title="c:mem:malloc">malloc</a> </td><td class="col1">allocates memory</td>
+	</tr>
+	<tr class="row80">
+		<td class="col0"><a href="string/memchr" class="wikilink1" title="c:string:memchr">memchr</a> </td><td class="col1">searches an array for the first occurance of a character</td>
+	</tr>
+	<tr class="row81">
+		<td class="col0"><a href="string/memcmp" class="wikilink1" title="c:string:memcmp">memcmp</a> </td><td class="col1">compares two buffers</td>
+	</tr>
+	<tr class="row82">
+		<td class="col0"><a href="string/memcpy" class="wikilink1" title="c:string:memcpy">memcpy</a> </td><td class="col1">copies one buffer to another</td>
+	</tr>
+	<tr class="row83">
+		<td class="col0"><a href="string/memmove" class="wikilink1" title="c:string:memmove">memmove</a> </td><td class="col1">moves one buffer to another</td>
+	</tr>
+	<tr class="row84">
+		<td class="col0"><a href="string/memset" class="wikilink1" title="c:string:memset">memset</a> </td><td class="col1">fills a buffer with a character</td>
+	</tr>
+	<tr class="row85">
+		<td class="col0"><a href="date/mktime" class="wikilink1" title="c:date:mktime">mktime</a> </td><td class="col1">returns the calendar version of a given time</td>
+	</tr>
+	<tr class="row86">
+		<td class="col0"><a href="math/modf" class="wikilink1" title="c:math:modf">modf</a> </td><td class="col1">decomposes a number into integer and fractional parts</td>
+	</tr>
+	<tr class="row87">
+		<td class="col0"><a href="io/perror" class="wikilink1" title="c:io:perror">perror</a> </td><td class="col1">displays a string version of the current error to STDERR</td>
+	</tr>
+	<tr class="row88">
+		<td class="col0"><a href="math/pow" class="wikilink1" title="c:math:pow">pow</a> </td><td class="col1">returns a given number raised to another number</td>
+	</tr>
+	<tr class="row89">
+		<td class="col0"><a href="io/printf" class="wikilink1" title="c:io:printf">printf</a> </td><td class="col1">write formatted output to STDOUT</td>
+	</tr>
+	<tr class="row90">
+		<td class="col0"><a href="io/putc" class="wikilink1" title="c:io:putc">putc</a> </td><td class="col1">write a character to a stream</td>
+	</tr>
+	<tr class="row91">
+		<td class="col0"><a href="io/putchar" class="wikilink1" title="c:io:putchar">putchar</a> </td><td class="col1">write a character to STDOUT</td>
+	</tr>
+	<tr class="row92">
+		<td class="col0"><a href="other/putenv" class="wikilink1" title="c:other:putenv">putenv</a> </td><td class="col1">add/modify the environmental settings</td>
+	</tr>
+	<tr class="row93">
+		<td class="col0"><a href="io/puts" class="wikilink1" title="c:io:puts">puts</a> </td><td class="col1">write a string to STDOUT</td>
+	</tr>
+	<tr class="row94">
+		<td class="col0"><a href="other/qsort" class="wikilink1" title="c:other:qsort">qsort</a> </td><td class="col1">perform a quicksort</td>
+	</tr>
+	<tr class="row95">
+		<td class="col0"><a href="other/raise" class="wikilink1" title="c:other:raise">raise</a> </td><td class="col1">send a signal to the program</td>
+	</tr>
+	<tr class="row96">
+		<td class="col0"><a href="other/rand" class="wikilink1" title="c:other:rand">rand</a> </td><td class="col1">returns a pseudorandom number</td>
+	</tr>
+	<tr class="row97">
+		<td class="col0"><a href="mem/realloc" class="wikilink1" title="c:mem:realloc">realloc</a> </td><td class="col1">changes the size of previously allocated memory</td>
+	</tr>
+	<tr class="row98">
+		<td class="col0"><a href="io/remove" class="wikilink1" title="c:io:remove">remove</a> </td><td class="col1">erase a file</td>
+	</tr>
+	<tr class="row99">
+		<td class="col0"><a href="io/rename" class="wikilink1" title="c:io:rename">rename</a> </td><td class="col1">rename a file</td>
+	</tr>
+	<tr class="row100">
+		<td class="col0"><a href="io/rewind" class="wikilink1" title="c:io:rewind">rewind</a> </td><td class="col1">move the file position indicator to the beginning of a file</td>
+	</tr>
+	<tr class="row101">
+		<td class="col0"><a href="io/scanf" class="wikilink1" title="c:io:scanf">scanf</a> </td><td class="col1">read formatted input from STDIN</td>
+	</tr>
+	<tr class="row102">
+		<td class="col0"><a href="io/setbuf" class="wikilink1" title="c:io:setbuf">setbuf</a> </td><td class="col1">set the buffer for a specific stream</td>
+	</tr>
+	<tr class="row103">
+		<td class="col0"><a href="other/setjmp" class="wikilink1" title="c:other:setjmp">setjmp</a> </td><td class="col1">set execution to start at a certain point</td>
+	</tr>
+	<tr class="row104">
+		<td class="col0"><a href="date/setlocale" class="wikilink1" title="c:date:setlocale">setlocale</a> </td><td class="col1">sets the current locale</td>
+	</tr>
+	<tr class="row105">
+		<td class="col0"><a href="io/setvbuf" class="wikilink1" title="c:io:setvbuf">setvbuf</a> </td><td class="col1">set the buffer and size for a specific stream</td>
+	</tr>
+	<tr class="row106">
+		<td class="col0"><a href="other/signal" class="wikilink1" title="c:other:signal">signal</a> </td><td class="col1">register a function as a signal handler</td>
+	</tr>
+	<tr class="row107">
+		<td class="col0"><a href="math/sin" class="wikilink1" title="c:math:sin">sin</a> </td><td class="col1">sine</td>
+	</tr>
+	<tr class="row108">
+		<td class="col0"><a href="math/sinh" class="wikilink1" title="c:math:sinh">sinh</a> </td><td class="col1">hyperbolic sine</td>
+	</tr>
+	<tr class="row109">
+		<td class="col0"><a href="io/sprintf" class="wikilink1" title="c:io:sprintf">sprintf</a> </td><td class="col1">write formatted output to a buffer</td>
+	</tr>
+	<tr class="row110">
+		<td class="col0"><a href="math/sqrt" class="wikilink1" title="c:math:sqrt">sqrt</a> </td><td class="col1">square root</td>
+	</tr>
+	<tr class="row111">
+		<td class="col0"><a href="other/srand" class="wikilink1" title="c:other:srand">srand</a> </td><td class="col1">initialize the random number generator</td>
+	</tr>
+	<tr class="row112">
+		<td class="col0"><a href="io/sscanf" class="wikilink1" title="c:io:sscanf">sscanf</a> </td><td class="col1">read formatted input from a buffer</td>
+	</tr>
+	<tr class="row113">
+		<td class="col0"><a href="string/strcat" class="wikilink1" title="c:string:strcat">strcat</a> </td><td class="col1">concatenates two strings</td>
+	</tr>
+	<tr class="row114">
+		<td class="col0"><a href="string/strchr" class="wikilink1" title="c:string:strchr">strchr</a> </td><td class="col1">finds the first occurance of a character in a string</td>
+	</tr>
+	<tr class="row115">
+		<td class="col0"><a href="string/strcmp" class="wikilink1" title="c:string:strcmp">strcmp</a> </td><td class="col1">compares two strings</td>
+	</tr>
+	<tr class="row116">
+		<td class="col0"><a href="string/strcoll" class="wikilink1" title="c:string:strcoll">strcoll</a> </td><td class="col1">compares two strings in accordance to the current locale</td>
+	</tr>
+	<tr class="row117">
+		<td class="col0"><a href="string/strcpy" class="wikilink1" title="c:string:strcpy">strcpy</a> </td><td class="col1">copies one string to another</td>
+	</tr>
+	<tr class="row118">
+		<td class="col0"><a href="string/strcspn" class="wikilink1" title="c:string:strcspn">strcspn</a> </td><td class="col1">searches one string for any characters in another</td>
+	</tr>
+	<tr class="row119">
+		<td class="col0"><a href="string/strerror" class="wikilink1" title="c:string:strerror">strerror</a> </td><td class="col1">returns a text version of a given error code</td>
+	</tr>
+	<tr class="row120">
+		<td class="col0"><a href="date/strftime" class="wikilink1" title="c:date:strftime">strftime</a> </td><td class="col1">returns individual elements of the date and time</td>
+	</tr>
+	<tr class="row121">
+		<td class="col0"><a href="string/strlen" class="wikilink1" title="c:string:strlen">strlen</a> </td><td class="col1">returns the length of a given string</td>
+	</tr>
+	<tr class="row122">
+		<td class="col0"><a href="string/strncat" class="wikilink1" title="c:string:strncat">strncat</a> </td><td class="col1">concatenates a certain amount of characters of two strings</td>
+	</tr>
+	<tr class="row123">
+		<td class="col0"><a href="string/strncmp" class="wikilink1" title="c:string:strncmp">strncmp</a> </td><td class="col1">compares a certain amount of characters of two strings</td>
+	</tr>
+	<tr class="row124">
+		<td class="col0"><a href="string/strncpy" class="wikilink1" title="c:string:strncpy">strncpy</a> </td><td class="col1">copies a certain amount of characters from one string to another</td>
+	</tr>
+	<tr class="row125">
+		<td class="col0"><a href="string/strpbrk" class="wikilink1" title="c:string:strpbrk">strpbrk</a> </td><td class="col1">finds the first location of any character in one string, in another string</td>
+	</tr>
+	<tr class="row126">
+		<td class="col0"><a href="string/strrchr" class="wikilink1" title="c:string:strrchr">strrchr</a> </td><td class="col1">finds the last occurance of a character in a string</td>
+	</tr>
+	<tr class="row127">
+		<td class="col0"><a href="string/strspn" class="wikilink1" title="c:string:strspn">strspn</a> </td><td class="col1">returns the length of a substring of characters of a string</td>
+	</tr>
+	<tr class="row128">
+		<td class="col0"><a href="string/strstr" class="wikilink1" title="c:string:strstr">strstr</a> </td><td class="col1">finds the first occurance of a substring of characters</td>
+	</tr>
+	<tr class="row129">
+		<td class="col0"><a href="string/strtod" class="wikilink1" title="c:string:strtod">strtod</a> </td><td class="col1">converts a string to a double</td>
+	</tr>
+	<tr class="row130">
+		<td class="col0"><a href="string/strtok" class="wikilink1" title="c:string:strtok">strtok</a> </td><td class="col1">finds the next token in a string</td>
+	</tr>
+	<tr class="row131">
+		<td class="col0"><a href="string/strtol" class="wikilink1" title="c:string:strtol">strtol</a> </td><td class="col1">converts a string to a long</td>
+	</tr>
+	<tr class="row132">
+		<td class="col0"><a href="string/strtoul" class="wikilink1" title="c:string:strtoul">strtoul</a> </td><td class="col1">converts a string to an unsigned long</td>
+	</tr>
+	<tr class="row133">
+		<td class="col0"><a href="string/strxfrm" class="wikilink1" title="c:string:strxfrm">strxfrm</a> </td><td class="col1">converts a substring so that it can be used by string comparison functions</td>
+	</tr>
+	<tr class="row134">
+		<td class="col0"><a href="other/system" class="wikilink1" title="c:other:system">system</a> </td><td class="col1">perform a system call</td>
+	</tr>
+	<tr class="row135">
+		<td class="col0"><a href="math/tan" class="wikilink1" title="c:math:tan">tan</a> </td><td class="col1">tangent</td>
+	</tr>
+	<tr class="row136">
+		<td class="col0"><a href="math/tanh" class="wikilink1" title="c:math:tanh">tanh</a> </td><td class="col1">hyperbolic tangent</td>
+	</tr>
+	<tr class="row137">
+		<td class="col0"><a href="date/time" class="wikilink1" title="c:date:time">time</a> </td><td class="col1">returns the current calendar time of the system</td>
+	</tr>
+	<tr class="row138">
+		<td class="col0"><a href="io/tmpfile" class="wikilink1" title="c:io:tmpfile">tmpfile</a> </td><td class="col1">return a pointer to a temporary file</td>
+	</tr>
+	<tr class="row139">
+		<td class="col0"><a href="io/tmpnam" class="wikilink1" title="c:io:tmpnam">tmpnam</a> </td><td class="col1">return a unique filename</td>
+	</tr>
+	<tr class="row140">
+		<td class="col0"><a href="string/tolower" class="wikilink1" title="c:string:tolower">tolower</a> </td><td class="col1">converts a character to lowercase</td>
+	</tr>
+	<tr class="row141">
+		<td class="col0"><a href="string/toupper" class="wikilink1" title="c:string:toupper">toupper</a> </td><td class="col1">converts a character to uppercase</td>
+	</tr>
+	<tr class="row142">
+		<td class="col0"><a href="io/ungetc" class="wikilink1" title="c:io:ungetc">ungetc</a> </td><td class="col1">puts a character back into a stream</td>
+	</tr>
+	<tr class="row143">
+		<td class="col0"><a href="other/va_arg" class="wikilink1" title="c:other:va_arg">va_arg</a> </td><td class="col1">use variable length parameter lists</td>
+	</tr>
+	<tr class="row144">
+		<td class="col0"><a href="io/vprintf_vfprintf_vsprintf" class="wikilink1" title="c:io:vprintf_vfprintf_vsprintf">vprintf, vfprintf, and vsprintf</a> </td><td class="col1">write formatted output with variable argument lists</td>
+	</tr>
+	<tr class="row145">
+		<td class="col0"><a href="io/vscanf_vfscanf_vsscanf" class="wikilink1" title="c:io:vscanf_vfscanf_vsscanf">vscanf, vfscanf and vsscanf</a> </td><td class="col1">gets formatted input from stdin with variable argument lists</td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

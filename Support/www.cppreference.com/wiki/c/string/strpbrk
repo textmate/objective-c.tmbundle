@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:string:strpbrk</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-12-26T21:30:17-0800" />
+<meta name="keywords" content="c,string,strpbrk" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/string/strpbrk?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/string/strpbrk" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/string/strpbrk" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="strpbrk" id="strpbrk">strpbrk</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstring&gt;</span>
+    <span class="kw4">char</span><span class="sy0">*</span> strpbrk<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str1<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> str2 <span class="br0">&#41;</span>;</pre>
+<p>
+
+The function strpbrk() returns a pointer to the first occurrence in str1 of any
+character in str2, or NULL if no such characters are present.
+</p>
+
+<p>
+Related Topics: <a href="http://www.cppreference.com/wiki/c/string/c_algorithms_find_first_of" class="wikilink2" title="c:string:c_algorithms_find_first_of" rel="nofollow">(C++ Algorithms) find_first_of</a>, <a href="strchr" class="wikilink1" title="c:string:strchr">strchr</a>, <a href="strcspn" class="wikilink1" title="c:string:strcspn">strcspn</a>, <a href="strrchr" class="wikilink1" title="c:string:strrchr">strrchr</a>, <a href="strspn" class="wikilink1" title="c:string:strspn">strspn</a>, <a href="strstr" class="wikilink1" title="c:string:strstr">strstr</a>, <a href="strtok" class="wikilink1" title="c:string:strtok">strtok</a>
+</p>
+
+</div>
+<!-- SECTION "strpbrk" [3-] --></div>
+</body>
+</html>

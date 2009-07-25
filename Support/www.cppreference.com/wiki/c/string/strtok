@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:string:strtok</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:03-0700" />
+<meta name="keywords" content="c,string,strtok" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/string/strtok?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:string" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/string/strtok" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/string/strtok" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="strtok" id="strtok">strtok</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstring&gt;</span>
+    <span class="kw4">char</span> <span class="sy0">*</span>strtok<span class="br0">&#40;</span> <span class="kw4">char</span> <span class="sy0">*</span>str1<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>str2 <span class="br0">&#41;</span>;</pre>
+<p>
+
+The strtok() function returns a pointer to the next “token” in str1, where str2
+contains the delimiters that determine the token. strtok() returns NULL if no
+token is found. In order to convert a string to tokens, the first call to
+strtok() should have str1 point to the string to be tokenized. All calls after
+this should have str1 be NULL.
+For example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="kw4">char</span> str<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="st0">&quot;now # is the time for all # good men to come to the # aid of
+  their country&quot;</span>;
+     <span class="kw4">char</span> delims<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="st0">&quot;#&quot;</span>;
+     <span class="kw4">char</span> <span class="sy0">*</span>result <span class="sy0">=</span> <span class="kw2">NULL</span>;
+     result <span class="sy0">=</span> strtok<span class="br0">&#40;</span> str<span class="sy0">,</span> delims <span class="br0">&#41;</span>;
+     <span class="kw1">while</span><span class="br0">&#40;</span> result <span class="sy0">!=</span> <span class="kw2">NULL</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;result is <span class="es0">\&quot;</span>%s<span class="es0">\&quot;</span><span class="es0">\n</span>&quot;</span><span class="sy0">,</span> result <span class="br0">&#41;</span>;
+         result <span class="sy0">=</span> strtok<span class="br0">&#40;</span> <span class="kw2">NULL</span><span class="sy0">,</span> delims <span class="br0">&#41;</span>;
+     <span class="br0">&#125;</span></pre>
+<p>
+
+The above code will display the following output:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     result is <span class="st0">&quot;now &quot;</span>
+     result is <span class="st0">&quot; is the time for all &quot;</span>
+     result is <span class="st0">&quot; good men to come to the &quot;</span>
+     result is <span class="st0">&quot; aid of their country&quot;</span></pre>
+<p>
+Related Topics: <a href="strchr" class="wikilink1" title="c:string:strchr">strchr</a>, <a href="strcspn" class="wikilink1" title="c:string:strcspn">strcspn</a>, <a href="strpbrk" class="wikilink1" title="c:string:strpbrk">strpbrk</a>, <a href="strrchr" class="wikilink1" title="c:string:strrchr">strrchr</a>, <a href="strspn" class="wikilink1" title="c:string:strspn">strspn</a>, <a href="strstr" class="wikilink1" title="c:string:strstr">strstr</a>
+</p>
+
+</div>
+<!-- SECTION "strtok" [3-] --></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keywords:while</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:05-0700" />
+<meta name="keywords" content="keywords,while" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/keywords/while?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=keywords" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/keywords/while" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/keywords/while" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="while" id="while">while</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="kw1">while</span><span class="br0">&#40;</span> condition <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    statement<span class="sy0">-</span>list;
+    <span class="br0">&#125;</span></pre>
+<p>
+
+The while keyword is used as a looping construct that will evaluate the
+statement-list as long as condition is true. Note that if the condition starts
+off as false, the statement-list will never be executed. (You can use a do loop
+to guarantee that the statement-list will be executed at least once.) For
+example:
+</p>
+<pre class="c code c++" style="font-family:monospace;">     bool done <span class="sy0">=</span> <span class="kw2">false</span>;
+     <span class="kw1">while</span><span class="br0">&#40;</span> <span class="sy0">!</span>done <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+       ProcessData<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+       <span class="kw1">if</span><span class="br0">&#40;</span> StopLooping<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+         done <span class="sy0">=</span> <span class="kw2">true</span>;
+       <span class="br0">&#125;</span>
+     <span class="br0">&#125;</span></pre>
+<p>
+Related Topics: <a href="break" class="wikilink1" title="keywords:break">break</a>, <a href="continue" class="wikilink1" title="keywords:continue">continue</a>, <a href="do" class="wikilink1" title="keywords:do">do</a>, <a href="for" class="wikilink1" title="keywords:for">for</a>, <a href="if" class="wikilink1" title="keywords:if">if</a>
+</p>
+
+</div>
+<!-- SECTION "while" [3-] --></div>
+</body>
+</html>

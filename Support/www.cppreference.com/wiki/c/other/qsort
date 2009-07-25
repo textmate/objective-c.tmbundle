@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>c:other:qsort</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-03-31T18:57:07-0700" />
+<meta name="keywords" content="c,other,qsort" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/c/other/qsort?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=c:other" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/c/other/qsort" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/c/other/qsort" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="qsort" id="qsort">qsort</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;cstdlib&gt;</span>
+    <span class="kw4">void</span> qsort<span class="br0">&#40;</span> <span class="kw4">void</span> <span class="sy0">*</span>buf<span class="sy0">,</span> size_t num<span class="sy0">,</span> size_t size<span class="sy0">,</span> <span class="kw4">int</span> <span class="br0">&#40;</span><span class="sy0">*</span>compare<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy0">*,</span> <span class="kw4">const</span> <span class="kw4">void</span> <span class="sy0">*</span><span class="br0">&#41;</span> <span class="br0">&#41;</span>;</pre>
+<p>
+The qsort function sorts <code>buf</code> (which contains <code>num</code> items, each of size <code>size</code>)
+using <a href="http://en.wikipedia.org/wiki/Quicksort" class="urlextern" title="http://en.wikipedia.org/wiki/Quicksort"  rel="nofollow">Quicksort</a>. The <code>compare</code> function is used to compare the items in <code>buf</code>, 
+and should return negative if the first argument is less than the second,
+zero if they are equal, and positive if the first argument is greater than the
+second. qsort() sorts <code>buf</code> in ascending order.
+</p>
+
+<p>
+For example, the following bit of code uses qsort to sort an array of integers:
+</p>
+<pre class="c code c++" style="font-family:monospace;">   <span class="kw4">int</span> compare_ints<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">void</span><span class="sy0">*</span> a<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">void</span><span class="sy0">*</span> b <span class="br0">&#41;</span> <span class="br0">&#123;</span>  <span class="co1">// compare function</span>
+     <span class="kw4">int</span><span class="sy0">*</span> arg1 <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="sy0">*</span><span class="br0">&#41;</span> a;
+     <span class="kw4">int</span><span class="sy0">*</span> arg2 <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="sy0">*</span><span class="br0">&#41;</span> b;
+     <span class="kw1">if</span><span class="br0">&#40;</span> <span class="sy0">*</span>arg1 <span class="sy0">&lt;</span> <span class="sy0">*</span>arg2 <span class="br0">&#41;</span> <span class="kw1">return</span> <span class="sy0">-</span><span class="nu0">1</span>;
+     <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span> <span class="sy0">*</span>arg1 <span class="sy0">==</span> <span class="sy0">*</span>arg2 <span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu19">0</span>;
+     <span class="kw1">else</span> <span class="kw1">return</span> <span class="nu0">1</span>;
+   <span class="br0">&#125;</span>
+&nbsp;
+   <span class="kw4">int</span> array<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="sy0">-</span><span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">99</span><span class="sy0">,</span> <span class="nu19">0</span><span class="sy0">,</span> <span class="sy0">-</span><span class="nu0">743</span><span class="sy0">,</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">4</span> <span class="br0">&#125;</span>;
+   <span class="kw4">int</span> array_size <span class="sy0">=</span> <span class="nu0">7</span>;
+&nbsp;
+   ...
+&nbsp;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;Before sorting: &quot;</span> <span class="br0">&#41;</span>;
+   <span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu19">0</span>; i <span class="sy0">&lt;</span> array_size; i<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+     <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;%d &quot;</span><span class="sy0">,</span> array<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#41;</span>;
+   <span class="br0">&#125;</span>
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;<span class="es0">\n</span>&quot;</span> <span class="br0">&#41;</span>;
+&nbsp;
+   qsort<span class="br0">&#40;</span> array<span class="sy0">,</span> array_size<span class="sy0">,</span> <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="sy0">,</span> compare_ints <span class="br0">&#41;</span>;
+&nbsp;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;After sorting: &quot;</span> <span class="br0">&#41;</span>;
+   <span class="kw1">for</span><span class="br0">&#40;</span> <span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu19">0</span>; i <span class="sy0">&lt;</span> array_size; i<span class="sy0">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+     <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;%d &quot;</span><span class="sy0">,</span> array<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="br0">&#41;</span>;
+   <span class="br0">&#125;</span>
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span> <span class="st0">&quot;<span class="es0">\n</span>&quot;</span> <span class="br0">&#41;</span>;</pre>
+<p>
+When run, this code displays the following output:
+</p>
+<pre class="code">
+   Before sorting: -2 99 0 -743 2 3 4
+   After sorting: -743 -2 0 2 3 4 99</pre>
+<p>
+Related Topics: <a href="bsearch" class="wikilink1" title="c:other:bsearch">bsearch</a>, <a href="../../stl/algorithm/sort" class="wikilink1" title="stl:algorithm:sort">sort</a>
+</p>
+
+</div>
+<!-- SECTION "qsort" [3-] --></div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>preprocessor:preprocessor_if</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2008-10-14T15:42:05-0700" />
+<meta name="keywords" content="preprocessor,preprocessor_if" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/preprocessor/preprocessor_if?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=preprocessor" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/preprocessor/preprocessor_if" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/preprocessor/preprocessor_if" />
+<link rel="stylesheet" media="all" type="text/css" href="../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="preprocessor_conditionals" id="preprocessor_conditionals">Preprocessor Conditionals</a></h2>
+<div class="level2">
+<pre class="c code c++" style="font-family:monospace;"><span class="co2">#if, #ifdef, #ifndef, #else, #elif, #endif</span></pre>
+<p>
+These six preprocessor commands give simple logic control to the compiler. As a file is being
+compiled, you can use these commands to cause certain lines of code to be
+included or not included.
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="co2">#if expression</span></pre>
+<p>
+If the value of expression is true, then the code that immediately follows the
+command will be compiled.
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="co2">#ifdef macro</span></pre>
+<p>
+If the macro has been defined by a <a href="define" class="wikilink1" title="preprocessor:define">#define</a> statement, then the code immediately
+following the command will be compiled.
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="co2">#ifndef macro</span></pre>
+<p>
+If the macro has not been defined by a <a href="define" class="wikilink1" title="preprocessor:define">#define</a> statement, then the code
+immediately following the command will be compiled.
+</p>
+
+<p>
+A few side notes: The command #elif is simply a horribly truncated way to say
+“elseif” and works like you think it would. You can also throw in a “defined”
+or ”!defined” after an #if to get added functionality.
+</p>
+
+<p>
+Here&#039;s an example of all these:
+
+</p>
+<pre class="c code c++" style="font-family:monospace;">     <span class="co2">#ifdef DEBUG</span>
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;This is the test version, i=&quot;</span> <span class="sy0">&lt;&lt;</span> i <span class="sy0">&lt;&lt;</span> endl;
+     <span class="co2">#else</span>
+       <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;This is the production version!&quot;</span> <span class="sy0">&lt;&lt;</span> endl;
+     <span class="co2">#endif</span></pre>
+<p>
+You might notice how that second example could make debugging a lot easier than
+inserting and removing a million “cout”s in your code.
+</p>
+
+<p>
+Related topics: <a href="define" class="wikilink1" title="preprocessor:define">#define</a>
+</p>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:algorithm:remove</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-05-07T11:37:11-0700" />
+<meta name="keywords" content="stl,algorithm,remove" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/algorithm/remove?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:algorithm" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/algorithm/remove" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/algorithm/remove" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="remove" id="remove">remove</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;algorithm&gt;</span>
+    iterator remove<span class="br0">&#40;</span> iterator start<span class="sy0">,</span> iterator end<span class="sy0">,</span> <span class="kw4">const</span> TYPE<span class="sy0">&amp;</span> val <span class="br0">&#41;</span>;</pre>
+<p>
+The remove() algorithm removes all of the elements in the range [start,end)
+that are equal to val.
+</p>
+
+<p>
+The return value of this function is an iterator after the last element of the new
+sequence that should contain no elements equal to val.
+</p>
+
+<p>
+Note that remove() doesn&#039;t actually “remove” things from the range [start, end); if
+remove() is called on a container, the length of the container will remain the same
+afterwards (remove() couldn&#039;t possibly affect that through the iterators alone), and
+all the elements will still be in the container. Instead, remove() puts all the “removed”
+elements to the end of the container, and returns the iterator that separates the not-removed
+and removed elements. To actually remove items from a container, you would have to call the
+erase() method of the container, to erase elements starting at the returned iterator.
+This is usually combined in what is called the <a href="http://en.wikipedia.org/wiki/Erase-remove_idiom" class="urlextern" title="http://en.wikipedia.org/wiki/Erase-remove_idiom"  rel="nofollow">erase-remove idiom</a>:
+</p>
+<pre class="code">container.erase(remove(container.begin(), container.end(), val), container.end());</pre>
+
+<p>
+The remove() function runs in <a href="../../complexity" class="wikilink1" title="complexity">linear time</a>.
+</p>
+
+<p>
+Related Topics: <a href="remove_copy" class="wikilink1" title="stl:algorithm:remove_copy">remove_copy</a>, <a href="remove_copy_if" class="wikilink1" title="stl:algorithm:remove_copy_if">remove_copy_if</a>, <a href="remove_if" class="wikilink1" title="stl:algorithm:remove_if">remove_if</a>, <a href="unique" class="wikilink1" title="stl:algorithm:unique">unique</a>, <a href="unique_copy" class="wikilink1" title="stl:algorithm:unique_copy">unique_copy</a>
+</p>
+
+</div>
+<!-- SECTION "remove" [3-] --></div>
+</body>
+</html>

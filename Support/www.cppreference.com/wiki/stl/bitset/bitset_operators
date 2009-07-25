@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+ lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>stl:bitset:bitset_operators</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-06-10T10:54:54-0700" />
+<meta name="keywords" content="stl,bitset,bitset_operators" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.cppreference.com/wiki/lib/exe/opensearch.php" title="C++ Reference" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="http://www.cppreference.com/wiki/stl/bitset/bitset_operators?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://www.cppreference.com/wiki/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://www.cppreference.com/wiki/feed.php?mode=list&amp;ns=stl:bitset" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://www.cppreference.com/wiki/_export/xhtml/stl/bitset/bitset_operators" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://www.cppreference.com/wiki/_export/raw/stl/bitset/bitset_operators" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php@s=all&amp;t=custom1" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php@t=custom1" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php@s=print&amp;t=custom1" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php@edit=0&amp;write=1" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h2><a name="bitset_operators" id="bitset_operators">Bitset Operators</a></h2>
+<div class="level2">
+
+<p>
+Syntax:
+</p>
+<pre class="c code c++" style="font-family:monospace;">    <span class="co2">#include &lt;bitset&gt;</span>
+    <span class="sy0">!=,</span> <span class="sy0">==,</span> <span class="sy0">&amp;=,</span> <span class="sy0">^=,</span> |=, ~<span class="sy0">,</span> <span class="sy0">&lt;&lt;=,</span> <span class="sy0">&gt;&gt;=,</span> <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="sy0">,</span> <span class="sy0">=</span></pre>
+<p>
+These operators all work with bitsets. They can be described as follows:
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0"> Operator </th><th class="col1"> Description </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  <code>!=</code>  </td><td class="col1">returns true if the two bitsets are not equal</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  <code>==</code>  </td><td class="col1">returns true if the two bitsets are equal</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  <code>&amp;=</code>  </td><td class="col1">performs the AND operation on the two bitsets</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  <code>^=</code>  </td><td class="col1">performs the XOR operation on the two bitsets</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  <code>|=</code>  </td><td class="col1">performs the OR operation on the two bitsets</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  <code>~</code>  </td><td class="col1">reverses the bitset (same as calling flip())</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  <code>&lt;&lt;=</code>  </td><td class="col1">shifts the bitset to the left</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">  <code>&gt;&gt;=</code>  </td><td class="col1">shifts the bitset to the right</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 centeralign">  <code>b[x]</code>  </td><td class="col1">returns a reference to the xth bit in the bitset</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 centeralign">  <code>=</code>  </td><td class="col1">take an unsigned long and put the corresponding bits in the bitset</td>
+	</tr>
+</table>
+
+<p>
+
+For example, the following code creates a bitset and shifts it to the left 4
+places:
+</p>
+<pre class="c code c++" style="font-family:monospace;">   <span class="co1">// create a bitset out of a number</span>
+   bitset<span class="sy0">&lt;</span><span class="nu0">8</span><span class="sy0">&gt;</span> bs2<span class="br0">&#40;</span> <span class="br0">&#40;</span><span class="kw4">long</span><span class="br0">&#41;</span> <span class="nu0">131</span> <span class="br0">&#41;</span>;
+   <span class="co1">// you can do bitset&lt;8&gt; bs2; bs2 = (long) 131;</span>
+&nbsp;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;bs2 is &quot;</span> <span class="sy0">&lt;&lt;</span> bs2 <span class="sy0">&lt;&lt;</span> endl;
+   <span class="co1">// shift the bitset to the left by 4 digits</span>
+   bs2 <span class="sy0">&lt;&lt;=</span> <span class="nu0">4</span>;
+   <a href="http://www.opengroup.org/onlinepubs/009695399/functions/cout.html"><span class="kw3">cout</span></a> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;now bs2 is &quot;</span> <span class="sy0">&lt;&lt;</span> bs2 <span class="sy0">&lt;&lt;</span> endl;</pre>
+<p>
+When the above code is run, it displays:
+</p>
+<pre class="code">
+ bs2 is 10000011
+ now bs2 is 00110000</pre>
+</div>
+<!-- SECTION "Bitset Operators" [4-] --></div>
+</body>
+</html>
