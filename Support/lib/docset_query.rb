@@ -108,7 +108,7 @@ def show_document (results, query)
 	if url
 		TextMate.exit_show_html "<meta http-equiv='Refresh' content='0;URL=tm-file://#{url}'>"
 	else
-   		TextMate.exit_discard  
+		TextMate.exit_discard  
 	end
 end
 
@@ -126,7 +126,7 @@ Cxx = Struct.new(:url, :language, :title, :klass)
 def cxx_lookup (query)
   dir = ENV['TM_BUNDLE_SUPPORT'] + '/www.cppreference.com/wiki/stl'
   files = `find #{e_sh dir} -type f \\( -name #{e_sh query} -or -path \\*/#{e_sh query}/start \\)`
-  files.to_a.map { |e| Cxx.new(e_url(e.chop), 'C++', e.gsub(/^#{Regexp.escape(dir)}\/(start)?|\n$/, ''), query) }
+  files.to_a.map { |e| Cxx.new(e_url(e.chop), 'C++', e.gsub(/^#{Regexp.escape(dir)}\/|(\/start)?\n$/, ''), query) }
 end
 
 def get_user_selected_reference (class_names)
