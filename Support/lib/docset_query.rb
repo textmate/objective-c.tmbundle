@@ -106,7 +106,8 @@ def show_document (results, query)
 	end
 	
 	if url
-		TextMate.exit_show_html "<meta http-equiv='Refresh' content='0;URL=tm-file://#{url}'>"
+		full = url =~ /^http:/ ? url : "tm-file://#{url}"
+		TextMate.exit_show_html "<meta http-equiv='Refresh' content='0;URL=#{full}'>"
 	else
 		TextMate.exit_discard  
 	end
@@ -124,9 +125,10 @@ end
 Cxx = Struct.new(:url, :language, :title, :klass)
 
 def cxx_lookup (query)
-  dir = ENV['TM_BUNDLE_SUPPORT'] + '/www.cppreference.com/wiki/stl'
-  files = `find #{e_sh dir} -type f \\( -name #{e_sh query} -or -path \\*/#{e_sh query}/start \\)`
-  files.to_a.map { |e| Cxx.new(e_url(e.chop), 'C++', e.gsub(/^#{Regexp.escape(dir)}\/|(\/start)?\n$/, ''), query) }
+  # find . -path './algorithm/start' -prune -or -type f -regex '\./.*/.*' -print|perl -pe 's|^./||; s|^algorithm/([a-z0-9_]+)$|$1\tstd::$1\thttp://www.cppreference.com/wiki/stl/$&|; s|^([a-z_]+)/start$|$1\tstd::$1\thttp://www.cppreference.com/wiki/stl/$&|; s|^([a-z_]+)/([a-z0-9_]+)$|$2\tstd::$1::$2\thttp://www.cppreference.com/wiki/stl/$&|'
+  File.open("#{ENV['TM_BUNDLE_SUPPORT']}/CppReferenceWiki.tsf").grep(/^#{Regexp.escape query}\t([^\t]+)\t([^\t]+)$/) do
+    Cxx.new($2, 'C++', $1, query)
+  end
 end
 
 def get_user_selected_reference (class_names)
