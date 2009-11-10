@@ -39,7 +39,7 @@ end
 
 TextMate::exit_show_tool_tip('No methods found on the clipboard') if methods.empty?
 
-if ENV['TM_SCOPE'] =~ /meta.scope.interface.objc/
+if ENV['TM_SCOPE'] !~ /meta.implementation.objc/
   methods.each { |(proto, rettype)| puts "#{proto};" }
 else
   tabstop = 0
@@ -67,7 +67,7 @@ end
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
-	<string>meta.scope.implementation.objc, meta.scope.interface.objc</string>
+	<string>meta.interface-or-protocol.objc, meta.implementation.objc</string>
 	<key>uuid</key>
 	<string>CB5EC7EC-35B7-4FD8-9045-31CCC379D474</string>
 </dict>
