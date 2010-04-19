@@ -109,9 +109,13 @@ def show_document (results, query)
 end
 
 def man_page (query)
-	if `man 2>&1 -S2:3 -w #{query}` !~ /No manual entry/
-		page = `#{e_sh SUPPORT}/bin/html_man.sh -S2:3 #{query}`
-		Man.new(page, 'C', 'man(2, 3)')
+	pages = `man 2>&1 -S2:3 -w #{query}`
+	if pages !~ /No manual entry/
+		pages.split("\n").map { |e| $1 if e =~ %r{/#{query}\.(.*?)(\.gz)?$} }.sort.uniq.collect do |sect|
+			page = `#{e_sh SUPPORT}/bin/html_man.sh #{sect} #{query}`
+			puts "#{query}(#{sect})"
+			Man.new(page, 'C', "#{query}(#{sect})")
+		end
 	else
 		nil
 	end
