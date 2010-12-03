@@ -141,6 +141,7 @@ def search_docs_all(query)
 
   results = search_docs(query)
   results.reject! { |e| e.url =~ %r{^/usr/share/man/} }
+  results.reject! { |e| e.language == 'Java' }
 
   man = man_page(query)
   results << man if man
