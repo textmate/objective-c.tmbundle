@@ -33,6 +33,10 @@ class Ref
 		klass == '-' ? TYPE_ABBREVIATIONS[type] || type  : klass
 	end
 	
+	def exists?
+		File.exists?(url.split('#').first)
+	end
+	
 	# Test if we are referring to documentation about the same
 	# thing, but from different docsets. (used by uniq).
 	def eql? (other)
@@ -142,6 +146,7 @@ def search_docs_all(query)
   results = search_docs(query)
   results.reject! { |e| e.url =~ %r{^/usr/share/man/|/ManPages/} }
   results.reject! { |e| e.language == 'Java' }
+  results = results.select { |e| e.exists? }
 
   man = man_page(query)
   results << man if man
