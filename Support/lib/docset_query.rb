@@ -140,7 +140,7 @@ def search_docs_all(query)
   return nil if query.to_s.empty?
 
   results = search_docs(query)
-  results.reject! { |e| e.url =~ %r{^/usr/share/man/} }
+  results.reject! { |e| e.url =~ %r{^/usr/share/man/|/ManPages/} }
   results.reject! { |e| e.language == 'Java' }
 
   man = man_page(query)
