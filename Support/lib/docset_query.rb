@@ -145,7 +145,7 @@ def search_docs_all(query)
 
   results = search_docs(query)
   results.reject! { |e| e.url =~ %r{^/usr/share/man/|/ManPages/} }
-  results.reject! { |e| e.language == 'Java' }
+  results.reject! { |e| e.language =~ /^Java(Script)?$/ }
   results = results.select { |e| e.exists? }
 
   man = man_page(query)
