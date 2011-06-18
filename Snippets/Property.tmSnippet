@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>@property (${1|retain,readonly,copy,assign|}) ${3:NSSomeClass}${3/^((?!NS(U?Integer|Point|Size|Rect)|C[GF]|BOOL|SEL)[A-Z]\w*)|.*/${1:?${TM_C_POINTER: *}: }/}${4:${3/^(?:(BOOL)|(SEL)|[A-Z](?:[A-Z]+|[a-z]+)([A-Z]\w*))/${1:?flag:${2:?action:\l$3}}/}};</string>
+	<string>@property (${2:nonatomic, }${1|retain,readonly,copy,assign|}) ${3:NSSomeClass}${3/^((?!NS(U?Integer|Point|Size|Rect)|C[GF]|BOOL|SEL)[A-Z]\w*)|.*/${1:?${TM_C_POINTER: *}: }/}${4:${3/^(?:(BOOL)|(SEL)|[A-Z](?:[A-Z]+|[a-z]+)([A-Z]\w*))/${1:?flag:${2:?action:\l$3}}/}};</string>
 	<key>name</key>
 	<string>Property (Objective-C 2.0)</string>
 	<key>scope</key>
