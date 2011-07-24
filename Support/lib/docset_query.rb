@@ -67,7 +67,7 @@ def parts_of_reference (docset, ref_str)
 end
 	
 def search_docs (query)
-	results = []
+	results, legacy = [], []
 	DOCSETS.each do |docset|		
 		cmd = DOCSET_CMD + query + ' ' + docset
 		response = `#{cmd}`
@@ -78,11 +78,14 @@ def search_docs (query)
 			when /Documentation set path does not exist/
 				# Docset not installed or moved somewhere else.
 			else
-				response.split("\n").each {|r| results << parts_of_reference(docset, r)}
+				response.split("\n").each do |r|
+					(docset =~ /Legacy/ ? legacy : results) << parts_of_reference(docset, r)
+				end
 		end	
 	end
 	
-	# Remove any duplicated documentation (from different docsets).
+	# Only add legacy documentation if we didn’t find a newer reference — this approach is required because WebObjects has a lot of legacy documentation on Foundation classes
+	legacy.each { |match| results << match unless results.member? match }
 	return results.uniq
 end
 
