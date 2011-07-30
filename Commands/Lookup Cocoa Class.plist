@@ -5,12 +5,10 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>if [[ "$(defaults read /System/Library/CoreServices/SystemVersion ProductVersion)" == 10.6.* ]]; then
-  ruby -r"$TM_BUNDLE_SUPPORT/lib/docset_query.rb" -e 'documentation_for_word'
-  exit
-fi
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
 
-if [[ "$(defaults read /System/Library/CoreServices/SystemVersion ProductVersion)" == 10.5.* ]]; then
+if [[ "$(defaults read /System/Library/CoreServices/SystemVersion ProductVersion)" != 10.4.* ]]; then
   ruby -r"$TM_BUNDLE_SUPPORT/lib/docset_query.rb" -e 'documentation_for_word'
   exit
 fi
