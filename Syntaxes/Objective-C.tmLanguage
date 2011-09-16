@@ -884,12 +884,22 @@
 				<dict>
 					<key>begin</key>
 					<string>(\()</string>
-					<key>captures</key>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.type.objc</string>
+							<string>punctuation.definition.type.begin.objc</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\))\s*(\w+\b)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.type.end.objc</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -897,8 +907,6 @@
 							<string>entity.name.function.objc</string>
 						</dict>
 					</dict>
-					<key>end</key>
-					<string>(\))\s*(\w+\b)</string>
 					<key>name</key>
 					<string>meta.return-type.objc</string>
 					<key>patterns</key>
@@ -941,7 +949,7 @@
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.type.objc</string>
+							<string>punctuation.definition.type.begin.objc</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -951,7 +959,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.type.objc</string>
+							<string>punctuation.definition.type.end.objc</string>
 						</dict>
 						<key>2</key>
 						<dict>
