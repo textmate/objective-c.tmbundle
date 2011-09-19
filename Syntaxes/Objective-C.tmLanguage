@@ -242,7 +242,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\bid\b(\s|\n)?</string>
+			<string>\bid\b</string>
 			<key>name</key>
 			<string>storage.type.id.objc</string>
 		</dict>
