@@ -91,7 +91,7 @@ end
 
 def show_document (results, query)
 	if results.nil? || results.empty?
-		return nil
+		TextMate.exit_show_tool_tip "Cannot find documentation for: #{query}"
 	elsif results.length == 1
 		url = results[0].url
 	else
@@ -171,11 +171,7 @@ def documentation_for_word
 	end
 
 	results = search_docs_all(query)
-	if results.nil? || results.empty?
-		TextMate.exit_show_tool_tip "Cannot find documentation for: #{query}"
-	else
-		show_document(results, query)
-	end
+	show_document(results, query)
 end
 
 def documentation_for_selector
