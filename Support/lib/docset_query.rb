@@ -7,7 +7,7 @@ require SUPPORT + '/lib/ui'
 
 DOCSET_CMD = "/Developer/usr/bin/docsetutil search -skip-text -query "
 
-DOCSETS = Dir.glob("/Developer/Documentation/DocSets/*.docset")
+DOCSETS = Dir.glob("/{Developer/Documentation/DocSets,Library/Developer/Shared/Documentation/DocSets}/*.docset")
 
 
 Man = Struct.new(:url, :language, :klass)
