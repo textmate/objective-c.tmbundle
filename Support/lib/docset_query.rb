@@ -79,7 +79,8 @@ def search_docs (query)
 				# Docset not installed or moved somewhere else.
 			else
 				response.split("\n").each do |r|
-					(docset =~ /Legacy/ ? legacy : results) << parts_of_reference(docset, r)
+					ref = parts_of_reference(docset, r)
+					(docset =~ /Legacy/ ? legacy : results) << ref if ref.exists?
 				end
 		end	
 	end
@@ -149,7 +150,6 @@ def search_docs_all(query)
   results = search_docs(query)
   results.reject! { |e| e.url =~ %r{^/usr/share/man/|/ManPages/} }
   results.reject! { |e| e.language =~ /^Java(Script)?$/ }
-  results = results.select { |e| e.exists? }
 
   man = man_page(query)
   results << man if man
