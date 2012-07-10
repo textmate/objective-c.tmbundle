@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+
+def toggle(keyword)
+  case keyword
+    when 'import'  then 'include'
+    when 'include' then 'import'
+    else keyword
+  end
+end
+
+STDOUT &lt;&lt; toggle(STDIN.read)
+</string>
+	<key>hideFromUser</key>
+	<true/>
+	<key>input</key>
+	<string>scope</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^"</string>
+	<key>name</key>
+	<string>Toggle Import/Include Keyword</string>
+	<key>outputCaret</key>
+	<string>interpolateByChar</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
+	<key>scope</key>
+	<string>keyword.control.import.include, L:keyword.control.import.include</string>
+	<key>uuid</key>
+	<string>A8F23393-4D73-480A-A268-6DCD514DE2E4</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
