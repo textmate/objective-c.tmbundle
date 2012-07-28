@@ -5,10 +5,18 @@ require SUPPORT + '/lib/escape'
 require SUPPORT + '/lib/osx/plist'
 require SUPPORT + '/lib/ui'
 
-DOCSET_CMD = "/Developer/usr/bin/docsetutil search -skip-text -query "
+def find_xcode_prefix
+  if ENV['PATH'].split(':').find { |path| File.executable?(File.join(path, 'xcode-select')) }
+    %x{xcode-select -print-path}.chomp
+  else
+    '/Developer'
+  end
+end
 
-DOCSETS = Dir.glob("/{Developer/Documentation/DocSets,Library/Developer/Shared/Documentation/DocSets}/*.docset")
+prefix = find_xcode_prefix
 
+DOCSET_CMD = "#{prefix}/usr/bin/docsetutil search -skip-text -query "
+DOCSETS = Dir.glob("{#{prefix}/Documentation/DocSets,{#{ENV['HOME']},}/Library/Developer/Shared/Documentation/DocSets}/*.docset")
 
 Man = Struct.new(:url, :language, :klass)
 class Man
