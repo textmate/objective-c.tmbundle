@@ -386,11 +386,11 @@ class ObjCFallbackCompletion
         files += [[ "#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaTypes.txt.gz",true,false, :constant]]
       elsif ENV['TM_SCOPE'].include? "meta.scope.implementation.objc"
         star = arg_name = true
-        files += [["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CLib.txt.gz",false,false, :functions],
+        files += [["#{e_sh ENV['TM_C_BUNDLE_SUPPORT']}/CLib.txt.gz",false,false, :functions],
         [ "#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaConstants.txt.gz",true,true, :constant],
         [ "#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaTypes.txt.gz",true,false, :constant],
         ["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaFunctions.txt.gz",false,false, :functions]]
-        files += [["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/C++Lib.txt.gz",false,false, :functions]] if ENV['TM_SCOPE'].include? "source.objc++"
+        files += [["#{e_sh ENV['TM_C_BUNDLE_SUPPORT']}/C++Lib.txt.gz",false,false, :functions]] if ENV['TM_SCOPE'].include? "source.objc++"
       elsif ENV['TM_SCOPE'].include? "meta.scope.interface.objc"
         star = arg_name = true
       end
@@ -399,9 +399,9 @@ class ObjCFallbackCompletion
       files = [["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaClassesWithAncestry.txt.gz",false,false, :classes],
       [ "#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaConstants.txt.gz",true,true, :constant],
       [ "#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaTypes.txt.gz",true,false, :constant],
-      [ "#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CLib.txt.gz",false,false, :functions],
+      [ "#{e_sh ENV['TM_C_BUNDLE_SUPPORT']}/CLib.txt.gz",false,false, :functions],
       [ "#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaFunctions.txt.gz",false,false, :functions]]
-      files += [["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/C++Lib.txt.gz",false,false, :functions]] if ENV['TM_SCOPE'].include? "source.objc++"
+      files += [["#{e_sh ENV['TM_C_BUNDLE_SUPPORT']}/C++Lib.txt.gz",false,false, :functions]] if ENV['TM_SCOPE'].include? "source.objc++"
     end
     dot_alpha_and_caret = /\.([a-zA-Z][a-zA-Z0-9]*)?$/
     if temp =line[0..caret_placement].match( dot_alpha_and_caret)
@@ -426,8 +426,8 @@ class ObjCFallbackCompletion
           ["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaAnonymousEnums.txt.gz",false,false, :constant],
           ["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaAnnotatedStrings.txt.gz",false,false, :constant],
           ["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaFunctions.txt.gz",false,false, :functions],
-          [ "#{e_sh ENV['TM_BUNDLE_SUPPORT']}/CLib.txt.gz",false,false, :functions]]
-          files += [["#{e_sh ENV['TM_BUNDLE_SUPPORT']}/C++Lib.txt.gz",false,false, :functions]] if ENV['TM_SCOPE'].include? "source.objc++"
+          [ "#{e_sh ENV['TM_C_BUNDLE_SUPPORT']}/CLib.txt.gz",false,false, :functions]]
+          files += [["#{e_sh ENV['TM_C_BUNDLE_SUPPORT']}/C++Lib.txt.gz",false,false, :functions]] if ENV['TM_SCOPE'].include? "source.objc++"
           candidates = candidates_or_exit(k[2], files)
           temp = []
           unless candidates.empty?
