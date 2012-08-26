@@ -117,7 +117,7 @@ def show_document (results, query)
 	end
 	
 	if url
-		full = url =~ /^http:/ ? url : "tm-file://#{url}"
+		full = url =~ /^http:/ ? url : "file://#{url}"
 		TextMate.exit_show_html "<meta http-equiv='Refresh' content='0;URL=#{full}'>"
 	else
 		TextMate.exit_discard  

@@ -45,7 +45,7 @@ def loadHTMLPage(url,className,methodName, ref)
   className = "NSObject" if ref
   m = open(url).read.match(/(\#\/\/apple_ref\/[^"]+?\/#{className}\/#{methodName})"/)
   url += m[1] if m
-  TextMate.exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=tm-file://#{url}'&gt;"
+  TextMate.exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=file://#{url}'&gt;"
 end
 
 pat = /("(\\.|[^"\\])*"|\[|\]|@selector\([^\)]*\)|[a-zA-Z][a-zA-Z0-9]*:)/

@@ -26,28 +26,28 @@ word=${TM_SELECTED_TEXT:-$TM_CURRENT_WORD}
 reference=$(zgrep -w "^$word" "$TM_BUNDLE_SUPPORT/doc_references.txt.gz"|cut -f2)
 if [[ -n "$reference" ]]; then
 	file="$doc_path/$reference"
-	[[ -f "${file%#*}" ]] &amp;&amp; exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=tm-file://${file// /%20}'&gt;"
+	[[ -f "${file%#*}" ]] &amp;&amp; exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=file://${file// /%20}'&gt;"
 fi
 
 # then see if there's a file named after the word (class)
 folders=( "Foundation" "ApplicationKit" "WebKit" )
 for (( i = 0; i &lt; ${#folders[@]}; i++ )); do
 	file="$doc_path/${folders[$i]}/ObjC_classic/Classes/$word.html"
-	[[ -f "$file" ]] &amp;&amp; exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=tm-file://${file// /%20}'&gt;"
+	[[ -f "$file" ]] &amp;&amp; exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=file://${file// /%20}'&gt;"
 done
 
 # then see if there's a file named after the class in Xcode 2.3 or later
 folders=( "Foundation" "ApplicationKit" "WebKit" )
 for (( i = 0; i &lt; ${#folders[@]}; i++ )); do
 	file="$doc_path/${folders[$i]}/Classes/${word}_Class/index.html"
-	[[ -f "$file" ]] &amp;&amp; exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=tm-file://${file// /%20}'&gt;"
+	[[ -f "$file" ]] &amp;&amp; exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=file://${file// /%20}'&gt;"
 done
 
 # finally try man (PolyglotMan)
 try_man () {
 	if man -w "$word" &amp;&gt;/dev/null; then
 		page=$("$TM_SUPPORT_PATH/bin/html_man.sh" -a "$word")
-		echo "&lt;meta http-equiv='Refresh' content='0;URL=tm-file://$page'&gt;"
+		echo "&lt;meta http-equiv='Refresh' content='0;URL=file://$page'&gt;"
 		exit_show_html
 	fi
 }
