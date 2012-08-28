@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>NSLog(@"%s$1", SELNAME(_cmd)${1/[^%]*(%)?.*/(?1:, :\);)/}$2${1/[^%]*(%)?.*/(?1:\);)/}</string>
+	<string>NSLog(@"%s$1", sel_getName(_cmd)${1/[^%]*(%)?.*/(?1:, :\);)/}$2${1/[^%]*(%)?.*/(?1:\);)/}</string>
 	<key>name</key>
 	<string>NSLog(.., _cmd)</string>
 	<key>scope</key>
