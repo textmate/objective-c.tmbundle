@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>@protocol ${1:${2:${TM_FILENAME:?${TM_FILENAME/\..+$//}:My}}Delegate}${3: &lt;NSObject&gt;}
+$0
+@optional
+@end</string>
+	<key>name</key>
+	<string>Protocol</string>
+	<key>scope</key>
+	<string>source.objc, source.objc++</string>
+	<key>tabTrigger</key>
+	<string>pro</string>
+	<key>uuid</key>
+	<string>B638A0D2-1B84-4932-99D4-3134230C3EC8</string>
+</dict>
+</plist>
