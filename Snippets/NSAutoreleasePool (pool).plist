@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>NSAutoreleasePool${TM_C_POINTER: *}pool = [NSAutoreleasePool new];
-$0
-[pool drain];</string>
+	<string>@autoreleasepool {
+    $0
+}</string>
 	<key>name</key>
-	<string>NSAutoreleasePool</string>
+	<string>Autorelease Pool</string>
 	<key>scope</key>
 	<string>source.objc, source.objc++</string>
 	<key>tabTrigger</key>
