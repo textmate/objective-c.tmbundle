@@ -313,7 +313,7 @@ end
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
-	<string>source.objc - string - comment - dyn.selection, source.objc++ - string - comment - dyn.selection</string>
+	<string>(source.objc | source.objc++) - (string | comment | dyn.selection | dyn.caret.mixed)</string>
 	<key>uuid</key>
 	<string>DB16585F-4D78-412B-B468-38AD54C254B5</string>
 </dict>
