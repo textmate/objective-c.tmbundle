@@ -5,9 +5,9 @@
 	<key>content</key>
 	<string>+ (void)initialize
 {
-	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-		$0@"value", @"key",
-		nil]];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:@{
+		$0@"key" : @"value",
+	}];
 }</string>
 	<key>name</key>
 	<string>Method: Initialize</string>
