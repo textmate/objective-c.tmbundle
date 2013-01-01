@@ -329,7 +329,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(@)(synchronized|public|private|protected)\b</string>
+			<string>(@)(synchronized|public|package|private|protected)\b</string>
 			<key>name</key>
 			<string>storage.modifier.objc</string>
 		</dict>
