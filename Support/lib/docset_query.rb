@@ -172,10 +172,10 @@ def documentation_for_word
 	query = $& if query.to_s =~ /\w*/
 
 	if query.to_s.empty?
-		query = %x{ __CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 /usr/bin/pbpaste -pboard find }
+		query = %x{ /usr/bin/pbpaste -pboard find }
 		query = $& if query =~ /\w+/
 		query = TextMate::UI.request_string :title => "Documentation Search", :default => query, :prompt => "Search documentation for word"    
-		abort if query.nil?
+		TextMate.exit_discard if query.nil?
 	end
 
 	results = search_docs_all(query)
