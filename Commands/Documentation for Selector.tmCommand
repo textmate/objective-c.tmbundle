@@ -23,7 +23,7 @@ documentation_for_selector
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
-	<string>meta.bracketed.objc | meta.function.objc</string>
+	<string>(meta.bracketed.objc | meta.function.objc) - dyn.selection</string>
 	<key>uuid</key>
 	<string>8AF46225-833C-473E-8EEC-F21C581636F6</string>
 </dict>
