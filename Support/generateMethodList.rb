@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
 # run with find /System/Library/Frameworks/*.framework -name \*.h -print0 | ruby generateMethodList.rb
 translate = {"Message" => "Me",
 "AddressBook" => "AB",
