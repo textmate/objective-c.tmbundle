@@ -17,7 +17,11 @@ left, right = line[0...col], line[col..-1]
 if left =~ /(.*?)(\[)?(\w+)\s+$/ then
   lead, bracket, cl = $1, $2, $3
   right = line[col+1..-1] unless bracket.nil?
-  print "#{e lead}${1/.+/[/}[[#{e cl} alloc] init$2]${1: autorelease]}"
+  if ENV.has_key?('TM_OBJC_MRR')
+    print "#{e lead}${1/.+/[/}[[#{e cl} alloc] init$2]${1: autorelease]}"
+  else
+    print "#{e lead}[[#{e cl} alloc] init$1]"
+  end
   print right.empty? ? ";" : "#{e right}"
 else
   # this is only if we were not able to interpret the line
@@ -29,7 +33,7 @@ end
 	<key>input</key>
 	<string>selection</string>
 	<key>name</key>
-	<string>Insert [[[… alloc] init] autorelease]</string>
+	<string>Insert [[… alloc] init]</string>
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
