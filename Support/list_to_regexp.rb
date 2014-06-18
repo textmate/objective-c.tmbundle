@@ -1,4 +1,4 @@
-#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
+#!/usr/bin/env ruby18
 #
 #  list_to_regexp.rb
 #  Created by Allan Odgaard on 2005-11-28.
