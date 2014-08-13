@@ -27,31 +27,31 @@ end
 
 Ref = Struct.new(:docset, :language, :type, :klass, :thing, :path)
 class Ref
-	TYPE_ABBREVIATIONS = {'cl' => 'Class', 'intf' => 'Protocol', 'cat' => 'Category', 
-							'intfm' => 'Method', 'instm' => Method, 'econst' => 'Enum', 
-							'tdef' => 'Typedef', 'macro' => 'Macro', 'data' => 'Data', 
+	TYPE_ABBREVIATIONS = {'cl' => 'Class', 'intf' => 'Protocol', 'cat' => 'Category',
+							'intfm' => 'Method', 'instm' => Method, 'econst' => 'Enum',
+							'tdef' => 'Typedef', 'macro' => 'Macro', 'data' => 'Data',
 							'func' => 'Function'}
-							
+
 	def url
 		path[0] == ?/ ? path : docset + "/Contents/Resources/Documents/" + path
 	end
-	
+
 	# A '-' as a title in the popup menu not very useful so use the type field instead.
 	def title
 		klass == '-' ? TYPE_ABBREVIATIONS[type] || type  : klass
 	end
-	
+
 	def exists?
 		File.exists?(url.split('#').first)
 	end
-	
+
 	# Test if we are referring to documentation about the same
 	# thing, but from different docsets. (used by uniq).
 	def eql? (other)
-		language == other.language && type == other.type && 
+		language == other.language && type == other.type &&
 			klass == other.klass && thing == other.thing
 	end
-	
+
 	# Also needed by uniq
 	def hash
 		(language + type + klass + thing).hash
@@ -73,13 +73,13 @@ def parts_of_reference (docset, ref_str)
 	language, type, klass, thing = ref[0].split('/')
 	Ref.new(docset, language, type, klass, thing, ref[1])
 end
-	
+
 def search_docs (query)
 	results, legacy = [], []
-	DOCSETS.each do |docset|		
+	DOCSETS.each do |docset|
 		cmd = DOCSET_CMD + query + ' ' + docset
 		response = `#{cmd}`
-			
+
 		case response			# elaborate for doc purposes
 			when ''
 				# Not found.
@@ -90,9 +90,9 @@ def search_docs (query)
 					ref = parts_of_reference(docset, r)
 					(docset =~ /Legacy/ ? legacy : results) << ref if ref.exists?
 				end
-		end	
+		end
 	end
-	
+
 	# Only add legacy documentation if we didn’t find a newer reference — this approach is required because WebObjects has a lot of legacy documentation on Foundation classes
 	legacy.each { |match| results << match unless results.member? match }
 	return results.uniq
@@ -104,7 +104,7 @@ def show_document (results, query)
 	elsif results.length == 1
 		url = results[0].url
 	else
-		
+
 		# Ask the user which class they are interested in.
 		results.sort! {|a, b| a.klass <=> b.klass}
 		if results.all? {|ref| ref.language == "Objective-C"}
@@ -115,12 +115,12 @@ def show_document (results, query)
 		class_names.sort! {|a, b| a['title'] <=> b['title']}
 		url = get_user_selected_reference(class_names)
 	end
-	
+
 	if url
 		full = url =~ /^http:/ ? url : "file://#{url}"
 		TextMate.exit_show_html "<meta http-equiv='Refresh' content='0;URL=#{full}'>"
 	else
-		TextMate.exit_discard  
+		TextMate.exit_discard
 	end
 end
 
@@ -148,7 +148,7 @@ end
 
 def get_user_selected_reference (class_names)
 	plist = {'menuItems' => class_names}.to_plist
-	res = OSX::PropertyList::load(%x{"$DIALOG" -up #{e_sh plist} })	
+	res = OSX::PropertyList::load(%x{"$DIALOG" -up #{e_sh plist} })
 	res['selectedMenuItem'] ? res['selectedMenuItem']['url'] : nil
 end
 
@@ -174,7 +174,7 @@ def documentation_for_word
 	if query.to_s.empty?
 		query = %x{ /usr/bin/pbpaste -pboard find }
 		query = $& if query =~ /\w+/
-		query = TextMate::UI.request_string :title => "Documentation Search", :default => query, :prompt => "Search documentation for word"    
+		query = TextMate::UI.request_string :title => "Documentation Search", :default => query, :prompt => "Search documentation for word"
 		TextMate.exit_discard if query.nil?
 	end
 
@@ -184,10 +184,10 @@ end
 
 def documentation_for_selector
 	lines = STDIN.readlines
-	
+
 	# selector = doc[(start_char + 1)...end_char]
 	selector = lines.join(" ")[1..-2]
-	
+
 	# Whittle out everything but the selectors.
 	selector.gsub!(/\n/m, ' ')                  # remove newlines
 	selector.gsub!(/".*"\]/, ' ')               # remove any string constants (may hold :)
@@ -201,10 +201,10 @@ def documentation_for_selector
 	end
 
 	results = search_docs(query)
-	
+
 	# Filter out the non Objective-C responses.
 	results.delete_if {|r| r.language != 'Objective-C'}
-	
+
 	show_document(results, query)
-end	
+end
 
