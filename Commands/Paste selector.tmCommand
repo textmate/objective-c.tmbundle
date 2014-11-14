@@ -11,7 +11,7 @@
 	<key>keyEquivalent</key>
 	<string>^V</string>
 	<key>name</key>
-	<string>Paste selector</string>
+	<string>Paste Selector</string>
 	<key>output</key>
 	<string>afterSelectedText</string>
 	<key>scope</key>
