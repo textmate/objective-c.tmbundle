@@ -42,6 +42,8 @@ print res</string>
 	<true/>
 	<key>fallbackInput</key>
 	<string>scope</string>
+	<key>hideFromUser</key>
+	<true/>
 	<key>input</key>
 	<string>selection</string>
 	<key>keyEquivalent</key>
