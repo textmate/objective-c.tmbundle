@@ -109,49 +109,60 @@
 			</array>
 		</dict>
 		<dict>
+			<key>applyEndPatternLast</key>
+			<true/>
 			<key>begin</key>
-			<string>@"</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.begin.objc</string>
-				</dict>
-			</dict>
+			<string>(?=@")</string>
 			<key>end</key>
-			<string>"</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.end.objc</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>string.quoted.double.objc</string>
+			<string>(?=\S)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>source.c#string_escaped_char</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?x)%
-						(\d+\$)?                             # field (argument #)
-						[#0\- +']*                          # flags
-						((-?\d+)|\*(-?\d+\$)?)?              # minimum field width
-						(\.((-?\d+)|\*(-?\d+\$)?)?)?         # precision
-						[@]                                  # conversion type
-					</string>
+					<key>begin</key>
+					<string>@?"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.objc</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.objc</string>
+						</dict>
+					</dict>
 					<key>name</key>
-					<string>constant.other.placeholder.objc</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>source.c#string_placeholder</string>
+					<string>string.quoted.double.objc</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.c#string_escaped_char</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>(?x)%
+    						(\d+\$)?                             # field (argument #)
+    						[#0\- +']*                          # flags
+    						((-?\d+)|\*(-?\d+\$)?)?              # minimum field width
+    						(\.((-?\d+)|\*(-?\d+\$)?)?)?         # precision
+    						[@]                                  # conversion type
+    					</string>
+							<key>name</key>
+							<string>constant.other.placeholder.objc</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>source.c#string_placeholder</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
