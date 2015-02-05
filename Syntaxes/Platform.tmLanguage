@@ -241,7 +241,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?:BOOL|Class|IMP|SEL|i(?:d|nstancetype)|objc_(?:class|object(?:ptr_t)?|selector))\b</string>
+			<string>\b(?:BOOL|Class|IMP|NS(?:Integer|UInteger)|SEL|i(?:d|nstancetype)|objc_(?:class|object(?:ptr_t)?|selector))\b</string>
 			<key>name</key>
 			<string>storage.type.objc</string>
 		</dict>
