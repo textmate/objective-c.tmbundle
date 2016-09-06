@@ -106,12 +106,13 @@ std::string strings_to_regexp (_InputIter first, _InputIter last)
 static BOOL update_grammar (NSString* grammarPath, std::map<std::string, std::set<std::string>> const& functions, std::map<std::string, std::set<std::string>> const& protocols, std::map<std::string, std::set<std::string>> const& other, NSString* comment)
 {
 	NSMutableArray* patternRules  = [NSMutableArray new];
+	NSMutableArray* functionRules = [NSMutableArray new];
 	NSMutableArray* protocolRules = [NSMutableArray new];
 
 	for(auto const& pair : functions)
 	{
 		NSString* match = [NSString stringWithFormat:@"\\b%@\\b", @(strings_to_regexp(pair.second.begin(), pair.second.end()).c_str())];
-		[patternRules addObject:@{
+		[functionRules addObject:@{
 			@"match" : [NSString stringWithFormat:@"(\\s*)(%@)", match],
 			@"captures" : @{
 				@"1" : @{ @"name" : @"punctuation.whitespace.support.function.leading" },
@@ -136,9 +137,12 @@ static BOOL update_grammar (NSString* grammarPath, std::map<std::string, std::se
 	{
 		plist[@"comment"] = comment ?: @"Generated";
 		plist[@"patterns"] = patternRules;
+		NSMutableDictionary* repos = [NSMutableDictionary dictionaryWithDictionary:@{
+			@"functions" : @{ @"patterns" : functionRules },
+		}];
 		if(protocolRules.count)
-				plist[@"repository"] = @{ @"protocols" : @{ @"patterns" : protocolRules } };
-		else	[plist removeObjectForKey:@"protocols"];
+			repos[@"protocols"] = @{ @"patterns" : protocolRules };
+		plist[@"repository"] = repos;
 		return [plist writeToFile:grammarPath atomically:YES];
 	}
 	return NO;

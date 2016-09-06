@@ -344,6 +344,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>source.objc.platform#functions</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>source.c</string>
 		</dict>
 		<dict>
