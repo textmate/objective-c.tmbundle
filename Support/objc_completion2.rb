@@ -14,89 +14,89 @@ class ExternalSnippetizer
     @tm_C_pointer = options[:tm_C_pointer] || nil
   end
 
-def snippet_generator(cand, start)
+  def snippet_generator(cand, start)
 
-  cand = cand.strip
-  oldstuff = cand[0..-1].split("\t")
-  stuff = cand[start..-1].split("\t")
-  stuffSize = stuff[0].size
-  if oldstuff[0].count(":") == 1
-    out = "${0:#{stuff[6]}}"
-  elsif oldstuff[0].count(":") > 1
+    cand = cand.strip
+    oldstuff = cand[0..-1].split("\t")
+    stuff = cand[start..-1].split("\t")
+    stuffSize = stuff[0].size
+    if oldstuff[0].count(":") == 1
+      out = "${0:#{stuff[6]}}"
+    elsif oldstuff[0].count(":") > 1
 
-    name_array = stuff[0].split(":")
-    out = "${1:#{stuff[-name_array.size - 1]}} "
-    unless name_array.empty?
-    begin
-      stuff[-(name_array.size)..-1].each_with_index do |arg,i|
-          out << name_array[i] + ":${"+(i+2).to_s + ":"+ arg + "} "
+      name_array = stuff[0].split(":")
+      out = "${1:#{stuff[-name_array.size - 1]}} "
+      unless name_array.empty?
+        begin
+          stuff[-(name_array.size)..-1].each_with_index do |arg,i|
+            out << name_array[i] + ":${"+(i+2).to_s + ":"+ arg + "} "
+          end
+        rescue NoMethodError
+          out = "$0"
+        end
       end
-    rescue NoMethodError
+    else
       out = "$0"
     end
+    return out.chomp.strip
   end
-  else
-    out = "$0"
-  end
-  return out.chomp.strip
-end
 
-def construct_arg_name(arg)
-  a = arg.match(/(NS|AB|CI|CD)?(Mutable)?(([AEIOQUYi])?[A-Za-z_0-9]+)/)
-  unless a.nil?
-    (a[4].nil? ? "a": "an") + a[3].sub!(/\b\w/) { $&.upcase }
-  else
-    ""
-  end
-end
-
-def type_declaration_snippet_generator(dict)
-
-  arg_name = @arg_name && dict['noArg']
-  star = @star && dict['pure']
-  pointer = @tm_C_pointer
-  pointer = " *" unless pointer
-
-  if arg_name
-    name = "${2:#{construct_arg_name dict['match']}}"
-    if star
-      name = ("${1:#{pointer}#{name}}")
+  def construct_arg_name(arg)
+    a = arg.match(/(NS|AB|CI|CD)?(Mutable)?(([AEIOQUYi])?[A-Za-z_0-9]+)/)
+    unless a.nil?
+      (a[4].nil? ? "a": "an") + a[3].sub!(/\b\w/) { $&.upcase }
     else
-      name = " " + name
+      ""
     end
-
-  else
-    name = pointer.rstrip if star
   end
-  #  name = name[0..-2].rstrip unless arg_name
-  name + "$0"
-end
 
-def cfunction_snippet_generator(c)
-  c = c.split"\t"
-  i = 0
-  "("+c[1][1..-2].split(",").collect do |arg|
-    "${"+(i+=1).to_s+":"+ arg.strip + "}"
-  end.join(", ")+")$0"
-end
+  def type_declaration_snippet_generator(dict)
 
-def run(res)
-  if res['type'] == "methods"
-    r = snippet_generator(res['cand'], res['match'].size)
-  elsif res['type'] == "functions"
-    r = cfunction_snippet_generator(res['cand'])
-  elsif res['pure'] && res['noArg']
-    r = type_declaration_snippet_generator res
-  else
-    r = "$0"
+    arg_name = @arg_name && dict['noArg']
+    star = @star && dict['pure']
+    pointer = @tm_C_pointer
+    pointer = " *" unless pointer
+
+    if arg_name
+      name = "${2:#{construct_arg_name dict['match']}}"
+      if star
+        name = ("${1:#{pointer}#{name}}")
+      else
+        name = " " + name
+      end
+
+    else
+      name = pointer.rstrip if star
+    end
+    # name = name[0..-2].rstrip unless arg_name
+    name + "$0"
   end
-  return r
-end
+
+  def cfunction_snippet_generator(c)
+    c = c.split"\t"
+    i = 0
+    "("+c[1][1..-2].split(",").collect do |arg|
+      "${"+(i+=1).to_s+":"+ arg.strip + "}"
+    end.join(", ")+")$0"
+  end
+
+  def run(res)
+    if res['type'] == "methods"
+      r = snippet_generator(res['cand'], res['match'].size)
+    elsif res['type'] == "functions"
+      r = cfunction_snippet_generator(res['cand'])
+    elsif res['pure'] && res['noArg']
+      r = type_declaration_snippet_generator res
+    else
+      r = "$0"
+    end
+    return r
+  end
 end
 
 # Zlib::GzipReader.new(ARGF).each { |l| f = l.split("\t"); puts l if f[0] =~ /\S/ and f[3] =~ /\S/ }
 class ObjCFallbackCompletion
-      A = Struct.new(:tt, :text, :beg)
+  A = Struct.new(:tt, :text, :beg)
 
   def initialize(line, caret_placement)
     @full = line
@@ -115,7 +115,7 @@ class ObjCFallbackCompletion
   end
 
   def method_parse(k)
-    k = k.match(/[^;\{]+?(;|\{)/)
+    k = k.match(/[^;\{]+?(;|\{)/) # }
     if k
       l = k[0].scan(/(\-|\+)\s*\((([^\(\)]|\([^\)]*\))*)\)|\((([^\(\)]|\([^\)]*\))*)\)\s*([_a-zA-Z][_a-zA-Z0-9]*)|(([a-zA-Z][a-zA-Z0-9]*)?:)/)
       types = l.select {|item| item[3] && item[3].match(/([A-Z]\w|unichar)\s*(?!\*)/) &&  item[5] }
@@ -178,13 +178,13 @@ class ObjCFallbackCompletion
       l.add_token(:at, /@/)
       l.add_token(:star, /\*/)
       l.add_token(:close, /\)|\]|\}/)
-      l.add_token(:open, /\(|\[|\{/)
+      l.add_token(:open, /\(|\[|\{/) # }]
       l.add_token(:operator,   /[&-+\/=%:\,\?;<>\|\~\^]/)
       l.add_token(:terminator, /;\n|\n/)
       l.add_token(:whitespace, /\s+/)
       l.add_token(:unknown,    /./)
       l.input { to_parse.gets }
-        #l.input {STDIN.read}
+      # l.input {STDIN.read}
     end
 
     offset = 0
@@ -218,7 +218,7 @@ class ObjCFallbackCompletion
           candidates = candidates_or_exit(k[1]+ "[[:space:]]", files)
           r = [candidates[0][0].split("\t")[2]] unless candidates.empty?
 
-          #get constant or function return type
+          # get constant or function return type
         elsif k[4]
           mn = methodNames(line[b..-1])
           unless mn.empty?
@@ -282,7 +282,7 @@ class ObjCFallbackCompletion
       else
         name = (ENV['TM_C_POINTER'] || " *").rstrip if star
       end
-      #  name = name[0..-2].rstrip unless arg_name
+      # name = name[0..-2].rstrip unless arg_name
       e_sn(c[0][s..-1]) + name + "$0"
     end
   end
@@ -312,17 +312,17 @@ class ObjCFallbackCompletion
     end
 
     if prettyCandidates.size > 1
-      #index = start
-      #test = false
-      #while !test
-      #  candidates.each_cons(2) do |a,b|
-      #    break if test = (a[index].chr != b[index].chr || a[index].chr == "\t")
-      #  end
-      #  break if test
-      #  searchTerm << candidates[0][index].chr
-      #  index +=1
-      #end
-     pl = prettyCandidates.map do |pretty, full, pure, noArg, type |
+      # index = start
+      # test = false
+      # while !test
+      #   candidates.each_cons(2) do |a,b|
+      #     break if test = (a[index].chr != b[index].chr || a[index].chr == "\t")
+      #   end
+      #   break if test
+      #   searchTerm << candidates[0][index].chr
+      #   index +=1
+      # end
+      pl = prettyCandidates.map do |pretty, full, pure, noArg, type |
         { 'display' => pretty,
           'cand' => full,
           'pure'=> pure,
@@ -338,15 +338,16 @@ class ObjCFallbackCompletion
       begin
         TextMate::UI.complete(pl, flags)  do |hash|
           es = ExternalSnippetizer.new({:star => star,
-               :arg_name => arg_name,
-               :tm_C_pointer => ENV['TM_C_POINTER']})
+            :arg_name => arg_name,
+            :tm_C_pointer => ENV['TM_C_POINTER']
+          })
           es.run(hash)
         end
 
       rescue NoMethodError
         TextMate.exit_show_tool_tip "you have Dialog2 installed but not the ui.rb in review"
       end
-     TextMate.exit_discard # create_new_document
+      TextMate.exit_discard # create_new_document
     else
       snippet_generator( candidates[0][0], start, star && !candidates[0][1], arg_name && !candidates[0][2] )
     end
@@ -364,7 +365,7 @@ class ObjCFallbackCompletion
     end
 
     if line[1+caret_placement..-1].nil?
-       TextMate.exit_discard
+      TextMate.exit_discard
     end
 
     backContext = line[1+caret_placement..-1].match(/^[a-zA-Z0-9_]/)
@@ -545,16 +546,16 @@ class ObjCMethodCompletion
     end
 
     if prettyCandidates.size > 1
-      #index = start
-      #test = false
-      #while !test
-      #  candidates.each_cons(2) do |a,b|
-      #    break if test = (a[index].chr != b[index].chr || a[index].chr == "\t")
-      #  end
-      #  break if test
-      #  searchTerm << candidates[0][index].chr
-      #  index +=1
-      #end
+      # index = start
+      # test = false
+      # while !test
+      #   candidates.each_cons(2) do |a,b|
+      #     break if test = (a[index].chr != b[index].chr || a[index].chr == "\t")
+      #   end
+      #   break if test
+      #   searchTerm << candidates[0][index].chr
+      #   index +=1
+      # end
       prettyCandidates = prettyCandidates.sort {|x,y| x[1].downcase <=> y[1].downcase }
       show_dialog(prettyCandidates,start,staticPrefix,word) do |c,s|
         snippet_generator(c,s, call)
@@ -581,8 +582,8 @@ class ObjCMethodCompletion
 
   def c_popup_gen(c,si,arg_type=nil)
     s = si.size
-    #puts c.inspect.gsub("],", "],\n")
-    #c.each {|e| puts e unless e.class == Array}
+    # puts c.inspect.gsub("],", "],\n")
+    # c.each {|e| puts e unless e.class == Array}
     prettyCandidates = c.map do |candidate, type|
       ca = candidate.split("\t")
       if type == :functions
@@ -591,7 +592,7 @@ class ObjCMethodCompletion
         [ca[0], ca[0], candidate,type]
       end
 
-      #[((ca[1].nil? || !ca[4].nil? || c[1]=="") ? ca[0] : ca[0]+ca[1]),ca[0], candidate]
+      # [((ca[1].nil? || !ca[4].nil? || c[1]=="") ? ca[0] : ca[0]+ca[1]),ca[0], candidate]
     end
 
     if prettyCandidates.size > 1
@@ -605,7 +606,7 @@ class ObjCMethodCompletion
 
   def show_dialog(prettyCandidates,start,static,word)
     pl = prettyCandidates.map do |pretty, filter, full, type |
-            { 'display' => pretty, 'cand' => full, 'match'=> filter, 'type'=> type.to_s}
+      { 'display' => pretty, 'cand' => full, 'match'=> filter, 'type'=> type.to_s}
     end
 
     flags = {}
@@ -617,7 +618,7 @@ class ObjCMethodCompletion
         ExternalSnippetizer.new.run(hash)
       end
     rescue NoMethodError
-        TextMate.exit_show_tool_tip "you have Dialog2 installed but not the ui.rb in review"
+      TextMate.exit_show_tool_tip "you have Dialog2 installed but not the ui.rb in review"
     end
     TextMate.exit_discard
   end
@@ -683,8 +684,8 @@ class ObjCMethodCompletion
         end
       end
       z.close
-        # zGrepped = %x{ zgrep -e ^#{e_sh methodSearch } #{e_sh fileName }}
-        #candidates += zGrepped.split("\n")
+      # zGrepped = %x{ zgrep -e ^#{e_sh methodSearch } #{e_sh fileName }}
+      # candidates += zGrepped.split("\n")
     end
 
     n = (n.empty? ? candidates : n)
@@ -723,7 +724,7 @@ class ObjCMethodCompletion
     arg_types = nil
     rules.each do |rule|
       sMn, sCn, sIMn, sTy = rule.split("!")
- #     sCn = nil if sCn.empty?
+      # sCn = nil if sCn.empty?
       if(mn == sMn && (sCn == "" || (sCn != "" && sCn.split("|").include?(typeName))))
         arg_types = sTy.split("|")
         break
@@ -736,7 +737,7 @@ class ObjCMethodCompletion
       candidates += candidate_list(search, types, :anonymous)
       candidates += candidate_list(search, types, :functions)
       candidates += candidate_list(search, types, :constants)
-      #puts candidates.inspect.gsub(",","\n")
+      # puts candidates.inspect.gsub(",","\n")
       res = c_popup_gen(candidates, search, arg_types)
     else
       candidates = candidate_list(mn, nil, :methods)
@@ -759,7 +760,7 @@ class ObjCMethodCompletion
       candidates += candidate_list(search, types, :anonymous)
       candidates += candidate_list(search, types, :functions)
       candidates += candidate_list(search, types, :constants)
-#      puts candidates.inspect.gsub(",","\n")
+      # puts candidates.inspect.gsub(",","\n")
       TextMate.exit_show_tool_tip "No completion available" if candidates.empty?
 
       res = c_popup_gen(candidates, search, arg_types)
@@ -768,7 +769,7 @@ class ObjCMethodCompletion
 
 
   def method_parse(k)
-    k = k.match(/[^;\{]+?(;|\{)/)
+    k = k.match(/[^;\{]+?(;|\{)/) # }
     if k
       l = k[0].scan(/(\-|\+)\s*\((([^\(\)]|\([^\)]*\))*)\)|\((([^\(\)]|\([^\)]*\))*)\)\s*([_a-zA-Z][_a-zA-Z0-9]*)|(([a-zA-Z][a-zA-Z0-9]*)?:)/)
       types = l.select {|item| item[3] && item[3].match(/([A-Z]\w)\s*\*/) &&  item[5] }
@@ -906,7 +907,7 @@ class ObjCMethodCompletion
     # find Nested method
     up = 0
     start = [0]
-    #Count [
+    # Count [
     fromstart = mline.scan(/./u)[0..caret_placement].join
     match_iter(pat , fromstart) do |tok, beg, len|
       t = tok[0].chr
