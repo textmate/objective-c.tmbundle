@@ -222,7 +222,7 @@ class ObjCFallbackCompletion
         elsif k[4]
           mn = methodNames(line[b..-1])
           unless mn.empty?
-            candidates = %x{ zgrep ^#{e_sh mn + "[[:space:]]" } #{e_sh ENV['TM_BUNDLE_SUPPORT']}/cocoa.txt.gz }.split("\n")
+            candidates = %x{ zgrep ^#{e_sh mn + "[[:space:]]" } #{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaMethods.txt.gz }.split("\n")
           end
           r = candidates.map{|e| e.split("\t")[5]} unless candidates.empty?
         end
@@ -636,7 +636,7 @@ class ObjCMethodCompletion
     elsif types == :functions
       fileNames = "#{ENV['TM_BUNDLE_SUPPORT']}/CocoaFunctions.txt.gz"
     elsif types == :methods
-      fileNames = ["#{ENV['TM_BUNDLE_SUPPORT']}/cocoa.txt.gz"]
+      fileNames = ["#{ENV['TM_BUNDLE_SUPPORT']}/CocoaMethods.txt.gz"]
       userMethods = "#{ENV['TM_PROJECT_DIRECTORY']}/.methods.TM_Completions.txt.gz"
 
       fileNames += [userMethods] if File.exists? userMethods
@@ -851,7 +851,7 @@ class ObjCMethodCompletion
           end
 
         else
-          candidates = %x{ zgrep ^#{e_sh mn + "[[:space:]]" } #{e_sh ENV['TM_BUNDLE_SUPPORT']}/cocoa.txt.gz }.split("\n")
+          candidates = %x{ zgrep ^#{e_sh mn + "[[:space:]]" } #{e_sh ENV['TM_BUNDLE_SUPPORT']}/CocoaMethods.txt.gz }.split("\n")
           obType = :instanceMethod
 
           unless candidates.empty?

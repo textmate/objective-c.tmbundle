@@ -134,7 +134,7 @@ return false
   end
   
   def file_contains_selector?(methodName)
-    fileNames = ["#{ENV['TM_BUNDLE_SUPPORT']}/cocoa.txt.gz"]
+    fileNames = ["#{ENV['TM_BUNDLE_SUPPORT']}/CocoaMethods.txt.gz"]
     userMethods = "#{ENV['TM_PROJECT_DIRECTORY']}/.methods.TM_Completions.txt.gz"
 
     fileNames += [userMethods] if File.exists? userMethods

@@ -120,7 +120,7 @@ class ObjcSelectorCompletion
     methodDeclaration = /^(?:@selector\()([_a-zA-Z][a-zA-Z0-9:]*)$/
 
     if k = line[0..caret_placement].match(methodDeclaration)
-      candidates = candidates_or_exit( k[1], nil, "cocoa.txt.gz")
+      candidates = candidates_or_exit( k[1], nil, "CocoaMethods.txt.gz")
       res =pop_up(candidates, k[1])
       TextMate.exit_discard if res == "$0"
       e_sn(line[0..caret_placement]) + res + e_sn(line[caret_placement + 1 ..  -1])

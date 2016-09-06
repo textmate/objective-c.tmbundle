@@ -172,7 +172,7 @@ end
 methodDeclaration = /^((?:\+|-)\s*)([a-zA-Z][a-zA-Z0-9:]*)$/
 
 if k = line.match(methodDeclaration)
-  candidates = candidates_or_exit( k[2], nil, "cocoa.txt.gz")
+  candidates = candidates_or_exit( k[2], nil, "CocoaMethods.txt.gz")
   res =pop_up(candidates, k[2])
   TextMate.exit_discard if res == "$0"
   print k[1] + res
