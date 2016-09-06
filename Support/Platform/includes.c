@@ -1,4 +1,5 @@
 #import <CoreFoundation/CoreFoundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import <MacTypes.h>
 #import <stdio.h>
 #import <stdint.h>
