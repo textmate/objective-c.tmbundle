@@ -530,33 +530,8 @@ class ObjCMethodCompletion
   def pop_up(candidates, staticPrefix, word, call = true)
     start = staticPrefix.size + word.size
     prettyCandidates = candidates.map { |candidate,type| prettify(candidate, call, type, staticPrefix, word) }
-    prettyCandidates = prettyCandidates.sort{|x,y| x[1] <=> y[1] }
-    if prettyCandidates.size > 1
-      require "enumerator"
-      pruneList = []
-
-      prettyCandidates.each_cons(2) do |a,b|
-        pruneList << (a[0] != b[0]) # check if prettified versions are the same
-      end
-      pruneList << true
-      ind = -1
-      prettyCandidates = prettyCandidates.select do |a| #remove duplicates
-        pruneList[ind+=1]
-      end
-    end
 
     if prettyCandidates.size > 1
-      # index = start
-      # test = false
-      # while !test
-      #   candidates.each_cons(2) do |a,b|
-      #     break if test = (a[index].chr != b[index].chr || a[index].chr == "\t")
-      #   end
-      #   break if test
-      #   searchTerm << candidates[0][index].chr
-      #   index +=1
-      # end
-      prettyCandidates = prettyCandidates.sort {|x,y| x[1].downcase <=> y[1].downcase }
       show_dialog(prettyCandidates,start,staticPrefix,word) do |c,s|
         snippet_generator(c,s, call)
       end
@@ -605,6 +580,14 @@ class ObjCMethodCompletion
 
 
   def show_dialog(prettyCandidates,start,static,word)
+    prettyCandidates = prettyCandidates.sort { |lhs, rhs| lhs.first.downcase <=> rhs.first.downcase }
+
+    # This does not work: prettyCandidates.uniq! { |item| item.first }
+    dup_count = Hash.new(0)
+    prettyCandidates = prettyCandidates.select do |e|
+      (dup_count[e.first] += 1) == 1
+    end
+
     pl = prettyCandidates.map do |pretty, filter, full, type |
       { 'display' => pretty, 'cand' => full, 'match'=> filter, 'type'=> type.to_s}
     end
