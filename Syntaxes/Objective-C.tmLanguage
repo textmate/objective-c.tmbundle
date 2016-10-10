@@ -1328,7 +1328,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\b(getter|setter|readonly|readwrite|assign|retain|copy|atomic|nonatomic|strong|weak|nullable|nonnull)\b</string>
+							<string>\b(getter|setter|readonly|readwrite|assign|retain|copy|atomic|nonatomic|strong|weak|nullable|nonnull|class)\b</string>
 							<key>name</key>
 							<string>keyword.other.property.attribute</string>
 						</dict>
