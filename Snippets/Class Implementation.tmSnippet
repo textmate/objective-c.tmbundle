@@ -4,9 +4,9 @@
 <dict>
 	<key>content</key>
 	<string>@implementation ${1:${TM_FILENAME/\...*$|(^$)/(?1:object)/}}
-- (id)init
+- (instancetype)init
 {
-	if((self = [super init]))
+	if(self = [super init])
 	{$0
 	}
 	return self;

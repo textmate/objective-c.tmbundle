@@ -8,27 +8,27 @@
 	[${3:${1/./\l$0/}} addObject:anObject];
 }
 
-- (void)insertObject:($2)anObject in$1AtIndex:(unsigned int)i 
+- (void)insertObject:($2)anObject in$1AtIndex:(NSUInteger)idx
 {
-	[$3 insertObject:anObject atIndex:i];
+	[$3 insertObject:anObject atIndex:idx];
 }
 
-- ($2)objectIn$1AtIndex:(unsigned int)i
+- ($2)objectIn$1AtIndex:(NSUInteger)idx
 {
-	return [$3 objectAtIndex:i];
+	return [$3 objectAtIndex:idx];
 }
 
-- (unsigned int)indexOfObjectIn$1:($2)anObject
+- (NSUInteger)indexOfObjectIn$1:($2)anObject
 {
 	return [$3 indexOfObject:anObject];
 }
 
-- (void)removeObjectFrom$1AtIndex:(unsigned int)i
+- (void)removeObjectFrom$1AtIndex:(NSUInteger)idx
 {
-	[$3 removeObjectAtIndex:i];
+	[$3 removeObjectAtIndex:idx];
 }
 
-- (unsigned int)countOf$1
+- (NSUInteger)countOf$1
 {
 	return [$3 count];
 }
