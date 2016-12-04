@@ -9,7 +9,7 @@ There is a `Makefile` which builds the `generator` executable and will also upda
 Before running `make` you should clone the respective bundles:
 
 ```shell
-cd ~/Library/Application\ Support/Avian/Bundles
+cd ~/Library/Application\ Support/TextMate/Bundles
 git clone "git@github.com:textmate/c.tmbundle"
 git clone "git@github.com:textmate/objective-c.tmbundle"
 ```

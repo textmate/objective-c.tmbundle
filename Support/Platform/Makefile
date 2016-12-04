@@ -4,8 +4,8 @@ LLVM=/usr/local/opt/llvm
 CC=xcrun clang
 CFLAGS=-Os -Wall -std=c++1y -lc++ --sysroot $(SDK) -DCOMPILE_DATE=\"$(BUILD_DATE)\" -framework Foundation -I$(LLVM)/include -L$(LLVM)/lib -lclang
 
-C_PATH='$(HOME)/Library/Application Support/Avian/Bundles/c.tmbundle/Syntaxes/Platform'
-OBJC_PATH='$(HOME)/Library/Application Support/Avian/Bundles/objective-c.tmbundle/Syntaxes/Platform'
+C_PATH='$(HOME)/Library/Application Support/TextMate/Bundles/c.tmbundle/Syntaxes/Platform'
+OBJC_PATH='$(HOME)/Library/Application Support/TextMate/Bundles/objective-c.tmbundle/Syntaxes/Platform'
 
 all: c objective-c
 
