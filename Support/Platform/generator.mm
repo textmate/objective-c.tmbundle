@@ -42,7 +42,7 @@ static void visit (CXTranslationUnit tu, std::function<void(std::string const&, 
 		int n = clang_getCursorPlatformAvailability(cursor, nullptr, nullptr, nullptr, nullptr, &availability[0], sizeof(availability) / sizeof(availability[0]));
 		for(int i = 0; i < n && !available; ++i)
 		{
-			if(strcmp("macosx", clang_getCString(availability[i].Platform)) == 0)
+			if(strcmp("macos", clang_getCString(availability[i].Platform)) == 0)
 				available = &availability[i];
 		}
 
