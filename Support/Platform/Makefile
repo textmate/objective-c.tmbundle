@@ -15,7 +15,7 @@ c: generator
 objective-c: generator
 	./generator --sdk=$(SDK) --grammar=$(OBJC_PATH).tmLanguage --text=$(OBJC_PATH).md --suffix='.objc' --cocoa includes.mm
 
-generator: generator.mm
+generator: generator.mm Makefile
 	@$(CC) $(CFLAGS) -o $@ $<
 
 .PHONY: all c objective-c
